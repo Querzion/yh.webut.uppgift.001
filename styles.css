@@ -3,10 +3,56 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-.bgcolor {
-    background-color: white;
+.font {
     color: black;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.headerbg {
+    background-image: url(/images/headerbg.svg);
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+    
+}
+.features1 {
+    background-color: white;
+    width: 100%;
+    height: 800px;
+}
+.features2-sliderbg {
+    background-image: url(/images/sliderbg.svg);
+    width: 100%;
+    height: 800px;
+}
+.features3 {
+    background-color: white;
+    width: 100%;
+    height: 1000px;
+}
+.testimonialsbg {
+    background-image: url('/images/testimonialsbg.svg');
+    width: 100%;
+    height: 385px;
+    background-size: cover;    
+}
+.faqbg {
+    width: 100%;
+    height: 600px;
+}
+.subscribebg {
+    background-image: url('/images/testimonialsbg.svg');
+    width: 70%;
+    height: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    background-size: cover;
+}
+.footerbg {
+    width: 100%;
+    height: 90px;
+}
+#footer {
+    text-align: center;
+}
