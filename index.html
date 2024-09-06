@@ -10,41 +10,38 @@
 </head>
 <body class="font">
     
-    <div class="headerbg">
-        <div>Navbar Field</div>
-        <div>Header Field</div>
-    </div>
-    
-    <div class="features1">
-        <div>Features Field 1</div>
-    </div>
-    
-    <div class="features2-sliderbg">
-        <div>Features Field 2</div>
-    </div>
-    
-    <div class="features3">
-        <div>Features Field 3</div>
-    </div>    
-    
-    <div class="testimonialsbg">
-        <div>Testimonials Field</div>
-    </div>
-    
-    <div class="faqbg">
-        <div>FAQ Field</div>
-    </div>
-    
-    <div class="subscribebg">
-        <div>Subscribe Field</div>
-    </div>
-    
-    <div class="footerbg">
-        <div>Footer Field</div>
-        <div id="Footer">
-            <h6>test</h6>
+    <header>
+        <!-- Navigation Bar -->
+        <div class="container">
+
+            <a id="logo" href="index.html"><img src="/images/light/logo/silicon-logo-solid-light.svg" alt="Silicon Logotype"></a>
+
+            <nav id="main-menu" class="navbar">
+                <a class="nav-link" href="#">Features</a>
+            </nav>
+        
+            <div id="darkmode-toggle-switch" class="btn-toggle-switch">
+                <span class="label">Dark mode</span>
+                <label for="darkmode-switch" class="toggle-switch">
+                    <input id="darkmode-switch" type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <a id="auth-signin-create" href="#" class="btn-primary">
+                <i class="fa-regular fa-user"></i>
+                <!-- <img id="user-icon" src="images/light/icons/icon-l-signcreate.svg" alt="User Icon"> -->
+                <span>Sign in / up</span>
+            </a>
+
+            <button class="btn-mobile">
+                <i class="fa-regular fa-bars"></i>
+            </button>
+
         </div>
-    </div>
+    </header>
+
+    
 
 </body>
 </html>
