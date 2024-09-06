@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+    /* Grayscale */
+    --color-gray-100: #F3F6FF; /* Light BG */
+    --color-gray-200: #EFF2FC; /* Secondary */
+    --color-gray-300: #E2E5F1; /* Divider, Border */
+    --color-gray-400: #D4D7E5; /* Forms Border */
+    --color-gray-500: #B4B7C9; /* Input Placeholder */
+    --color-gray-600: #9397AD; /* Muted Text */
+    --color-gray-700: #565973; /* Body Text */
+    --color-gray-800: #33354D; /* Navigation */
+    --color-gray-900: #0B0F19; /* Header, Dark */
+    /* Brand */
+    --color-primary: #6366F1; /* Brand, Primary */
+    --color-gradiant-1: #6366F1; /* 0% */
+    --color-gradiant-2: #8B5CF6; /* 50% */
+    --color-gradiant-3: #D946EF; /* 100% */
+    /* System & Buttons */
+    --color-red: #EF4444; /* Error */
+    --color-green: #22C55E; /* Success */
+    --color-yellow: #FFBA08; /* Warning */
+    --color-blue: #4C82F7; /* Info */
+    --color-black: #000; /* Black Button */
+    /* Shadows */
+    --color-white: #fff; /* S, M, L */
+    --color-brand-btn: #6366F1; /* Brand, Primary */
+    /* Logos */
+    --color-twitter: #1CA1F2; /* Twitter Blue */
+    --color-youtube: #FF0000; /* Youtube Red */
+
+    --container-padding: 1rem;
+    --transition-time: all 0.2s;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body, section, div, header, footer, main, aside, nav, blockquote, p, span {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
