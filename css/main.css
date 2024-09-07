@@ -203,6 +203,10 @@ header .container {
 }
 
 /* This part handles the main & main sections of the entire site */
+
+.brands {
+    display: none;
+}
 #showcase {
     background-image: url(/images/light/background/headerbg.svg);
     width: 100%;
@@ -239,6 +243,20 @@ footer {
     header .container {
         gap: 4rem;
     }
+
+    /* BRAND LOGO SECTION */
+    /* Pre-School Guidance Material Code - I wanted to see what I was capable of creating out of memory first. */
+    /*    .brands {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        
+        
+        #brand-5 { display: none;}
+        #brand-6 { display: none;}
+        
+    } */
 
     footer .container {
         padding-bottom: 1rem;
