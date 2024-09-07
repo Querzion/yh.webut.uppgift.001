@@ -86,9 +86,13 @@ body {
         }
     }
 
-    #showcase {
-        background-image: url(/images/dark/background/headerbg-dark.svg);
+    .btn-app {
+        background-color: var(--color-gray-200);
     }
+
+    /* #showcase {
+        background-image: url(/images/dark/background/headerbg-dark.svg);
+    } */
 }
 /* This part divides the site into multiple grids, for the ease of manipulating of the code. */
 .wrapper {
@@ -126,6 +130,27 @@ a:hover {
 .btn-primary i {
     margin-right: .5rem;
 }
+
+.btn-app {
+    background-color: var(--color-black);
+    border-radius: 8px;
+    padding: 8px 25px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.btn-app:hover {
+    background-color: var(--color-gray-600);
+    color: var(--color-white);
+    text-decoration: none;
+}
+.btn-app i {
+    margin-right: .5rem;
+}
+
+
 /* While the earlier button settings focused on the bigger picture, this one focus on the hamburger menu. */
 .btn-mobile {
     background-color: transparent;
@@ -225,6 +250,11 @@ a:hover {
     display: none;
 }
 
+#burger-menu {
+    height: 40px;
+    margin-top: 1px;
+}
+
 header .container {
     display: grid;
     grid-template-columns: 1fr auto auto;
@@ -232,11 +262,6 @@ header .container {
     gap: 1.5em;
     padding-top: 1rem;
     padding-bottom: .5rem;
-}
-
-#burger-menu {
-    height: 40px;
-    margin-top: 1px;
 }
 
 /* This part handles the main & main sections of the entire site */
@@ -268,9 +293,8 @@ header .container {
 
 
 #showcase {
-    background-image: url(images/light/background/headerbg.svg);
-    width: 100%;
-    /* height: 700px; */
+    /* background-image: url(images/light/background/headerbg.svg); */ 
+    grid-template-columns: auto;
 }
 
 /* MOBILE FOOTER SECTION */
@@ -351,9 +375,6 @@ footer {
     .btn-mobile {
         /* Hamburger menu Show/Hide */
         display: none;
-    }
-    #showcase {
-        height: 700px;
     }
 
     #brands {
