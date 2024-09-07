@@ -17,9 +17,12 @@
             <!-- NAVIGATION BAR SECTION --> <!-- School Guidance Material Code -->
             <!-- Navigation Bar is mainly recreated from school guidance material. (Tips & Trix video) -->
             <div class="container">
-    
-                <a id="logo" href="index.html"><img src="/images/light/logo/silicon-logo-solid-light.svg" alt="Silicon Logotype"></a>
-    
+                
+                <a id="logo" href="index.html">
+                    <img id="logo-img" src="images/silicon-logo.svg" alt="Silicon Logotype">
+                    <img id="logo-text" src="images/light/logo/silicon-text-light.svg" alt="">
+                  </a>
+                
                 <nav id="main-menu" class="navbar">
                     <a class="nav-link" href="#">Features</a>
                 </nav>
@@ -39,14 +42,23 @@
                 </a>
     
                 <button class="btn-mobile">
-                    <i class="fa-regular fa-bars"></i>
+                    <!-- <i class="fa-regular fa-bars"></i> -->
+                    <img id="burger-menu" src="/images/light/icons/button-toggle-navigation-light.svg" alt="Button - Toggle Navigation">
                 </button>
     
             </div>
+
+            <section id="showcase"></section>
+                <div class="container">
+
+                </div>
+            </section>
+
         </header>
 
         <main>
 
+            
             <!------------------------------------------------------------------- BRAND LOGO SECTION -->
             <!-- BRAND LOGO SECTION --> <!-- School Guidance Material Code -->
             <!-- Brand bar code is recreated from school guidance material (Tips & Trix video) -->
@@ -86,6 +98,39 @@
         </footer>
     </div>
     
+
+
+    <!-- DARK MODE JAVA SCRIPT -->
+    <!-- W3schools and then ChatGPT in order to get it implemented -->
+    <script>
+        // Dark mode toggle function
+        function darkMode() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+
+            var logo = document.getElementById('logo-text');
+            if (element.classList.contains('dark-mode')) {
+                logo.src = "/images/dark/logo/silicon-text-dark.svg";
+            } else {
+                logo.src = "/images/light/logo/silicon-text-light.svg";
+            }
+
+            var navigation = document.getElementById('burger-menu');
+            if (element.classList.contains('dark-mode')) {
+                navigation.src = "/images/dark/icons/button-toggle-navigation-dark.svg";
+            } else {
+                navigation.src = "/images/light/icons/button-toggle-navigation-light.svg";
+            }
+        }
+
+        // Get the checkbox element
+        const darkModeSwitch = document.getElementById('darkmode-switch');
+
+        // Add event listener to the checkbox to trigger the dark mode function
+        darkModeSwitch.addEventListener('change', function() {
+            darkMode();  // Call the darkMode function whenever the checkbox is toggled
+        });
+    </script>
 
 </body>
 </html>
