@@ -235,6 +235,8 @@ a:hover {
     right: 0;
     bottom: 0;
     background-color: var(--color-gray-600);
+    /* ChatGPT */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow here */
 }
 .toggle-switch .slider::before {
     position: absolute;
@@ -245,6 +247,8 @@ a:hover {
     bottom: 2.5px;
     background-color: var(--color-white);
     transition: all 200ms;
+    /* ChatGPT */
+    /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); */ /* Add shadow to the slider knob */
 }
 .toggle-switch .slider.round {
     border-radius: 35px;
@@ -255,11 +259,11 @@ a:hover {
 
 /* This part handles the navigation bar. */
 /* I can't get the menu to stick to the top and follow the page. */
-/* .navigation {
+header .navigation {
     position: sticky;
     top: 0;
     z-index: 100;
-} */
+}
 .navbar {
     /* Menu Alternatives Show/Hide */
     display: none;
@@ -293,8 +297,8 @@ a:hover {
 }
 
 #burger-menu {
-    height: 40px;
-    margin-top: 1px;
+    height: 45px;
+    /* margin-top: 1px; */
 }
 
 header .container {
@@ -319,6 +323,8 @@ header .container {
     "showcase-item-3"
     "showcase-item-4"
     "showcase-item-5";    
+
+    text-align: center;
 }
 .showcase-grid {
     /* background-color: var(--color-primary); */
@@ -333,17 +339,18 @@ header .container {
 /* Heading Title. */
 #showcase-item-1 {
     font-size: 34px;
-    font-weight: 900;
-    text-align: center;
-    align-items: center;    
+    font-weight: 800;
+    /* text-align: center; */ 
 }
 /* Heading Text. */
 #showcase-item-2 {
     font-size: 18px;
-    text-align: center;
+    /* text-align: center; */
     color: var(--color-secondary);
 }
-
+#showcase-item-3 {
+    padding-top: 30px;
+}
 /* Heading "Discover more" */
 #showcase-item-5 {
     display: flex;
