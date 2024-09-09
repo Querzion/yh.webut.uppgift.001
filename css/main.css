@@ -17,6 +17,7 @@ From there on, I've tried to incorporate a one to one replication of the project
     --color-gray-900: #0B0F19; /* Header, Dark */
     /* Brand */
     --color-primary: #6366F1; /* Brand, Primary */
+    --color-secondary: #585C7B; /* Some Text */
     --color-gradiant-1: #6366F1; /* 0% */
     --color-gradiant-2: #8B5CF6; /* 50% */
     --color-gradiant-3: #D946EF; /* 100% */
@@ -66,34 +67,6 @@ body {
     font-size: 16px;
 }
 
-.dark-mode {
-    background-color: var(--color-gray-900);
-    color: var(--color-white);
-    
-
-    header {
-        .nav-link {
-            color: var(--color-gray-500);
-        }
-        .nav-link:hover {
-            color: var(--color-primary);
-        }
-    
-        .btn-toggle-switch {
-            .label {
-                color: var(--color-gray-700);
-            }
-        }
-    }
-
-    .btn-app {
-        background-color: var(--color-gray-200);
-    }
-
-    /* #showcase {
-        background-image: url(/images/dark/background/headerbg-dark.svg);
-    } */
-}
 /* This part divides the site into multiple grids, for the ease of manipulating of the code. */
 .wrapper {
     display: grid;
@@ -131,11 +104,31 @@ a:hover {
     margin-right: .5rem;
 }
 
+.btn-secondary {
+    background-color: var(--color-white);
+    color: var(--color-white);
+    border-radius: 100%;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-decoration: none;
+}
+.btn-secondary i {
+    margin-right: .5rem;
+}
+
 .btn-app {
     background-color: var(--color-black);
     border-radius: 8px;
     padding: 8px 25px;
-    margin: auto;
+    width: 100%;
+    margin: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -150,6 +143,49 @@ a:hover {
     margin-right: .5rem;
 }
 
+
+
+/* --------------------------------------------------------------- DARK MODE CONFIGURATION */
+/* DARK MODE CONFIGURATION */
+.dark-mode {
+    background-color: var(--color-gray-900);
+    color: var(--color-white);
+    
+
+    header {
+        .nav-link {
+            color: var(--color-gray-500);
+        }
+        .nav-link:hover {
+            color: var(--color-primary);
+        }
+    
+        .btn-toggle-switch {
+            .label {
+                color: var(--color-gray-700);
+            }
+        }
+    }
+
+    .btn-app {
+        background-color: var(--color-gray-200);
+    }
+
+    .btn-secondary {
+        background-color: var(--color-gray-900);
+    }
+
+    #showcase-item-2 {
+        color: var(--color-white);
+    }
+    /* #showcase {
+        background-image: url(/images/dark/background/headerbg-dark.svg);
+    } */
+}
+
+
+/* --------------------------------------------------------------- NAVIGATION BAR SECTION */
+/* NAVIGATION BAR SECTION */
 
 /* While the earlier button settings focused on the bigger picture, this one focus on the hamburger menu. */
 .btn-mobile {
@@ -218,11 +254,17 @@ a:hover {
 }
 
 /* This part handles the navigation bar. */
+/* I can't get the menu to stick to the top and follow the page. */
+/* .navigation {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+} */
 .navbar {
     /* Menu Alternatives Show/Hide */
     display: none;
+    
 }
-
 
 /* Partly taken from School Guidance Material & ChatGPT */
 #logo {
@@ -266,6 +308,55 @@ header .container {
 
 /* This part handles the main & main sections of the entire site */
 /*  */
+/* --------------------------------------------------------------- MOBILE SHOWCASE SECTION */
+/* MOBILE SHOWCASE SECTION */
+.grid {
+    display: grid;
+    grid-template-columns: minmax(auto);
+    grid-template-areas: 
+    "showcase-item-1"
+    "showcase-item-2"
+    "showcase-item-3"
+    "showcase-item-4"
+    "showcase-item-5";    
+}
+.showcase-grid {
+    /* background-color: var(--color-primary); */
+    display: grid;
+    place-items: center;
+    
+}
+#showcase {
+    background-image: url(/images/light/background/headerbg-light.svg);
+}
+
+/* Heading Title. */
+#showcase-item-1 {
+    font-size: 34px;
+    font-weight: 900;
+    text-align: center;
+    align-items: center;    
+}
+/* Heading Text. */
+#showcase-item-2 {
+    font-size: 18px;
+    text-align: center;
+    color: var(--color-secondary);
+}
+
+/* Heading "Discover more" */
+#showcase-item-5 {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 25px;
+
+}
+#heading-phone-stacked {
+    display: none;
+}
+
+/* --------------------------------------------------------------- MOBILE BRAND LOGO SECTION */
 /* MOBILE BRAND LOGO SECTION */
 #brands { 
     display: none; 
@@ -291,18 +382,14 @@ header .container {
 }
 
 
-
-#showcase {
-    /* background-image: url(images/light/background/headerbg.svg); */ 
-    grid-template-columns: auto;
-}
-
+/* --------------------------------------------------------------- MOBILE FOOTER SECTION */
 /* MOBILE FOOTER SECTION */
 footer {
     font-size: 14px;
     padding-top: 1rem;
     padding-bottom: 1rem;
     color: var(--color-gray-600);
+    
 
     .container {
         display: flex;
@@ -318,26 +405,51 @@ footer {
 
 
 
-/* ------------------------------------------------------------- TABLET VERSION */
+/* --------------------------------------------------------------- TABLET VERSION */
 /* TABLET VERSION */
 
 @media (min-width: 768px) {
+    /* --------------------------------------------------------------- TABLET BASE/NAVBAR SECTION */
+    /* TABLET BASE/NAVBAR SECTION */
     .container {
         max-width: 720px;
     }
     .btn-toggle-switch .label {
         display: block;
     }
+    .btn-app {
+        width: auto;
+        gap: 1px  
+    }
     header .container {
         gap: 4rem;
     }
 
+    /* --------------------------------------------------------------- TABLET SHOWCASE SECTION */
+    /* TABLET SHOWCASE SECTION */
+    .grid {
+        grid-template-columns: minmax();
+        grid-template-areas: 
+        "showcase-item-1 showcase-item-1"
+        "showcase-item-2 showcase-item-6"
+        "showcase-item-3 showcase-item-6"
+        "showcase-item-4 showcase-item-5 showcase-item-6";
+
+    }
+    #heading-phone-stacked {
+        display: grid;
+    }
+    
+    /* --------------------------------------------------------------- TABLET BRANDS SECTION */
+    /* TABLET BRANDS SECTION */
     #brands {
         display: block;
 
         #brand-5, #brand-6 { display: none; }
     }
 
+    /* --------------------------------------------------------------- TABLET FOOTER SECTION */
+    /* TABLET FOOTER SECTION */
     footer .container {
         padding-bottom: 1rem;
     }
@@ -349,10 +461,12 @@ footer {
 
 
 
-/* ------------------------------------------------------------- DESKTOP 1K VERSION */
+/* --------------------------------------------------------------- DESKTOP 1K VERSION */
 /* DESKTOP 1K VERSION */
 
 @media (min-width: 1400px) {
+    /* --------------------------------------------------------------- DESKTOP BASE/NAVBAR SECTION */
+    /* DESKTOP BASE/NAVBAR SECTION */
     .container {
         max-width: 1320px;
     }
@@ -377,12 +491,19 @@ footer {
         display: none;
     }
 
+    /* --------------------------------------------------------------- DESKTOP SHOWCASE SECTION */
+    /* DESKTOP SHOWCASE SECTION */
+
+    /* --------------------------------------------------------------- DESKTOP BRANDS SECTION */
+    /* DESKTOP BRANDS SECTION */
     #brands {
         display: block;
 
         #brand-5, #brand-6 { display: flex; }
     }
 
+    /* --------------------------------------------------------------- DESKTOP FOOTER SECTION */
+    /* DESKTOP FOOTER SECTION */
     footer .container {
         padding-top: 2rem;
         padding-bottom: 2rem;
@@ -392,9 +513,9 @@ footer {
 
 
 
-/* ------------------------------------------------------------- DESKTOP 2K VERSION */
+/* --------------------------------------------------------------- DESKTOP 2K VERSION */
 /* DESKTOP 2K VERSION */
-/* ------------------------------------------------------------- DESKTOP 4K VERSION */
+/* --------------------------------------------------------------- DESKTOP 4K VERSION */
 /* DESKTOP 4K VERSION */
 
 
