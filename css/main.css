@@ -442,23 +442,35 @@ header .container {
 /* --------------------------------------------------------------- MOBILE APP FEATURES SECTION */
 /* MOBILE APP FEATURES SECTION */
 .app-features-info {
-    margin-bottom: 2rem;
+    
+    
+    #af-title-text {
+        margin-bottom: 2rem;
+        
+    }
 }
 .features-grid {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
+    
+    
+}
 
-
-    .af-img-container {
-        background-color: var(--color-gray-300);
-        padding: 8px;
-        border-radius: 8px;
-    }
+.af-img-container {
+    background-color: var(--color-gray-300);
+    padding: 8px;
+    border-radius: 8px;
 }
 
 .features {
     display: flex;
+    padding-inline: 3rem;
+    margin: 0 auto;
+    /* max-width: 900px; */
+    max-width: 1500px;
+    /* display: grid; */
+    gap: 2rem;
     
     p {
         color: var(--color-secondary);
@@ -467,7 +479,7 @@ header .container {
 }
 
 #features-1 {
-    display: flex;
+    
 }
 #features-2 {
 
