@@ -209,9 +209,7 @@ a:hover {
     .brand-box {
         background-color: var(--color-almostblack-blue);
     }
-    /* #showcase {
-        background-image: url(/images/dark/background/headerbg-dark.svg);
-    } */
+    
 }
 
 
@@ -223,7 +221,7 @@ a:hover {
     background-color: transparent;
     border: none;
     font-size: 2rem;
-    padding-top: 5px;
+    padding-top: .25rem;
 }
 
 /* This part handles the toggle button, for dark/light mode. */
@@ -367,6 +365,9 @@ header .container {
 }
 #showcase {
     background-image: url(/images/light/background/headerbg-light.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* Heading Title. */
@@ -417,6 +418,7 @@ header .container {
     display: none; 
     padding-top: 2rem;
     padding-bottom: 2rem;
+    margin-top: 3rem;
 
     .container {
         display: flex;
@@ -440,15 +442,48 @@ header .container {
 /* --------------------------------------------------------------- MOBILE APP FEATURES SECTION */
 /* MOBILE APP FEATURES SECTION */
 .app-features-info {
-    h1 {
+    margin-bottom: 2rem;
+}
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
 
+
+    .af-img-container {
+        background-color: var(--color-gray-300);
+        padding: 8px;
+        border-radius: 8px;
     }
 }
-.features p {
-    color: var(--color-secondary);
+
+.features {
+    display: flex;
+    
+    p {
+        color: var(--color-secondary);
+    }
+
 }
 
+#features-1 {
+    display: flex;
+}
+#features-2 {
 
+}
+#features-3 {
+
+}
+#features-4 {
+
+}
+#features-5 {
+
+}
+#features-6 {
+
+}
 
 
 /* --------------------------------------------------------------- MOBILE FOOTER SECTION */
@@ -485,6 +520,8 @@ footer {
     }
     .btn-toggle-switch .label {
         display: block;
+        margin-top: -.1rem;
+        
     }
     .btn-app {
         width: 138px;
@@ -495,7 +532,7 @@ footer {
 
     }
     header .container {
-        gap: 4rem;
+        gap: 3rem;
     }
 
     /* --------------------------------------------------------------- TABLET SHOWCASE SECTION */
@@ -503,9 +540,7 @@ footer {
     
     /* Got tired of trying to figure this out, so I  */
     .container .grid {
-        grid-template-columns: auto auto auto;
-        
-        
+        grid-template-columns: auto auto auto; 
     }
 
     /* Title */
@@ -551,7 +586,12 @@ footer {
         width: 100%;
         color: var(--color-secondary);
         margin-top: -35px;
-        margin-left: -50px;
+        margin-left: -5rem;
+
+        transform: scale(.8);
+        #chevron-down-icon {
+            transform: scale(1.5);
+        }
     }
     /* Stacked phones */
     #showcase-item-6 {
@@ -613,6 +653,7 @@ footer {
     /* DESKTOP BASE/NAVBAR SECTION */
     .container {
         max-width: 1320px;
+        /* background-color: #1CA1F2; */
     }
     .btn-toggle-switch .label {
         display: block;
@@ -625,10 +666,12 @@ footer {
         /* Menu option Show/Hide */
         display: block;
         align-content: center;
+        margin-top: .32rem;
     }
     #auth-signin-create {
         /* Sign in / up button Show/Hide */
         display: block;
+        margin-top: .4rem;
     }
     .btn-mobile {
         /* Hamburger menu Show/Hide */
@@ -637,60 +680,95 @@ footer {
 
     /* --------------------------------------------------------------- DESKTOP SHOWCASE SECTION */
     /* DESKTOP SHOWCASE SECTION */
-
-    .container.grid {
-        grid-template-columns: 2fr 1fr;
+    /* ChatGPT .grid */
+    .grid {
+        display: grid;
+        grid-template-columns: 25% 25% 50%; /* 3 columns - 25%, 25%, 50% */
+        grid-template-rows: repeat(4, auto); /* 5 rows */
+        gap: 10px; /* Adjust the gap as needed */
+        
     }
+    
+    
     /* Title */
     #showcase-item-1 {
-        grid-column: 1 / span 10;
-        grid-row-start: 1;
+        grid-column: 1 / span 2; 
+        grid-row: 1;
+        margin-top: 5rem;
+        margin-left: -6rem;
+
         text-align: left;
+        
     }
+
     /* Text */
     #showcase-item-2 {
-        grid-column: 1 / span 3;
-        grid-row-start: 2;
-        text-align: left;
-        font-size: 12px;
-        color: var(--color-secondary);
+        grid-column: 1 / span 2; 
+        grid-row: 2; 
+        font-size: .7rem;
+        margin-top: -2rem;
+        margin-left: -6rem;
+        margin-bottom: .3rem;
     }
+
     /* Appstore */
     #showcase-item-3 {
-        grid-column: 1;
-        grid-row-start: 3;
-        width: auto;
+        grid-column: 1; 
+        grid-row: 3; 
+        width: 100%; 
+        transform: scale(1.2); /* ChatGPT */
+        margin-right: -12rem;
+        margin-left: .3rem;
+        margin-bottom: 20rem; 
     }
+
     /* Google Play */
     #showcase-item-4 {
-        grid-column: 1;
-        grid-row-start: 3;
-        width: auto;
+        grid-column: 2; 
+        grid-row: 3;
+        width: 100%;
+        transform: scale(1.2); /* ChatGPT */
+        margin-right: 18rem;
+        margin-left: -4.5rem;
+        margin-bottom: 20rem; 
     }
 
     /* Discover more */
     #showcase-item-5 {
-        grid-column: 1;
-        /* grid-row-start: 3; */
-        color: var(--color-secondary);
-    }
-    /* Stacked phones */
-    #showcase-item-6 {
-        grid-column: 8 / span 3;
+        grid-column: 1 / span 2; 
+        grid-row: 4;
+        width: 100%;
+        margin-top: -13rem;
+        margin-left: -12rem;
+        /* font-size: 14px; */
         
+        
+        /* transform: scale(.8);
+        #chevron-down-icon {
+            transform: scale(1.5);
+        } */
     }
+
+    /* Stacked phones (spans from row 1 to row 5 on the right side) */
+    #showcase-item-6 {
+        grid-column: 3; 
+        grid-row: 1 / span 4; 
+        margin-right: -.2rem;
+        margin-top: 2rem;
+        margin-bottom: -4.5rem;
+    }
+    
 
     /* Fine-tune phone image size */
     #heading-phone-stacked {
         max-width: 100%;
-        
-
     }
 
     /* --------------------------------------------------------------- DESKTOP BRANDS SECTION */
     /* DESKTOP BRANDS SECTION */
     #brands {
         display: block;
+        margin-top: 4.5rem;
 
         #brand-5, #brand-6 { display: flex; }
     }
@@ -708,7 +786,17 @@ footer {
 
 /* --------------------------------------------------------------- DESKTOP 2K VERSION */
 /* DESKTOP 2K VERSION */
+/* @media (min-width: 1200px) {
+    .container {
+        max-width: 1320px;
+    }
+} */
+
 /* --------------------------------------------------------------- DESKTOP 4K VERSION */
 /* DESKTOP 4K VERSION */
-
+/* @media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+} */
 
