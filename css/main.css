@@ -349,6 +349,9 @@ header .container {
 .container.grid {
     display: grid;
     grid-template-columns: 1fr;
+    /* justify-content: center;
+    align-content: center;
+    align-items: center; */
 
     text-align: center;
 }
@@ -381,19 +384,17 @@ header .container {
 
 /* Apple Appstore Button */
 #showcase-item-3 {
-
-    padding-top: 40px;
-    /* height: 50px;
-    width: auto; */
+    width: 100%;
 }
 /* Google Play Store Button */
 #showcase-item-4 {
-
+    width: 100%;
 }
 /* Heading "Discover more" */
 #showcase-item-5 {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 15px;
     padding: 25px;
 
@@ -482,9 +483,12 @@ footer {
         display: block;
     }
     .btn-app {
-        width: auto;
+        width: 138px;
+        max-height: 44px;
+        margin-bottom: 2rem;
         /* gap: 1px; */
-        padding: 12px 20px; 
+        /* padding: 12px 20px; */
+
     }
     header .container {
         gap: 4rem;
@@ -497,14 +501,13 @@ footer {
     .container .grid {
         grid-template-columns: auto auto auto;
         
+        
     }
 
     /* Title */
     #showcase-item-1 {
         grid-column: 1 / span 15;
-        
-        text-align: center;
-        font-size: 34px;
+   
     }
     /* Text */
     #showcase-item-2 {
@@ -513,9 +516,9 @@ footer {
         grid-row-end: 3;
 
         text-align: left;
-        font-size: 12px;
+        font-size: 13px;
         color: var(--color-secondary);
-        margin-top: 90px;
+        margin-top: 70px;
 
     }
     /* ChatGPT */
@@ -525,37 +528,33 @@ footer {
 
     /* Appstore */
     #showcase-item-3 {
-        grid-column: 1 / span .5;
+        grid-column: 1 / span 1;
         grid-row: 4;
-        z-index: 101;
-        width: 140px;
-        column-gap: 10px;
-        margin-bottom: 15px;
+        margin-right: -10px;
+        margin-left: -15px;
         
     }
     /* Google Play */
     #showcase-item-4 {
         grid-column: 2 / span 1;
         grid-row: 4;
-        z-index: 100;
-        width: 153px;
-        margin-top: 25px;
     }
 
     /* Discover more */
     #showcase-item-5 {
         grid-column: 1 / span 2;
-        grid-row: 5 / span 5;
-        width: 300px;
+        grid-row: 5 / span 1;
+        width: 100%;
         color: var(--color-secondary);
-        margin-bottom: 25px;
-        
+        margin-top: -35px;
+        margin-left: -50px;
     }
     /* Stacked phones */
     #showcase-item-6 {
         grid-column: 7 / span 10;
         grid-row-start: 2;
-        grid-row-end: 10;
+        grid-row-end: 15;
+        margin-right: 25px;
     }
 
     /* Control image size for responsiveness */
@@ -564,7 +563,7 @@ footer {
     }
 
     .showcase-grid img {
-        max-width: 133%; /* Image scales down with window */
+        max-width: 115%; /* Image scales down with window */
         max-height: auto; /* Maintain aspect ratio */
     }
 
