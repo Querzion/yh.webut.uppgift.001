@@ -126,7 +126,7 @@ a:hover {
 .btn-app {
     background-color: var(--color-black);
     border-radius: 8px;
-    padding: 8px 25px;
+    padding: 25px 25px;
     width: 100%;
     margin: 8px;
     display: flex;
@@ -169,6 +169,9 @@ a:hover {
 
     .btn-app {
         background-color: var(--color-gray-200);
+    }
+    .btn-app:hover {
+        background-color: var(--color-gray-400);
     }
 
     .btn-secondary {
@@ -276,9 +279,13 @@ header .navigation {
     align-items: center;
     padding-top: 4.3px;
     gap: 8px;
+    /* I can't make the logo bigger. !"/ */
+    /* max-height: 50px;
+    width: auto; */
 }
 #logo-text {
-    max-height: 30px;
+    max-height: 50px;
+    width: auto;
 }
 
 .nav-link {
@@ -316,7 +323,7 @@ header .container {
 /* MOBILE SHOWCASE SECTION */
 .grid {
     display: grid;
-    grid-template-columns: minmax(auto);
+    grid-auto-rows: minmax(100px, auto);
     grid-template-areas: 
     "showcase-item-1"
     "showcase-item-2"
@@ -324,6 +331,7 @@ header .container {
     "showcase-item-4"
     "showcase-item-5";    
 
+    
     text-align: center;
 }
 .showcase-grid {
@@ -349,7 +357,10 @@ header .container {
     color: var(--color-secondary);
 }
 #showcase-item-3 {
-    padding-top: 30px;
+
+    padding-top: 40px;
+    /* height: 50px;
+    width: auto; */
 }
 /* Heading "Discover more" */
 #showcase-item-5 {
@@ -386,6 +397,14 @@ header .container {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+/* --------------------------------------------------------------- MOBILE APP FEATURES SECTION */
+/* MOBILE APP FEATURES SECTION */
+.app-features-grid {
+    background-color: var(--color-gray-200);
+    grid-auto-rows: auto;
 }
 
 
@@ -426,7 +445,8 @@ footer {
     }
     .btn-app {
         width: auto;
-        gap: 1px  
+        /* gap: 1px; */
+        padding: 12px 20px; 
     }
     header .container {
         gap: 4rem;
