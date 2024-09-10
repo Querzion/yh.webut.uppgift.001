@@ -82,7 +82,7 @@
                     <!-- Discover More button -->
                     <div id="showcase-item-5" class="showcase-grid">
                         <a id="chevron-down" href="#" class="btn-round-white">
-                            <img src="/images/light/icons/icon-l-chevron-down-light.svg" alt="">
+                            <img id="chevron-down-icon" src="/images/light/icons/icon-l-chevron-down-light.svg" alt="">
                         </a>
                         <p>Discover more</p>
                     </div>
@@ -235,7 +235,13 @@
             } else {
                 playstore.src = "/images/light/market/googleplay-light.svg";
             }
-
+            /* This part changes the chevron-down picture in the Discover more button. */
+            var showcase_chevronDown = document.getElementById('chevron-down-icon');
+            if (element.classList.contains('dark-mode')) {
+                showcase_chevronDown.src = "/images/dark/icons/icon-l-chevron-down-dark.svg";
+            } else {
+                showcase_chevronDown.src = "/images/light/icons/icon-l-chevron-down-light.svg";
+            }
         }
 
         // Get the checkbox element

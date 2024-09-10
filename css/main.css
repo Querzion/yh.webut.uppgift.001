@@ -21,6 +21,7 @@ From there on, I've tried to incorporate a one to one replication of the project
     --color-gradiant-1: #6366F1; /* 0% */
     --color-gradiant-2: #8B5CF6; /* 50% */
     --color-gradiant-3: #D946EF; /* 100% */
+    --color-almostblack-blue: #131022; /* Brand Fill */
     /* System & Buttons */
     --color-red: #EF4444; /* Error */
     --color-green: #22C55E; /* Success */
@@ -199,11 +200,14 @@ a:hover {
         background-color: var(--color-gray-900);
     }
     .btn-round-white:hover {
-        background-color: var(--color-secondary);
+        background-color: var(--color-primary);
     }
 
-    #showcase-item-2 {
+    #showcase-item-5 {
         color: var(--color-white);
+    }
+    .brand-box {
+        background-color: var(--color-almostblack-blue);
     }
     /* #showcase {
         background-image: url(/images/dark/background/headerbg-dark.svg);
