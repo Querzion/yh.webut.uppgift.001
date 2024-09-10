@@ -496,7 +496,7 @@ footer {
     /* Got tired of trying to figure this out, so I  */
     .container .grid {
         grid-template-columns: auto auto auto;
-        column-gap: 0;
+        
     }
 
     /* Title */
