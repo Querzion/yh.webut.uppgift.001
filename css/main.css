@@ -64,7 +64,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 /* This part divides the site into multiple grids, for the ease of manipulating of the code. */
@@ -83,6 +83,8 @@ a:hover {
     color: var(--color-primary);
     /* text-decoration: underline; */
 }
+
+
 /* This handles how buttons should look, act and feel. */
 .btn-primary {
     background-color: var(--color-primary);
@@ -104,7 +106,7 @@ a:hover {
     margin-right: .5rem;
 }
 
-.btn-secondary {
+.btn-round-white {
     background-color: var(--color-white);
     color: var(--color-white);
     border-radius: 100%;
@@ -114,21 +116,41 @@ a:hover {
     align-items: center;
     text-decoration: none;
 }
-.btn-secondary:hover {
-    background-color: var(--color-primary);
+.btn-round-white:hover {
+    background-color: var(--color-gray-600);
     color: var(--color-white);
     text-decoration: none;
 }
-.btn-secondary i {
+.btn-round-white i {
     margin-right: .5rem;
 }
+
+.btn-round-grey {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border-radius: 100%;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.btn-round-grey:hover {
+    background-color: var(--color-gray-600);
+    color: var(--color-white);
+    text-decoration: none;
+}
+.btn-round-grey i {
+    margin-right: .5rem;
+}
+
 
 .btn-app {
     background-color: var(--color-black);
     border-radius: 8px;
-    padding: 25px 25px;
+    padding: 20px 25px;
     width: 100%;
-    margin: 8px;
+    margin: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -150,7 +172,6 @@ a:hover {
 .dark-mode {
     background-color: var(--color-gray-900);
     color: var(--color-white);
-    
 
     header {
         .nav-link {
@@ -171,11 +192,14 @@ a:hover {
         background-color: var(--color-gray-200);
     }
     .btn-app:hover {
-        background-color: var(--color-gray-400);
+        background-color: var(--color-gray-500);
     }
 
-    .btn-secondary {
+    .btn-round-white {
         background-color: var(--color-gray-900);
+    }
+    .btn-round-white:hover {
+        background-color: var(--color-secondary);
     }
 
     #showcase-item-2 {
@@ -262,11 +286,12 @@ a:hover {
 
 /* This part handles the navigation bar. */
 /* I can't get the menu to stick to the top and follow the page. */
-header .navigation {
+/* header .navigation {
     position: sticky;
     top: 0;
     z-index: 100;
-}
+} */
+
 .navbar {
     /* Menu Alternatives Show/Hide */
     display: none;
@@ -323,13 +348,7 @@ header .container {
 /* MOBILE SHOWCASE SECTION */
 .grid {
     display: grid;
-    grid-auto-rows: minmax(100px, auto);
-    grid-template-areas: 
-    "showcase-item-1"
-    "showcase-item-2"
-    "showcase-item-3"
-    "showcase-item-4"
-    "showcase-item-5";    
+    grid-template-columns: repeat(1, 1fr);
 
     
     text-align: center;
@@ -356,11 +375,16 @@ header .container {
     /* text-align: center; */
     color: var(--color-secondary);
 }
+/* Apple Appstore Button */
 #showcase-item-3 {
 
     padding-top: 40px;
     /* height: 50px;
     width: auto; */
+}
+/* Google Play Store Button */
+#showcase-item-4 {
+
 }
 /* Heading "Discover more" */
 #showcase-item-5 {
@@ -402,11 +426,42 @@ header .container {
 
 /* --------------------------------------------------------------- MOBILE APP FEATURES SECTION */
 /* MOBILE APP FEATURES SECTION */
-.app-features-grid {
-    background-color: var(--color-gray-200);
-    grid-auto-rows: auto;
+.app-features-info {
+    display: grid;
+    text-align: center;
+
+
+    h1 {
+        font-size: 35px;
+        font-weight: 800;
+    }
+    p {
+        color: var(--color-secondary);
+        
+    }
 }
 
+.features-grid {
+    display: grid;
+    
+}
+
+.img-container {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+
+    /* Nu fungerar inte det här . . .  */
+    border-radius: .5rem;
+    /* utan att även lägga till detta. Annars måste border-radius adderas i själva bild inställningarna. */
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
+}
 
 /* --------------------------------------------------------------- MOBILE FOOTER SECTION */
 /* MOBILE FOOTER SECTION */
@@ -454,17 +509,60 @@ footer {
 
     /* --------------------------------------------------------------- TABLET SHOWCASE SECTION */
     /* TABLET SHOWCASE SECTION */
-    .grid {
-        grid-template-columns: minmax();
-        grid-template-areas: 
-        "showcase-item-1 showcase-item-1"
-        "showcase-item-2 showcase-item-6"
-        "showcase-item-3 showcase-item-6"
-        "showcase-item-4 showcase-item-5 showcase-item-6";
-
+    
+    /*  This is mainly from ChatGPT it didn't work, as seen in the commit.
+        I will now change the code so that it will look as it should. */
+    #showcase .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+        grid-template-rows: auto auto auto; /* Automatically adjust row height */
+        grid-gap: 20px; /* Spacing between items */
+    }
+    
+    /* Showcase item 1 takes the full width of the top row */
+    #showcase-item-1 {
+        grid-column: 1 / span 4; /* Spans across all 4 columns */
+        grid-row: 1;
+    }
+    
+    /* Showcase item 5 takes up 50% width of the second row */
+    #showcase-item-5 {
+        grid-column: 1 / span 2; /* Spans across 2 columns */
+        grid-row: 2;
+        text-align: center; /* Center the content */
+    }
+    
+    /* Showcase item 2 takes the remaining 50% space on the second row */
+    #showcase-item-2 {
+        grid-column: 3 / span 2; /* Spans across 2 columns */
+        grid-row: 2;
+    }
+    
+    /* Showcase items 3 and 4 are placed side by side */
+    #showcase-item-3 {
+        grid-column: 3; /* First item in the third row */
+        grid-row: 3;
+    }
+    
+    #showcase-item-4 {
+        grid-column: 4; /* Second item in the third row */
+        grid-row: 3;
+    }
+    
+    /* Showcase item 6 is placed below items 3 and 4 */
+    #showcase-item-6 {
+        grid-column: 3 / span 2; /* Spans across both columns under 3 and 4 */
+        grid-row: 4;
+    }
+    
+    /* General styling */
+    .showcase-grid {
+        background: #f4f4f4; /* Example background color */
+        padding: 20px;
+        border: 1px solid #ccc;
     }
     #heading-phone-stacked {
-        display: grid;
+        display: block;
     }
     
     /* --------------------------------------------------------------- TABLET BRANDS SECTION */
