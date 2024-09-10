@@ -346,11 +346,10 @@ header .container {
 /*  */
 /* --------------------------------------------------------------- MOBILE SHOWCASE SECTION */
 /* MOBILE SHOWCASE SECTION */
-.grid {
+.container.grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
 
-    
     text-align: center;
 }
 .showcase-grid {
@@ -375,6 +374,11 @@ header .container {
     /* text-align: center; */
     color: var(--color-secondary);
 }
+/* ChatGPT */
+#showcase-item-2 h2 .tablet-line-break {
+    display: none;
+}
+
 /* Apple Appstore Button */
 #showcase-item-3 {
 
@@ -394,6 +398,10 @@ header .container {
     padding: 25px;
 
 }
+/* Heading Stacked phone picture */
+/* #showcase-item-6 {
+    display: none;
+} */
 #heading-phone-stacked {
     display: none;
 }
@@ -427,41 +435,16 @@ header .container {
 /* --------------------------------------------------------------- MOBILE APP FEATURES SECTION */
 /* MOBILE APP FEATURES SECTION */
 .app-features-info {
-    display: grid;
-    text-align: center;
-
-
     h1 {
-        font-size: 35px;
-        font-weight: 800;
-    }
-    p {
-        color: var(--color-secondary);
-        
-    }
-}
-
-.features-grid {
-    display: grid;
-    
-}
-
-.img-container {
-    width: 100%;
-    aspect-ratio: 2 / 3;
-
-    /* Nu fungerar inte det här . . .  */
-    border-radius: .5rem;
-    /* utan att även lägga till detta. Annars måste border-radius adderas i själva bild inställningarna. */
-    overflow: hidden;
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
 
     }
 }
+.features p {
+    color: var(--color-secondary);
+}
+
+
+
 
 /* --------------------------------------------------------------- MOBILE FOOTER SECTION */
 /* MOBILE FOOTER SECTION */
@@ -510,61 +493,94 @@ footer {
     /* --------------------------------------------------------------- TABLET SHOWCASE SECTION */
     /* TABLET SHOWCASE SECTION */
     
-    /*  This is mainly from ChatGPT it didn't work, as seen in the commit.
-        I will now change the code so that it will look as it should. */
-    #showcase .container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
-        grid-template-rows: auto auto auto; /* Automatically adjust row height */
-        grid-gap: 20px; /* Spacing between items */
+    /* Got tired of trying to figure this out, so I  */
+    .container .grid {
+        grid-template-columns: auto auto auto;
+        column-gap: 0;
     }
-    
-    /* Showcase item 1 takes the full width of the top row */
+
+    /* Title */
     #showcase-item-1 {
-        grid-column: 1 / span 4; /* Spans across all 4 columns */
-        grid-row: 1;
+        grid-column: 1 / span 15;
+        
+        text-align: center;
+        font-size: 34px;
     }
-    
-    /* Showcase item 5 takes up 50% width of the second row */
-    #showcase-item-5 {
-        grid-column: 1 / span 2; /* Spans across 2 columns */
-        grid-row: 2;
-        text-align: center; /* Center the content */
-    }
-    
-    /* Showcase item 2 takes the remaining 50% space on the second row */
+    /* Text */
     #showcase-item-2 {
-        grid-column: 3 / span 2; /* Spans across 2 columns */
-        grid-row: 2;
+        grid-column: 1 / span 6;
+        grid-row-start: 3;
+        grid-row-end: 3;
+
+        text-align: left;
+        font-size: 12px;
+        color: var(--color-secondary);
+        margin-top: 90px;
+
     }
-    
-    /* Showcase items 3 and 4 are placed side by side */
+    /* ChatGPT */
+    #showcase-item-2 h2 .tablet-line-break {
+        display: inline;
+    }
+
+    /* Appstore */
     #showcase-item-3 {
-        grid-column: 3; /* First item in the third row */
-        grid-row: 3;
-    }
-    
-    #showcase-item-4 {
-        grid-column: 4; /* Second item in the third row */
-        grid-row: 3;
-    }
-    
-    /* Showcase item 6 is placed below items 3 and 4 */
-    #showcase-item-6 {
-        grid-column: 3 / span 2; /* Spans across both columns under 3 and 4 */
+        grid-column: 1 / span .5;
         grid-row: 4;
+        z-index: 101;
+        width: 140px;
+        column-gap: 10px;
+        margin-bottom: 15px;
+        
     }
-    
-    /* General styling */
-    .showcase-grid {
-        background: #f4f4f4; /* Example background color */
-        padding: 20px;
-        border: 1px solid #ccc;
+    /* Google Play */
+    #showcase-item-4 {
+        grid-column: 2 / span 1;
+        grid-row: 4;
+        z-index: 100;
+        width: 153px;
+        margin-top: 25px;
     }
+
+    /* Discover more */
+    #showcase-item-5 {
+        grid-column: 1 / span 2;
+        grid-row: 5 / span 5;
+        width: 300px;
+        color: var(--color-secondary);
+        margin-bottom: 25px;
+        
+    }
+    /* Stacked phones */
+    #showcase-item-6 {
+        grid-column: 7 / span 10;
+        grid-row-start: 2;
+        grid-row-end: 10;
+    }
+
+    /* Control image size for responsiveness */
     #heading-phone-stacked {
         display: block;
     }
+
+    .showcase-grid img {
+        max-width: 133%; /* Image scales down with window */
+        max-height: auto; /* Maintain aspect ratio */
+    }
+
+    .showcase-grid {
+        /* background: #f4f4f4; */ /* Example background color */   
+    }
     
+    /* (ChatGPT) */
+    .full-width-line {
+        width: 100%;
+        border: none;          /* Remove default styling */
+        border-top: 2px solid black;  /* Define the line */
+        margin: 0;             /* Adjust margins as needed */
+    }
+
+
     /* --------------------------------------------------------------- TABLET BRANDS SECTION */
     /* TABLET BRANDS SECTION */
     #brands {
@@ -618,6 +634,55 @@ footer {
 
     /* --------------------------------------------------------------- DESKTOP SHOWCASE SECTION */
     /* DESKTOP SHOWCASE SECTION */
+
+    .container.grid {
+        grid-template-columns: 2fr 1fr;
+    }
+    /* Title */
+    #showcase-item-1 {
+        grid-column: 1 / span 10;
+        grid-row-start: 1;
+        text-align: left;
+    }
+    /* Text */
+    #showcase-item-2 {
+        grid-column: 1 / span 3;
+        grid-row-start: 2;
+        text-align: left;
+        font-size: 12px;
+        color: var(--color-secondary);
+    }
+    /* Appstore */
+    #showcase-item-3 {
+        grid-column: 1;
+        grid-row-start: 3;
+        width: auto;
+    }
+    /* Google Play */
+    #showcase-item-4 {
+        grid-column: 1;
+        grid-row-start: 3;
+        width: auto;
+    }
+
+    /* Discover more */
+    #showcase-item-5 {
+        grid-column: 1;
+        /* grid-row-start: 3; */
+        color: var(--color-secondary);
+    }
+    /* Stacked phones */
+    #showcase-item-6 {
+        grid-column: 8 / span 3;
+        
+    }
+
+    /* Fine-tune phone image size */
+    #heading-phone-stacked {
+        max-width: 100%;
+        
+
+    }
 
     /* --------------------------------------------------------------- DESKTOP BRANDS SECTION */
     /* DESKTOP BRANDS SECTION */
