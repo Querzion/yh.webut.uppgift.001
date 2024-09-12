@@ -279,11 +279,6 @@ a:hover {
         }
     }
     
-    .af-img-container {
-        opacity: 5%;
-        
-        /* I CAN'T GET THE ICON TO SHOW WITH FULL OPACITY AFTER USING THIS OPTION! */
-    }
 
     #sticky-header.scrolled {
         background-color: var(--color-gray-900);
@@ -579,18 +574,39 @@ app-features-grid {
     
     
     .af-img-container {
-        /* background-color: var(--color-gray-300); */
-        /* padding: 8px; */
-        /* border-radius: 8px; */
+        position: relative;
+        justify-content: center;
+        justify-items: center;
+        width: 58px;
+        height: 60px;
 
-        padding: 14px;
-        width: 3.6rem;
-        height: 3.6rem;
-        border-radius: 8px;
+        /* width: 3.6rem;
+        height: 3.6rem; */
+        /* top: 0;
+        left: 0; */
+
+        padding: 1rem;
         margin-top: 1rem;
         
-        background-color: var(--color-gray-100);
         
+    }
+
+    .af-img-container img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .af-img-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--color-gray-100);
+        transition: background-color 0.3s ease;
+        border-radius: 8px;
+        z-index: -1; /* Behind the image */
     }
 
 
@@ -607,6 +623,10 @@ app-features-grid {
         }
     }
 
+}
+
+body.dark-mode .af-img-container::before {
+    background: rgba(243, 246, 255, 0.05); /* Same color with 5% opacity for dark mode */
 }
 
 #features-1 {
