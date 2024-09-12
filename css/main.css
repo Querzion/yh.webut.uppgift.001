@@ -83,6 +83,23 @@ body {
     height: 100vh;
 }
 
+#sticky-header {
+    position: sticky;
+    top: 0;
+    /* Top priority in layers. */
+    z-index: 1000; 
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+
+    padding-bottom: 13px;
+    /* align-content: center;  */   
+}
+
+/* ChatGPT code. */
+#sticky-header.scrolled {
+    background-color: var(--color-white); /* Background color when scrolling */
+}
+
 .grad {
     /* For browsers that doesn't support gradient. . . . . . . . . . . . . IE? */
     /* background-image: url(/images/light/background/headerbg-light.svg);
@@ -267,7 +284,10 @@ a:hover {
         
         /* I CAN'T GET THE ICON TO SHOW WITH FULL OPACITY AFTER USING THIS OPTION! */
     }
-    
+
+    #sticky-header.scrolled {
+        background-color: var(--color-gray-900);
+    }
 }
 
 
