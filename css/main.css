@@ -946,6 +946,16 @@ footer {
     }
     .app-features-info {
         text-align: start;
+        
+        #af-title {
+            font-size: 3rem;
+            margin-top: -.3rem;
+        }
+        
+    }
+
+    .features-grid {
+        gap: 2rem;
     }
     
     
