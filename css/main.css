@@ -441,7 +441,7 @@ header .container {
 /* Apple Appstore Button */
 #showcase-item-3 {
     width: 100%;
-    
+
     #appstore-logotype {
         transform: scale(1.4);
     }
@@ -524,6 +524,7 @@ app-features-grid {
     #af-title {
         font-size: 2rem;
         font-weight: 800;
+        margin-top: 4rem;
     }
     
     #af-title-text {
