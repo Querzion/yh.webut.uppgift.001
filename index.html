@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="/css/main.css">
     <title>Silicon</title>
 </head>
-<body class="font">
+<body class=".manrope-Regular">
     <!-- The Wrapper structure mainly comes from school guidance material. (Tips & Trixs video) -->
     <div class="wrapper">
 
         
-
+        <main>
             <div id="grad" class="grad" >
                 <header id="sticky-header">
                     <!------------------------------------------------------------------- NAVIGATION BAR SECTION -->
@@ -54,53 +54,57 @@
                     </nav>
                 </header>
                 
-                <main>
-                
-                <!------------------------------------------------------------------- HEADER SHOWCASE SECTION -->
-                <!-- HEADER SHOWCASE SECTION -->
+                <!-- <main class=""> -->
+                    
+                    <!------------------------------------------------------------------- HEADER SHOWCASE SECTION -->
+                    <!-- HEADER SHOWCASE SECTION -->
                     <section id="showcase" >
                         <div class="container grid">
                             <!-- Heading Title -->
                             <div id="showcase-item-1" class="showcase-grid">
-                                <h1>Manage All Your <br/> Money in One App</h1>
+                                <h1 class="manrope-ExtraBold">Manage All Your <br/> Money in One App</h1>
                             </div>
                             <!-- Heading Text -->
                             <div id="showcase-item-2" class="showcase-grid">
-                                <h2>We offer you a new generation of the mobile banking. <!-- ChatGPT --> <span class="tablet-line-break"><br/></span> Save, spend & manage money in your pocket.</h2>
+                                <h2 class="manrope-Regular">We offer you a new generation of the mobile banking. <!-- ChatGPT --> <span class="tablet-line-break"><br/></span> Save, spend & manage money in your pocket.</h2>
                             </div>
                             <!-- Apple Appstore Logo button -->
                             <div id="showcase-item-3" class="showcase-grid">
                                 <a id="visit-appstore" href="#" class="btn-app">
-                                    <img id="appstore-logotype" src="images/light/market/appstore-light.svg" alt="">
+                                    <img id="appstore-logotype" src="images/light/market/appstore-light.svg" alt="appstore">
                                 </a>
                             </div>
                             <!-- Google Play Story Logo button -->
                             <div id="showcase-item-4" class="showcase-grid">
                                 <a id="visit-playstore" href="#" class="btn-app">
-                                    <img id="playstore-logotype" src="images/light/market/googleplay-light.svg" alt="">
+                                    <img id="playstore-logotype" src="images/light/market/googleplay-light.svg" alt="playstore">
                                 </a>
                             </div>
                             <!-- Discover More button -->
                             <div id="showcase-item-5" class="showcase-grid">
-                                <a id="chevron-down" href="#" class="btn-round-white">
-                                    <img id="chevron-down-icon" src="/images/light/icons/icon-l-chevron-down-light.svg" alt="">
+    
+                                <!-- From Tips & Trix School Guidance Material. -->
+                                <a href="#" class="discover-more">
+                                    <span class="btn-circle">
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </span>
+                                    <span>Discover more</span>
                                 </a>
-                                <p>Discover more</p>
+    
                             </div>
                             <!-- Stacked Phone Photos -->
                             <div id="showcase-item-6" class="showcase-grid">
-                                <img id="heading-phone-stacked" src="/images/tablet+/stacked-phones.svg" alt="">
+                                <img id="heading-phone-stacked" src="/images/tablet+/stacked-phones.svg" alt="iphone stacked">
                             </div>
                         </div>
                         
                         
                         <hr id="line" class="full-width-line"> <!-- (ChatGPT) -->
                     </section>
+                    
+                </div>
                 
-                </main>
-            </div>
-            
-            <!------------------------------------------------------------------- BRAND LOGO SECTION -->
+                <!------------------------------------------------------------------- BRAND LOGO SECTION -->
             <!-- BRAND LOGO SECTION --> <!-- School Guidance Material Code -->
             <!-- Brand bar code is recreated from school guidance material (Tips & Trix video) -->
             <section id="brands">
@@ -135,7 +139,7 @@
 
                     <div class="app-features-grid">
                             <div class="app-features-info">
-                                <h1 id="af-title">App Features</h1>
+                                <h1 id="af-title" class="manrope-ExtraBold">App Features</h1>
                                 <p id="af-title-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin volutpat mollis egestas. Nam luctus facilisis ultrices. Pellentesque volutpat ligula est. Mattis fermentum, at nec lacus.</p>
                             </div>
                     
@@ -143,7 +147,7 @@
                             <div id="feature-1" class="features">
                     
                                 <div class="af-img-container">
-                                    <img id="af-payments" class="af-img" src="images/mobile+/payments.svg" alt="">
+                                    <img id="af-payments" class="af-img" src="images/mobile+/payments.svg" alt="payments icon">
                                 </div>
                     
                                 <div class="af-text-container">
@@ -153,7 +157,7 @@
                             </div>
                             <div id="feature-2" class="features">
                                 <div class="af-img-container">
-                                    <img id="af-security" class="af-img" src="images/mobile+/security.svg" alt="">
+                                    <img id="af-security" class="af-img" src="images/mobile+/security.svg" alt="security icon">
                                 </div>
                     
                                 <div class="af-text-container">
@@ -163,7 +167,7 @@
                             </div>
                             <div id="feature-3" class="features">
                                 <div class="af-img-container">
-                                    <img id="af-statistics" class="af-img" src="images/mobile+/statistics.svg" alt="">
+                                    <img id="af-statistics" class="af-img" src="images/mobile+/statistics.svg" alt="statistics icon">
                                 </div>
                     
                                 <div class="af-text-container">
@@ -174,7 +178,7 @@
                             </div>
                             <div id="feature-4" class="features">
                                 <div class="af-img-container">
-                                    <img id="af-support" class="af-img" src="/images/mobile+/support.svg" alt="">
+                                    <img id="af-support" class="af-img" src="/images/mobile+/support.svg" alt="support icon">
                                 </div>
                     
                                 <div class="af-text-container">
@@ -184,7 +188,7 @@
                             </div>
                             <div id="feature-5" class="features">
                                 <div class="af-img-container">
-                                    <img id="af-cashback" class="af-img" src="images/mobile+/cashback.svg" alt="">
+                                    <img id="af-cashback" class="af-img" src="images/mobile+/cashback.svg" alt="cashback icon">
                                 </div>
                                 <div class="af-text-container">
                                     <h2>Regular Cashback</h2>
@@ -193,7 +197,7 @@
                             </div>
                             <div id="feature-6" class="features">
                                 <div class="af-img-container">
-                                    <img id="af-standards" class="af-img" src="images/mobile+/happy.svg" alt="">
+                                    <img id="af-standards" class="af-img" src="images/mobile+/happy.svg" alt="happy icon">
                                 </div>
                                 <div class="af-text-container">
                                     <h2>Top Standards</h2>
@@ -205,6 +209,7 @@
                 </div>    
             </section>
 
+        </main>
         
     
 
@@ -259,14 +264,6 @@
                 playstore.src = "/images/dark/market/googleplay-dark.svg";
             } else {
                 playstore.src = "/images/light/market/googleplay-light.svg";
-            }
-            
-            /* This part changes the chevron-down picture in the Discover more button. */
-            var showcase_chevronDown = document.getElementById('chevron-down-icon');
-            if (element.classList.contains('dark-mode')) {
-                showcase_chevronDown.src = "/images/dark/icons/icon-l-chevron-down-dark.svg";
-            } else {
-                showcase_chevronDown.src = "/images/light/icons/icon-l-chevron-down-light.svg";
             }
         }
 
