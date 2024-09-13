@@ -1,0 +1,105 @@
+/* --------------------------------------------------------------- DARK MODE CONFIGURATION */
+/* DARK MODE CONFIGURATION */
+.dark-mode {
+    background-color: var(--color-gray-900);
+    color: var(--color-white);
+
+    header {
+        .nav-link {
+            color: var(--color-gray-500);
+        }
+        .nav-link:hover {
+            color: var(--color-primary);
+        }
+    
+        .btn-toggle-switch {
+            .label {
+                color: var(--color-gray-700);
+            }
+        }
+    }
+
+    .btn-download-app {
+        background-color: var(--color-gray-200);
+        
+        &:hover {
+            background-color: var(--color-gray-400);
+        }
+    }
+    
+    
+    
+    
+    .btn-circle:hover {
+        background-color: var(--color-gray-700);
+    }
+    
+    .content p {
+        color: rgba(255, 255, 255, 0.5);
+        
+    }
+    
+    /* .btn-app {
+        background-color: var(--color-gray-200);
+    }
+    .btn-app:hover {
+        background-color: var(--color-gray-500);
+    } */
+
+    /* #showcase-item-2 {
+        h2 {
+            color: var(--color-white);
+            opacity: 70%;
+        }
+    }
+    #showcase-item-5 {
+
+        p {
+            color: var(--color-white);
+            opacity: 30%;
+
+        }
+    }
+    #showcase-item-5 {
+
+        p {
+            color: var(--color-white);
+            opacity: 25%;
+
+        }
+    } */
+
+    /* "Discover More" text colour. */
+    #changecolordamnit {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .brand-box {
+        background-color: var(--color-almostblack-blue);
+    }
+
+    .app-features-info {
+
+        #af-title-text {
+            color: var(--color-white);
+            opacity: 70%;
+        }
+        
+    }
+    .features .af-text-container {
+
+        p {
+            color: var(--color-white);
+            opacity: 70%;
+        }
+    }
+    
+    /* .discover-more {
+        color: rgba(255, 255, 255, 0.5);
+    } */
+
+    #sticky-header.scrolled {
+        background-color: var(--color-gray-900);
+    }
+
+}

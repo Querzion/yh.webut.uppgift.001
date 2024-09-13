@@ -1,13 +1,5 @@
-.old-code {display: none;}
-
-
 #hero {
-    /* background: rgb(99, 102, 241); */
-    /* background: var(--linear-gradient); */
     padding-bottom: 2rem;
-    
-    /* height: 800px; */
-    /* overflow: hidden; */
     
     @media (min-width: 768px) {
         padding-bottom: 0;
@@ -150,3 +142,4 @@
         }
     }      
 }
+

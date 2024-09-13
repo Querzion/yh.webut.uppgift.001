@@ -1,0 +1,135 @@
+/* ChatGPT code. */
+#sticky-header.scrolled {
+    background-color: var(--color-white); /* Background color when scrolling */
+}
+
+
+/* --------------------------------------------------------------- NAVIGATION BAR SECTION */
+/* NAVIGATION BAR SECTION */
+
+/* While the earlier button settings focused on the bigger picture, this one focus on the hamburger menu. */
+.btn-mobile {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    padding-top: .25rem; 
+}
+
+/* This part handles the toggle button, for dark/light mode. */
+.btn-toggle-switch {
+    display: flex;
+    /* align-items: center; */
+    padding-top: 14px;
+    gap: 10px;
+}
+.btn-toggle-switch .label {
+    /* Dark Mode Text Show/Hide */
+    display: none;
+    padding-top: 2px;
+    font-weight: 700;
+}
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 25px;
+}
+.toggle-switch input {
+    opacity: 0;
+}
+.toggle-switch input:checked + .slider {
+    background-color: var(--color-primary);
+}
+.toggle-switch input:focus + .slider {
+    box-shadow: 0 0 1px var(--color-primary);
+}
+.toggle-switch input:checked + .slider::before {
+    transform: translateX(18px);
+    background-color: var(--color-white);
+}
+.toggle-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-gray-600);
+    /* ChatGPT */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow here */
+}
+.toggle-switch .slider::before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 2.5px;
+    background-color: var(--color-white);
+    transition: all 200ms;
+    /* ChatGPT */
+    /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); */ /* Add shadow to the slider knob */
+}
+.toggle-switch .slider.round {
+    border-radius: 35px;
+}
+.toggle-switch .slider.round::before {
+    border-radius: 50%;
+}
+
+/* This part handles the navigation bar. */
+/* I can't get the menu to stick to the top and follow the page. */
+/* header .navigation {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+} */
+
+.navbar {
+    /* Menu Alternatives Show/Hide */
+    display: none;
+    
+}
+
+/* Partly taken from School Guidance Material & ChatGPT */
+#logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* I can't make the logo bigger. !"/ */
+    /* max-height: 50px;
+    width: auto; */
+}
+#logo-text {
+    max-height: 50px;
+    width: auto;
+}
+
+.nav-link {
+    color: var(--color-gray-900);
+    font-weight: 600; /* SemiBold */
+    text-decoration: none;
+}
+.nav-link:hover .active {
+    color: var(--color-primary);
+    /* text-decoration: underline; */
+}
+
+#auth-signin-create {
+    /* Sign in / up button Show/Hide */
+    display: none;
+}
+
+#burger-menu {
+    height: 45px;
+    /* margin-top: 1px; */
+}
+
+header .container {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    /* grid-template-areas: "Logo sw mobile"; */
+    gap: 1.5em;
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+}

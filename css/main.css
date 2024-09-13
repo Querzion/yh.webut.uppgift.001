@@ -1,4 +1,84 @@
+@import "/css/other/_typography.css";
+@import "/css/other/_colors.css";
+@import "/css/other/_buttons.css";
+@import "/css/other/_dark-mode.css";
+@import "/css/sections/_navbar.css";
+@import "/css/sections/_showcase.css";
+@import "/css/sections/_brands.css";
+@import "/css/sections/_app-features.css";
 
-
+/* Pick your poison. */
 .old-code {display: none;}
 .new-code {display: block;}
+
+
+.container {
+    width: 100%;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body, section, div, header, footer, main, aside, nav, blockquote, p, span {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+}
+
+
+.wrapper {
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    
+
+    .grad {
+
+        /* For browsers that doesn't support gradient. . . . . . . . . . . . . IE? */
+        background: rgb(99, 102, 241);
+
+        /* Gradient background */ /* Got some help from ChatGPT here, or rather mostly with changing the colours in the root section. */
+        background: var(--linear-gradient);
+
+        #sticky-header {
+            position: sticky;
+            top: 0;
+            /* Top priority in layers. */
+            z-index: 1000; 
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        
+            padding-bottom: 13px;
+            /* align-content: center;  */  
+            
+            /* ChatGPT code. */
+            &.scrolled {
+                background-color: var(--color-white); /* Background color when scrolling */
+            }
+
+
+            
+
+
+        }
+    }
+}
+
+
+
+
+

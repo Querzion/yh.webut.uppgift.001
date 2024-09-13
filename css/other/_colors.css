@@ -1,0 +1,55 @@
+:root {
+    /* Grayscale */
+    --color-gray-100: #f3f6ff; /* Light BG */
+    --color-gray-100-hsl: 224, 100%, 97%;
+    --color-gray-200: #EFF2FC; /* Secondary */
+    --color-gray-300: #E2E5F1; /* Divider, Border */
+    --color-gray-400: #D4D7E5; /* Forms Border */
+    --color-gray-500: #B4B7C9; /* Input Placeholder */
+    --color-gray-600: #9397AD; /* Muted Text */
+    --color-gray-700: #565973; /* Body Text */
+    --color-gray-800: #33354D; /* Navigation */
+    --color-gray-900: #0B0F19; /* Header, Dark */
+
+    /* Brand */
+    --color-primary: #6366F1; /* Brand, Primary */
+    --color-secondary: #585C7B; /* Some Text */
+    --color-gradiant-1: #6366F1; /* 0% */
+    --color-gradiant-2: #8B5CF6; /* 50% */
+    --color-gradiant-3: #D946EF; /* 100% */
+    --color-almostblack-blue: #131022; /* Brand Fill */
+    /* System & Buttons */
+    --color-red: #EF4444; /* Error */
+    --color-green: #22C55E; /* Success */
+    --color-yellow: #FFBA08; /* Warning */
+    --color-blue: #4C82F7; /* Info */
+    --color-black: #000; /* Black Button */
+    /* Shadows */
+    --color-white: #fff; /* S, M, L */
+    --color-brand-btn: #6366F1; /* Brand, Primary */
+    /* Logos */
+    --color-twitter: #1CA1F2; /* Twitter Blue */
+    --color-youtube: #FF0000; /* Youtube Red */
+
+    --container-padding: 1rem;
+    --transition-time: all 0.2s;
+
+    /* Heading Gradient Colours - LIGHT/DARK */ /* Got some help from ChatGPT here (Hex press to hsl didn't work for the background.) */
+    --clr-grad-1: 221, 87%, 95%; /* HSL values for #F1F4FD */
+    --clr-grad-2: 293, 82%, 60%; /* HSL values for #DA46EF */
+    --clr-grad-3: 238, 80%, 67%; /* HSL values for #6366F1 */
+    
+    /* Something similar was found in a bootstrap css file. */
+    /* --linear-gradient: linear-gradient(0deg, 
+    rgba(99,102,241,0.09677419354838712) 0%,
+    rgba(218,70,239,0.06912442396313367) 42%,
+    rgba(241,244,253,0) 83%
+    ); */
+
+    --linear-gradient: linear-gradient(355deg, 
+    rgba(99,102,241,0.1) 0%, 
+    rgba(218,70,239,0.05) 42%, 
+    rgba(241,244,253,0.07) 83%
+    );
+
+}

@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Links are from a school guidance material (Tips & Trix video) -->
     <link rel="stylesheet" href="https://kit.fontawesome.com/a576612222.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/old-code.css">
+    <link rel="stylesheet" href="/css/old.main/old.main.css">
     <title>Silicon</title>
+
 </head>
 <body class=".manrope-Regular">
     <!-- The Wrapper structure mainly comes from school guidance material. (Tips & Trixs video) -->
@@ -89,7 +90,7 @@
                                         <span class="btn-circle">
                                             <i class="fa-solid fa-chevron-down"></i>
                                         </span>
-                                        <span>Discover more</span>
+                                        <span class="changecolordamnit">Discover more</span>
                                     </a>
                                 </div>
                                 <!-- Stacked Phone Photos -->
@@ -115,15 +116,15 @@
                                         We offer you a new generation of the mobile banking. <span class="tablet-line-break"><br/></span> Save, spend & manage money in your pocket.
                                     </p>
                                     <div class="buttons">
-                                        <a class="btn-download-app" href="#"><img id="appstore-logotype" src="images/light/market/appstore-light.svg" alt="appstore"></a>
-                                        <a class="btn-download-app" href="#"><img id="playstore-logotype" src="images/light/market/googleplay-light.svg" alt="playstore"></a>
+                                        <a class="btn-download-app" href="#"><img id="appstore" src="/images/light/market/appstore-light.svg" alt="appstore"></a>
+                                        <a class="btn-download-app" href="#"><img id="playstore" src="/images/light/market/googleplay-light.svg" alt="playstore"></a>
                                     </div>
                         
                                     <a href="#" class="discover-more">
                                         <span class="btn-circle">
                                             <i class="fa-solid fa-chevron-down"></i>
                                         </span>
-                                        <span id="changecolordamnit">Discover more</span>
+                                        <span class="changecolordamnit">Discover more</span>
                                     </a>
                                 </div>
                                 <div class="images">
@@ -260,69 +261,10 @@
         </footer>
     </div>
     
-
-
     <!-- DARK MODE JAVA SCRIPT -->
     <!-- W3schools and then ChatGPT in order to get it implemented -->
-    <script>
-        // Dark mode toggle function
-        function darkMode() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
-
-            /* This part changes the picture for the Silicon logo in the navigation bar. */
-            var logo = document.getElementById('logo-text');
-            if (element.classList.contains('dark-mode')) {
-                logo.src = "/images/dark/logo/silicon-text-dark.svg";
-            } else {
-                logo.src = "/images/light/logo/silicon-text-light.svg";
-            }
-            
-            /* This part changes the hamburger-menu image in the navigation bar. */
-            var navigation = document.getElementById('burger-menu');
-            if (element.classList.contains('dark-mode')) {
-                navigation.src = "/images/dark/icons/button-toggle-navigation-dark.svg";
-            } else {
-                navigation.src = "/images/light/icons/button-toggle-navigation-light.svg";
-            }
-            
-            /* This part changes the AppStore picture in the Appstore button. */
-            var appstore = document.getElementById('appstore-logotype');
-            if (element.classList.contains('dark-mode')) {
-                appstore.src = "/images/dark/market/appstore-dark.svg";
-            } else {
-                appstore.src = "/images/light/market/appstore-light.svg";
-            }
-            
-            /* This part changes the PlayStore picture in the PlayStore button. */
-            var playstore = document.getElementById('playstore-logotype');
-            if (element.classList.contains('dark-mode')) {
-                playstore.src = "/images/dark/market/googleplay-dark.svg";
-            } else {
-                playstore.src = "/images/light/market/googleplay-light.svg";
-            }
-        }
-
-        // Get the checkbox element
-        const darkModeSwitch = document.getElementById('darkmode-switch');
-
-        // Add event listener to the checkbox to trigger the dark mode function
-        darkModeSwitch.addEventListener('change', function() {
-            darkMode();  // Call the darkMode function whenever the checkbox is toggled
-        });
-
-        /* This part changes the colour of the navigation bar from transparent to a solid colour. */
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('sticky-header');
-            if (window.scrollY > 50) { // Adjust the value to determine when the background should change
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-
-    </script>
+    <!-- Include JavaScript file -->
+    <script src="js/main.js"></script>
 
 </body>
 </html>
