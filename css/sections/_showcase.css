@@ -13,12 +13,12 @@
         grid-template-areas:    "headline"
                                 "content";
         
-        @media (width > 768px) {
+        @media (min-width: 768px) {
             grid-template-columns: 40% 1fr;
             grid-template-areas:    "headline headline"
                                     "content images";
                                     
-            @media (width > 1400px) {
+            @media (min-width: 1400px) {
                 grid-template-columns: 1fr 1fr;
                 gap: 10px;
                 grid-template-areas:    "headline images"
@@ -35,12 +35,12 @@
         font-size: 34px;
         font-weight: 800;
         
-        @media (width > 768px) {
+        @media (min-width: 768px) {
             /* font-size: 44px; */
             /* margin-top: 4rem; */
             /* margin-bottom: 2rem; */
             
-            @media (width > 1400px) {
+            @media (min-width: 1400px) {
                 font-size: 40px;
                 text-align: left;
                 margin-top: 5.5rem;
@@ -53,7 +53,7 @@
         grid-area: content;
         text-align: center;
 
-        @media (width > 768px) {
+        @media (min-width: 768px) {
             text-align: left;           
         }
 
@@ -72,7 +72,7 @@
             .tablet-line-break {
                 display: none;
 
-                @media (width > 768px) {
+                @media (min-width: 768px) {
                     display: inline;
                 }
             }
@@ -83,7 +83,7 @@
             flex-direction: column;
             gap: 1rem;
 
-            @media (width > 1400px) {
+            @media (min-width: 1400px) {
                 flex-direction: row;
             }
 
@@ -97,11 +97,11 @@
             gap: 1rem;
             margin-top: 2.5rem;
             
-            @media (width > 768px) {
+            @media (min-width: 768px) {
                 justify-content: flex-start;
                 margin-bottom: 2.5rem;
                 
-                @media (width > 1400px) {
+                @media (min-width: 1400px) {
                     margin-top: 15rem;
                 }
             }
@@ -114,11 +114,11 @@
         display: none;
         position: relative;
         
-        @media (width > 768px) {
+        @media (min-width: 768px) {
             display: block;
             width: 100%;
             
-            @media (width > 1400px) {
+            @media (min-width: 1400px) {
                 margin-top: 6rem;                    
             }
         }
