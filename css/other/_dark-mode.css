@@ -77,12 +77,17 @@
     .features .af-text-container {
         
         h3 {
-            color: var(--color-white);
+            /* color: var(--color-white); */
         }
 
         p {
-            color: var(--color-white);
-            opacity: 50%;
+            /* color: var(--color-white); */
+            opacity: 60%;
         }
+    }
+
+    /* Footer Section */
+    footer {
+        opacity: 70%;
     }
 }

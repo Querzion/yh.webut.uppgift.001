@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description" content="Silly-con has time-robbing features, so don't put too much effort into it. . .">
@@ -35,10 +36,10 @@
             <nav id="main-menu" class="navbar">
                 <a class="nav-link" href="#">Features</a>
             </nav>
-            <div id="darkmode-toggle-switch" class="btn-toggle-switch" description="dark mode switch">
+            <div id="darkmode-toggle-switch" class="btn-toggle-switch">
                 <span class="label">Dark mode</span>
                 <label for="darkmode-switch" class="toggle-switch">
-                    <input id="darkmode-switch" type="checkbox">
+                    <input id="darkmode-switch" type="checkbox" aria-label="dark-mode toggle">
                     <span class="slider round"></span>
                 </label>
             </div>
@@ -47,7 +48,7 @@
                 <!-- <img id="user-icon" src="images/light/icons/icon-l-signcreate.svg" alt="User Icon"> -->
                 <span>Sign in / up</span>
             </a>
-            <button class="btn-mobile">
+            <button class="btn-mobile" title="Menu borked"  aria-label="menu button">
                 <i class="fa-regular fa-bars"></i>
                 <!-- <img id="burger-menu" src="/images/light/icons/button-toggle-navigation-light.svg" alt="Button - Toggle Navigation"> -->
             </button>
