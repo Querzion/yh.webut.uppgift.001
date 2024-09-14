@@ -4,90 +4,76 @@
     background-color: var(--color-gray-900);
     color: var(--color-white);
 
-    .grad {
 
-        header {
-            .nav-link {
-                color: var(--color-gray-500);
-                
-                &:hover {
-                    color: var(--color-primary);
-                }
+    header {
+        /* Features Text*/
+        .nav-link {
+            color: var(--color-gray-500);
+            
+            &:hover {
+                color: var(--color-primary);
             }
-        
-            .btn-toggle-switch {
-                .label {
-                    color: var(--color-gray-700);
-                }
+        }
+        /* Dark mode Text */
+        .btn-toggle-switch {
+            .label {
+                color: var(--color-gray-700);
             }
+        }
+
+        /* Burger Menu Icon */
+        .btn-mobile {
+            color: var(--color-white);
         }
     }
 
+    /* Showcase Title */
+    #sc-title {
+        color: var(--color-white);
+    }
+    /* Showcase Text */
+    #sc-text {
+        color: var(--color-white);
+        color: var(--color-tex-wh-o70);
+    }
 
+    /* Marketplace Buttons */
     .btn-download-app {
-        background-color: var(--color-gray-200);
+        background-color: var(--color-gray-500);
         
         &:hover {
             background-color: var(--color-gray-400);
         }
     }
     
+    /* Discover more Button */
     .btn-circle:hover {
         background-color: var(--color-gray-700);
     }
     
-    .content p {
-        color: rgba(255, 255, 255, 0.5);
-        
-    }
-    
-    .btn-app {
-        background-color: var(--color-gray-200);
-    }
-    .btn-app:hover {
-        background-color: var(--color-gray-500);
-    }
-
-    #showcase-item-2 {
-        h2 {
-            color: var(--color-white);
-            opacity: 70%;
-        }
-    }
-    #showcase-item-5 {
-
-        p {
-            color: var(--color-white);
-            opacity: 30%;
-
-        }
-    }
-    #showcase-item-5 {
-
-        p {
-            color: var(--color-white);
-            opacity: 25%;
-
+    /* Discover more Text */
+    .discover-more {
+        span {
+            color: var(--color-tex-wh-o70);
+            /* color: rgba(255, 255, 255, 0.5); */
         }
     }
 
-    /* "Discover More" text colour. */
-    #changecolordamnit {
-        color: rgba(255, 255, 255, 0.5);
-    }
-
+    /* Brandbox Blue */
     .brand-box {
         background-color: var(--color-almostblack-blue);
     }
 
+    /* App Features - Top section */
     .app-features-info {
 
         #af-title-text {
             color: var(--color-white);
             opacity: 70%;
         }
-        
     }
+
+    /* App Features - Grid */
     .features .af-text-container {
 
         p {
@@ -95,11 +81,4 @@
             opacity: 70%;
         }
     }
-    
-    /* .discover-more {
-        color: rgba(255, 255, 255, 0.5);
-    } */
-
-    
-
 }

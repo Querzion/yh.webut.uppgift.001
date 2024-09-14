@@ -24,8 +24,15 @@
     --color-yellow: #FFBA08; /* Warning */
     --color-blue: #4C82F7; /* Info */
     --color-black: #000; /* Black Button */
-    /* Shadows */
-    --color-white: #fff; /* S, M, L */
+    --color-white: #fff;
+    /* Text Dark-Mode Transparency */
+    --color-tex-wh-o100: rgba(255, 255, 255, 1); /* S, M, L */
+    --color-tex-wh-o70: rgba(255, 255, 255, 0.7);
+    --color-tex-wh-o5: rgba(255, 255, 255, 0.05);
+    /* Text Light-Mode */
+    --color-tex-gr-bl: rgb(88, 92, 123);
+    --color-tex-bl-bl: rgb(19, 16, 34);
+
     --color-brand-btn: #6366F1; /* Brand, Primary */
     /* Logos */
     --color-twitter: #1CA1F2; /* Twitter Blue */
@@ -54,7 +61,7 @@
 
 
     /* NAVIGATION BAR COLOURS */
-    --navbar-bg-light: rgba(255, 255, 255, 0.05); /* Semi-transparent white for light mode */
+    --navbar-bg-light: rgba(255, 255, 255, 0); /* Semi-transparent white for light mode */
     --navbar-bg-dark: rgba(0, 0, 0, 0); /* Semi-transparent black for dark mode */
     --navbar-bg-light-scrolled: rgba(255, 255, 255, 1); /* Solid white for scrolled light mode */
     --navbar-bg-dark-scrolled: rgba(0, 0, 0, 1); /* Solid black for scrolled dark mode */
