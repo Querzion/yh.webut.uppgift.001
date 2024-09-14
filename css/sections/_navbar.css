@@ -18,8 +18,7 @@
 /* First section styling */
 .first-section {
     padding-top: 1rem;
-    top: -8rem; 
-    z-index: -1;
+    top: 0; 
 }
 
 /* When scrolled, make the header fully opaque in light mode */
