@@ -30,13 +30,9 @@
 
     /* Showcase Section */
 
-    /* Showcase Title */
-    /* #sc-title {
-        color: var(--color-white);
-    } */
     /* Showcase Text */
     #sc-text {
-        color: var(--color-white);
+        /* color: var(--color-white); */
         color: var(--color-tex-wh-o70);
     }
 
@@ -72,19 +68,21 @@
     /* App Features Section */
 
     /* App Features - Top section */
-    /* #af-title-text {
-        color: var(--color-white);
-        opacity: 70%;
-    } */
+    #af-title-text {
+        /* color: var(--color-white); */
+        /* opacity: 70%; */
+    }
 
     /* App Features - Grid */
     .features .af-text-container {
+        
+        h3 {
+            color: var(--color-white);
+        }
 
         p {
             color: var(--color-white);
-            opacity: 70%;
+            opacity: 50%;
         }
     }
-
-
 }

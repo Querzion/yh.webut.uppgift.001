@@ -1,22 +1,19 @@
 #brands { 
     display: none; 
-    /* padding-top: 2rem;
-    padding-bottom: 2rem; */
-    margin-top: 3rem;
+    #brand-5, #brand-6 { display: none; }
 
     @media (width > 768px) {
         display: block;
+        margin-top: 3rem;
 
-        #brand-5, #brand-6 { display: none; }
-        
         @media (width > 1400px) {
             margin-top: 4.5rem;
             margin-bottom: 7rem;
     
             #brand-5, #brand-6 { display: flex; }     
-        }
+        }     
     }
-    
+   
     .container {
         display: flex;
         justify-content: space-between;
