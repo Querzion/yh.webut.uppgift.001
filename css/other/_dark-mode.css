@@ -4,20 +4,29 @@
     background-color: var(--color-gray-900);
     color: var(--color-white);
 
-    header {
-        .nav-link {
-            color: var(--color-gray-500);
-        }
-        .nav-link:hover {
-            color: var(--color-primary);
-        }
+    .grad {
+
+        header {
+            .nav-link {
+                color: var(--color-gray-500);
+                
+                &:hover {
+                    color: var(--color-primary);
+                }
+            }
+        
+            .btn-toggle-switch {
+                .label {
+                    color: var(--color-gray-700);
+                }
+            }
     
-        .btn-toggle-switch {
-            .label {
-                color: var(--color-gray-700);
+            #sticky-header .scrolled {
+                background-color: var(--color-gray-900);
             }
         }
     }
+
 
     .btn-download-app {
         background-color: var(--color-gray-200);
@@ -26,9 +35,6 @@
             background-color: var(--color-gray-400);
         }
     }
-    
-    
-    
     
     .btn-circle:hover {
         background-color: var(--color-gray-700);
@@ -39,14 +45,14 @@
         
     }
     
-    /* .btn-app {
+    .btn-app {
         background-color: var(--color-gray-200);
     }
     .btn-app:hover {
         background-color: var(--color-gray-500);
-    } */
+    }
 
-    /* #showcase-item-2 {
+    #showcase-item-2 {
         h2 {
             color: var(--color-white);
             opacity: 70%;
@@ -67,7 +73,7 @@
             opacity: 25%;
 
         }
-    } */
+    }
 
     /* "Discover More" text colour. */
     #changecolordamnit {
@@ -98,8 +104,6 @@
         color: rgba(255, 255, 255, 0.5);
     } */
 
-    #sticky-header.scrolled {
-        background-color: var(--color-gray-900);
-    }
+    
 
 }

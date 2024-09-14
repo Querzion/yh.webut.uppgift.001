@@ -13,7 +13,7 @@
         grid-template-areas:    "headline"
                                 "content";
         
-        @media (min-width: 768px) {
+        @media (width > 768px) {
             grid-template-columns: 40% 1fr;
             grid-template-areas:    "headline headline"
                                     "content images";
@@ -100,6 +100,7 @@
             }
         }
     }
+
     .images {
         grid-area: images;
         display: none;

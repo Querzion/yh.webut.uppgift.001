@@ -909,10 +909,10 @@ header .container {
     display: none;
 }
 
-
-app-features-grid {
+.app-features-grid {
     display: grid;
 }
+
 .app-features-info {
     text-align: center;
 
@@ -1164,8 +1164,7 @@ footer {
         width: 100%;
         border: none;          /* Remove default styling */
         border-top: 2px solid var(--color-almostblack-blue);  /* Define the line */
-        margin: 0;             /* Adjust margins as needed */
-        
+        margin: 0;             /* Adjust margins as needed */  
     }
 
 

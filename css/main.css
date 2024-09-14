@@ -1,24 +1,18 @@
-@import "/css/other/_typography.css";
-@import "/css/other/_colors.css";
-@import "/css/other/_buttons.css";
-@import "/css/other/_dark-mode.css";
-@import "/css/sections/_navbar.css";
-@import "/css/sections/_showcase.css";
-@import "/css/sections/_brands.css";
-@import "/css/sections/_app-features.css";
+@import url('/css/other/_typography.css');
+@import url('/css/other/_variables.css');
+@import url('/css/other/_buttons.css');
+@import url('/css/other/_dark-mode.css');
+@import url('/css/sections/_navbar.css');
+@import url('/css/sections/_showcase.css');
+@import url('/css/sections/_brands.css');
+@import url('/css/sections/_app-features.css');
+
+/* FONT - MANROPE | GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 /* Pick your poison. */
 .old-code {display: none;}
 .new-code {display: block;}
-
-
-.container {
-    width: 100%;
-    padding-left: var(--container-padding);
-    padding-right: var(--container-padding);
-    margin-left: auto;
-    margin-right: auto;    
-}
 
 * {
     box-sizing: border-box;
@@ -45,9 +39,8 @@ body {
     grid-template-rows: auto 1fr auto;
     height: 100vh;
     
-
+    
     .grad {
-
         /* For browsers that doesn't support gradient. . . . . . . . . . . . . IE? */
         background: rgb(99, 102, 241);
 
@@ -69,16 +62,36 @@ body {
             &.scrolled {
                 background-color: var(--color-white); /* Background color when scrolling */
             }
-
-
-            
-
-
         }
     }
 }
 
+.container {
+    width: 100%;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    margin-left: auto;
+    margin-right: auto;
+    
+    @media (width > 768px) {
+        max-width: 720px;
+    }
+    @media (width > 1400px) {
+        max-width: 1360px;
+    }
+}
 
+#line {
+    display: none;
 
-
-
+    @media (width > 768px) {
+        display: block;
+    }
+}
+/* (ChatGPT) */
+.full-width-line {
+    width: 100%;
+    border: none;          /* Remove default styling */
+    border-top: 2px solid var(--color-almostblack-blue);  /* Define the line */
+    margin: 0;             /* Adjust margins as needed */  
+}

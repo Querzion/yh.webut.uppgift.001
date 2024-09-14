@@ -144,4 +144,13 @@ body.dark-mode .btn-circle {
     i {
         margin-right: .5rem;
     }
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        width: auto;
+        max-height: auto;
+        /* margin-bottom: 2rem; */
+        /* gap: 1px; */
+        /* padding: 12px 20px; */
+    }
 }
