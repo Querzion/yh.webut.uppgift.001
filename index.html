@@ -223,6 +223,13 @@
         /* DARK MODE JAVA SCRIPT */
         /* W3schools and then ChatGPT in order to get it implemented */
         // Dark mode toggle function
+        
+        // Get the checkbox element for dark mode toggle
+        const darkModeSwitch = document.getElementById('darkmode-switch');
+
+        // Add event listener to the checkbox to trigger the darkMode function
+        darkModeSwitch.addEventListener('change', darkMode);
+        
         function darkMode() {
             var element = document.body;
             element.classList.toggle("dark-mode");
@@ -234,10 +241,10 @@
                 : "/images/light/logo/silicon-text-light.svg";
 
             // Change the hamburger menu icon
-            var navigation = document.getElementById('burger-menu');
+            /* var navigation = document.getElementById('burger-menu');
             navigation.src = element.classList.contains('dark-mode') 
                 ? "/images/dark/icons/button-toggle-navigation-dark.svg" 
-                : "/images/light/icons/button-toggle-navigation-light.svg";
+                : "/images/light/icons/button-toggle-navigation-light.svg"; */
 
             // Change the AppStore and PlayStore logos in the buttons
             var appstore_logotype = document.getElementById('appstore');
@@ -251,11 +258,6 @@
                 : "/images/light/market/googleplay-light.svg";
         }
 
-        // Get the checkbox element for dark mode toggle
-        const darkModeSwitch = document.getElementById('darkmode-switch');
-
-        // Add event listener to the checkbox to trigger the darkMode function
-        darkModeSwitch.addEventListener('change', darkMode);
 
         // Change the background color of the navigation bar on scroll
         document.addEventListener('scroll', function () {
