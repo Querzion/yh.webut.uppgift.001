@@ -1,38 +1,117 @@
+
+#carousel {
+    
+    
+    /* Mask (figma file) */
+    .desktop-mask {
+        
+        .mask {
+            position: absolute;
+            width: 328px;
+            height: 663px;
+            left: 368px;
+            top: 2160px;
+            
+            opacity: 0.8;
+        }
+        
+        .layer_size {
+            position: absolute;
+            width: 328px;
+            height: 663px;
+            left: 796px;
+            top: 2160px;
+        }
+
+        .background_layer {
+
+            position: absolute;
+            left: 5.39%;
+            right: 5.62%;
+            top: 2.44%;
+            bottom: 2.39%;
+            
+            background: #000000;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*  These CSS lines are directly copied from the figma file Desktop mode, 
     then I used ChatGPT.com to order them up and give them names.
     I saved them here in order to test it out I don't know if it's going to work.
     The thoughts is to create a functional carousel slider. */
 
 /* Slider */
-.slider {
+/* .slider {
     position: absolute;
     width: 1920px;
     height: 1077px;
     left: 0px;
     top: 1980px;
-  }
+  } */
   
   /* bg */
-  .bg {
+  /* .bg {
     position: absolute;
     width: 1920px;
     height: 1077px;
     left: 0px;
     top: 1980px;
     background: #F3F6FF;
-  }
+  } */
   
   /* progress */
-  .progress {
+  /* .progress {
     position: absolute;
     width: 1920px;
     height: 0px;
     left: 0px;
     top: 3057px;
-  }
+  } */
   
   /* description */
-  .description {
+  /* .description {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,10 +122,10 @@
     height: 98px;
     left: 642px;
     top: 2863px;
-  }
+  } */
   
   /* Latest transaction history */
-  .latest-transaction-history {
+  /* .latest-transaction-history {
     width: 308px;
     height: 34px;
     font-family: 'Manrope';
@@ -56,10 +135,10 @@
     line-height: 140%;
     text-align: center;
     color: #0B0F19;
-  }
+  } */
   
   /* Description text */
-  .description-text {
+  /* .description-text {
     width: 636px;
     height: 52px;
     font-family: 'Manrope';
@@ -69,109 +148,109 @@
     line-height: 160%;
     text-align: center;
     color: #565973;
-  }
+  } */
   
   /* carousel */
-  .carousel {
+  /* .carousel {
     position: absolute;
     width: 1184px;
     height: 663px;
     left: 368px;
     top: 2160px;
-  }
+  } */
   
   /* iPhone 12 Pro - Semi-Transparent */
-  .iphone-12-pro-semi-transparent {
+  /* .iphone-12-pro-semi-transparent {
     position: absolute;
     width: 328px;
     height: 663px;
     left: 1224px;
     top: 2160px;
     opacity: 0.8;
-  }
+  } */
   
   /* Object - Hidden */
-  .object-hidden {
+  /* .object-hidden {
     position: absolute;
     visibility: hidden;
     width: 327px;
     height: 661.19px;
     left: 0px;
     top: 0px;
-  }
+  } */
   
   /* iPhone 12 Pro - Background Image */
-  .iphone-12-pro-bg-image {
+  /* .iphone-12-pro-bg-image {
     position: absolute;
     width: 327px;
     height: 661.19px;
     left: 0px;
     top: 0px;
     background: url('Image.png');
-  }
+  } */
   
   /* iPhone 12 Pro - Transparent Background */
-  .iphone-12-pro-transparent-bg {
+  /* .iphone-12-pro-transparent-bg {
     position: absolute;
     width: 327px;
     height: 661.19px;
     left: 0px;
     top: 0px;
     background: rgba(8, 0, 50, 0.001);
-  }
+  } */
   
   /* Mask - Gray/900 */
-  .mask-gray-900 {
+  /* .mask-gray-900 {
     position: absolute;
     left: 5.39%;
     right: 5.62%;
     top: 2.44%;
     bottom: 2.39%;
     background: #0B0F19;
-  }
+  } */
   
   /* Mask - Black */
-  .mask-black {
+  /* .mask-black {
     position: absolute;
     left: 5.39%;
     right: 5.62%;
     top: 2.44%;
     bottom: 2.39%;
     background: #000000;
-  }
+  } */
   
   /* Change This - Image 2 */
-  .change-this-2 {
+  /* .change-this-2 {
     position: absolute;
     left: 5.36%;
     right: 5.34%;
     top: 2.3%;
     bottom: 2.53%;
     background: url('Change This-2.jpg');
-  }
+  } */
   
   /* Change This - Image 3 */
-  .change-this-3 {
+  /* .change-this-3 {
     position: absolute;
     left: 5.36%;
     right: 5.34%;
     top: 2.3%;
     bottom: 2.53%;
     background: url('Change This-3.jpg');
-  }
+  } */
   
   /* Change This - Image 4 */
-  .change-this-4 {
+  /* .change-this-4 {
     position: absolute;
     left: 5.36%;
     right: 5.34%;
     top: 2.3%;
     bottom: 2.53%;
     background: url('Change This-4.jpg');
-  }
+  } */
   
   /* How Does It Work? */
-  .how-does-it-work {
+  /* .how-does-it-work {
     position: absolute;
     width: 670px;
     height: 52px;
@@ -184,5 +263,5 @@
     line-height: 130%;
     text-align: center;
     color: #0B0F19;
-  }
+  } */
   
