@@ -1,11 +1,45 @@
 /* --------------------------------------------------------------- NAVIGATION BAR SECTION */
 /* NAVIGATION BAR SECTION */
 
+/* Start with the header being fully transparent */
+.sticky-header {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    /* left: 0; */
+    width: 100%;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    transition: background-color 0.5s ease;
+    z-index: 1000;
+    
+}
+
+/* First section styling */
+.first-section {
+    padding-top: 1rem;
+    top: -8rem; 
+    z-index: -1;
+}
+
+/* When scrolled, make the header fully opaque in light mode */
+.sticky-header.scrolled {
+    background: var(--color-white); 
+}
+
+/* Dark mode: Initially transparent */
+body.dark-mode .sticky-header {
+    background: transparent; 
+}
+
+/* Dark mode: When scrolled, apply --color-gray-900 */
+body.dark-mode .sticky-header.scrolled {
+    background: var(--color-gray-900); 
+}
+
+
+
 header {
-    /* ChatGPT code. */ /* Background color when scrolling */
-    /* #sticky-header.scrolled {
-        background-color: var(--color-white); 
-    } */
 
     .container {
         display: grid;
@@ -13,7 +47,7 @@ header {
         /* grid-template-areas: "Logo sw mobile"; */
         gap: 1.5em;
         padding-top: 1rem;
-        padding-bottom: .5rem;
+        padding-bottom: 1rem;
         
         align-content: center;
         
@@ -27,17 +61,6 @@ header {
         }
     }
 }
-    
-
-
-
-/* This part handles the navigation bar. */
-/* I can't get the menu to stick to the top and follow the page. */
-/* header .navigation {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-} */
 
 .navbar {
     /* Menu Alternatives Show/Hide */
@@ -190,4 +213,3 @@ header {
         }
     }
 }
-

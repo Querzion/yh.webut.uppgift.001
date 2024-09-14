@@ -32,38 +32,19 @@ body {
     font-size: 18px;
 }
 
-
 .wrapper {
 
     display: grid;
     grid-template-rows: auto 1fr auto;
-    height: 100vh;
-    
-    
-    .grad {
-        /* For browsers that doesn't support gradient. . . . . . . . . . . . . IE? */
-        background: rgb(99, 102, 241);
+    height: 100vh;    
+}
 
-        /* Gradient background */ /* Got some help from ChatGPT here, or rather mostly with changing the colours in the root section. */
-        background: var(--linear-gradient);
+.bg-gradient {
+     /* For browsers that doesn't support gradient. . . . . . . . . . . . . IE? */
+    background: rgb(99, 102, 241);
 
-        #sticky-header {
-            position: sticky;
-            top: 0;
-            /* Top priority in layers. */
-            z-index: 1000; 
-            background-color: transparent;
-            transition: background-color 0.3s ease;
-        
-            padding-bottom: 13px;
-            /* align-content: center;  */  
-            
-            /* ChatGPT code. */
-            &.scrolled {
-                background-color: var(--color-white); /* Background color when scrolling */
-            }
-        }
-    }
+    /* Gradient background */ /* Got some help from ChatGPT here, or rather mostly with changing the colours in the root section. */
+    background: var(--linear-gradient);
 }
 
 .container {

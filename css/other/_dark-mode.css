@@ -20,10 +20,6 @@
                     color: var(--color-gray-700);
                 }
             }
-    
-            #sticky-header .scrolled {
-                background-color: var(--color-gray-900);
-            }
         }
     }
 

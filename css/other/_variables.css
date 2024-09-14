@@ -52,4 +52,14 @@
     rgba(241,244,253,0.07) 83%
     );
 
+
+    /* NAVIGATION BAR COLOURS */
+    --navbar-bg-light: rgba(255, 255, 255, 0.05); /* Semi-transparent white for light mode */
+    --navbar-bg-dark: rgba(0, 0, 0, 0); /* Semi-transparent black for dark mode */
+    --navbar-bg-light-scrolled: rgba(255, 255, 255, 1); /* Solid white for scrolled light mode */
+    --navbar-bg-dark-scrolled: rgba(0, 0, 0, 1); /* Solid black for scrolled dark mode */
+    --navbar-color-light: var(--color-gray-900); /* Text color for light mode */
+    --navbar-color-dark: var(--color-white); /* Text color for dark mode */
+    --transition-duration: 0.3s; /* Smooth transition duration */
+
 }
