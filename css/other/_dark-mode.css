@@ -4,6 +4,7 @@
     background-color: var(--color-gray-900);
     color: var(--color-white);
 
+    /* Navbar */
 
     header {
         /* Features Text*/
@@ -26,6 +27,8 @@
             color: var(--color-white);
         }
     }
+
+    /* Showcase Section */
 
     /* Showcase Title */
     #sc-title {
@@ -59,19 +62,20 @@
         }
     }
 
+    /* Brand section */
+
     /* Brandbox Blue */
     .brand-box {
         background-color: var(--color-almostblack-blue);
     }
 
-    /* App Features - Top section */
-    .app-features-info {
+    /* App Features Section */
 
-        #af-title-text {
-            color: var(--color-white);
-            opacity: 70%;
-        }
-    }
+    /* App Features - Top section */
+    /* #af-title-text {
+        color: var(--color-white);
+        opacity: 70%;
+    } */
 
     /* App Features - Grid */
     .features .af-text-container {
@@ -81,4 +85,6 @@
             opacity: 70%;
         }
     }
+
+
 }

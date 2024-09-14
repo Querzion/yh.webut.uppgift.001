@@ -1,29 +1,29 @@
 #brands { 
     display: none; 
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    /* padding-top: 2rem;
+    padding-bottom: 2rem; */
     margin-top: 3rem;
 
+    @media (width > 768px) {
+        display: block;
+
+        #brand-5, #brand-6 { display: none; }
+        
+        @media (width > 1400px) {
+            margin-top: 4.5rem;
+            margin-bottom: 7rem;
+    
+            #brand-5, #brand-6 { display: flex; }     
+        }
+    }
+    
     .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: .8rem;
     }
-
-    @media (min-width: 768px) {
-        display: block;
-
-        #brand-5, #brand-6 { display: none; }
-    }
-
-    @media (width > 1400px) {
-        display: block;
-        margin-top: 4.5rem;
-        margin-bottom: 4rem;
-
-        #brand-5, #brand-6 { display: flex; }     
-    }
+    
 }
 
 .brand-box {
