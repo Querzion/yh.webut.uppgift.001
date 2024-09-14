@@ -76,3 +76,45 @@ body {
     border-top: 2px solid var(--color-almostblack-blue);  /* Define the line */
     margin: 0;             /* Adjust margins as needed */  
 }
+
+
+
+
+
+
+footer {
+    font-size: 14px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: var(--color-gray-600);
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .credit {
+        display: block;
+    }    
+}
+
+@media (width > 768px) {
+    
+    
+    footer .container {
+        flex-direction: row;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+        gap: 5px;        
+    }
+}
+
+@media (width > 1400px) {
+
+    footer .container {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }  
+}
