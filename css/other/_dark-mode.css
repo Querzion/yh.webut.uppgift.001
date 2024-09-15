@@ -38,10 +38,10 @@
 
     /* Marketplace Buttons */
     .btn-download-app {
-        background-color: var(--color-gray-500);
+        background-color: var(--color-gray-200);
         
         &:hover {
-            background-color: var(--color-gray-400);
+            background-color: var(--color-gray-500);
         }
     }
     

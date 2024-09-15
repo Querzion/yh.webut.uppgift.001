@@ -1,3 +1,6 @@
+#app-features {
+    padding-bottom: 4rem;
+}
 
 .flexit {
     
@@ -29,7 +32,7 @@
         }
     
         #af-title {
-            font-size: 27.9px;
+            /* font-size: 27.9px; */
             font-weight: 800;
             /* margin-top: 4rem; */
             
