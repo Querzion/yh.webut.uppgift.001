@@ -3,7 +3,7 @@
 }
 
 #carousel {
-    grid-area: carousel; /* Grid area assignment for carousel */
+    grid-area: carousel-section; /* Grid area assignment for carousel */
 
     padding-top: 3rem; /* Top padding for spacing */
     padding-bottom: 5rem; /* Bottom padding for spacing */

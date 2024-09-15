@@ -40,11 +40,11 @@ body {
     height: 100vh;
     
     grid-template-areas: 
-    "showcase"
-    "brands"
-    "app-features"
-    "carousel"
-    "footer";
+    "showcase-section"
+    "brands-section"
+    "app-features-section"
+    "carousel-section"
+    "footer-section";
 }
 
 .bg-gradient {
@@ -87,7 +87,7 @@ body {
 }
 
 footer {
-    grid-area: footer;
+    grid-area: footer-section;
     font-size: 14px;
     padding-top: 2rem;
     padding-bottom: 2rem;
