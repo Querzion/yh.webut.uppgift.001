@@ -52,7 +52,7 @@ body {
     background: rgb(99, 102, 241);
 
     /* Gradient background */ /* Got some help from ChatGPT here, or rather mostly with changing the colours in the root section. */
-    background: var(--linear-gradient);
+    background: var(--linear-gradient-sc-sec);
 }
 
 .container {

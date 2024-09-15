@@ -1,156 +1,157 @@
+.bg-gradient {
+    background: var(--linear-gradient-c-sec); /* Background gradient applied to the section */
+}
+
 #carousel {
-    grid-area: carousel;
-    padding-top: 3rem;
-    padding-bottom: 5rem;
-    text-align: center;
-    background: var(--gradient-bg); /* Apply the gradient background if needed */
+    grid-area: carousel; /* Grid area assignment for carousel */
+
+    padding-top: 3rem; /* Top padding for spacing */
+    padding-bottom: 5rem; /* Bottom padding for spacing */
+    text-align: center; /* Center-align text */
 
     .container {
-        display: grid;
-        gap: 2rem; /* Adjust as needed */
+        display: grid; /* Display container as grid layout */
+        /* gap: 2rem; */ /* Adjust gap between grid items as needed */
     }
 
-    .carousel-title {
-        h2 {
-            font-size: 27.9px;
-            font-weight: 800;
+    .grid {
+        .carousel-title {
+            display: grid; /* Display carousel title as grid */
+            grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+            grid-column: 2; /* Position title in the second column */
+            font-size: 27.9px; /* Font size for the title */
+            font-weight: 800; /* Font weight for the title */
 
             @media (min-width: 768px) {
-                font-size: 33.5px;
+                font-size: 33.5px; /* Adjust font size for tablets and above */
 
                 @media (min-width: 1400px) {
-                    font-size: 40px;
+                    font-size: 40px; /* Larger font size for large screens */
                 }
             }
         }
-    }
 
-    #carousel-grid-container {
-        .carousel-wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 10;
-            transform: translateX(0);
-            transition: transform 0.5s ease;
+        #carousel-grid-container {
+            .carousel-wrapper {
+                position: absolute; /* Position carousel wrapper absolutely */
+                top: 0; /* Align to the top of the container */
+                left: 0; /* Align to the left of the container */
+                right: 0; /* Align to the right of the container */
+                z-index: 10; /* Ensure it's above other content */
+                transform: translateX(0); /* Initial transformation */
+                transition: transform 0.5s ease; /* Smooth transition for transform changes */
 
-            .carousel-grid-container {
-                position: relative;
-                display: grid;
-                grid-template-columns: 1fr;
-                width: 100%;
+                .carousel-grid-container {
+                    position: relative; /* Position grid container relatively */
+                    display: grid; /* Display as grid layout */
+                    grid-template-columns: 1fr; /* Single column layout by default */
+                    width: 100%; /* Full width of the parent */
 
-                .carousel-grid {
-                    .carousel-item {
-                        display: grid;
-                        grid-template-columns: 1fr;
-                        gap: 0rem;
-                        justify-content: center;
-                        justify-items: center;
+                    .carousel-grid {
+                        .carousel-item {
+                            display: grid; /* Display carousel item as grid */
+                            grid-template-columns: 1fr; /* Single column layout */
+                            gap: 0rem; /* No gap by default */
+                            justify-content: center; /* Center items horizontally */
+                            justify-items: center; /* Center items inside each grid cell */
 
-                        @media (min-width: 768px) {
-                            max-width: 720px;
-                            grid-template-columns: repeat(3, 1fr);
-                            gap: 2rem;
+                            @media (min-width: 768px) {
+                                grid-template-columns: repeat(3, 1fr); /* Three equal columns for tablets and above */
+                                gap: 2rem; /* Gap between columns */
 
-                            @media (min-width: 1400px) {
-                                max-width: 1070px;
-                                gap: 7rem;
-                            }
-                        }
-
-                        .image-layers {
-                            display: grid;
-                            position: relative;
-                            width: 90%;
-                            height: auto;
-
-                            .layer-group {
-                                position: absolute;
-                                top: 0;
-                                bottom: 0;
-                                width: 100%;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
+                                @media (min-width: 1400px) {
+                                    max-width: 1070px; /* Maximum width for large screens */
+                                    gap: 7rem; /* Larger gap between columns */
+                                }
                             }
 
-                            .left {
-                                left: -100%;
-                            }
+                            .image-layers {
+                                display: grid; /* Display image layers as grid */
+                                position: relative; /* Position relatively for layering */
+                                width: 90%; /* Width of image layers container */
+                                height: auto; /* Height adjusts based on content */
+                                clip-path: url(#clip-shape); /* Apply clip-path to all layers inside */
 
-                            .middle {
-                                left: 0;
-                            }
-
-                            .right {
-                                left: 100%;
-                            }
-
-                            .layer {
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                width: 100%;
-                                opacity: 0.1;
-                                transition: opacity 0.3s ease-in-out;
-
-                                &.layer-1 {
-                                    z-index: 2;
-                                    opacity: 1;
+                                .layer-group {
+                                    position: absolute; /* Position layer groups absolutely */
+                                    top: 0; /* Align to top of container */
+                                    bottom: 0; /* Align to bottom of container */
+                                    width: 100%; /* Full width of the container */
+                                    display: flex; /* Flex layout for alignment */
+                                    justify-content: center; /* Center horizontally */
+                                    align-items: center; /* Center vertically */
                                 }
 
-                                &.layer-2 {
-                                    z-index: 1;
-                                    opacity: 1;
-                                    mask-image: url('/images/carousel/desktop/desktop-mask-layer_1.svg');
-                                    mask-size: cover;
-                                    mask-repeat: no-repeat;
+                                .left {
+                                    left: -100%; /* Position to the left, outside of view */
                                 }
 
-                                &.layer-3 {
-                                    z-index: 0;
-                                    opacity: 1;
+                                .middle {
+                                    left: 0; /* Center position */
+                                }
 
-                                    @media (min-width: 768px) {
-                                        border-radius: 1rem;
+                                .right {
+                                    left: 100%; /* Position to the right, outside of view */
+                                }
 
-                                        @media (min-width: 1400px) {
-                                            border-radius: 3rem;
+                                .layer {
+                                    position: absolute; /* Position layers absolutely */
+                                    top: 0; /* Align to top */
+                                    left: 0; /* Align to left */
+                                    width: 100%; /* Full width of the container */
+                                    opacity: 0.1; /* Default opacity */
+                                    transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity changes */
+
+                                    &.layer-1 {
+                                        z-index: 1; /* Layer below other layers */
+                                        opacity: 1; /* Full opacity for this layer */
+                                        /* Removed mask-image and replaced with clip-path */
+                                        clip-path: url(#clip-shape); /* Apply the same clip-path to this layer */
+                                    }
+
+                                    &.layer-2 {
+                                        z-index: 0; /* Layer below layer-1 */
+                                        opacity: 1; /* Full opacity for this layer */
+
+                                        @media (min-width: 768px) {
+                                            border-radius: 1rem; /* Rounded corners for tablets and above */
+
+                                            @media (min-width: 1400px) {
+                                                border-radius: 3rem; /* Larger rounded corners for large screens */
+                                            }
                                         }
                                     }
                                 }
-                            }
 
-                            .centered-image {
-                                position: absolute;
-                                top: 50%;
-                                left: 50%;
-                                transform: translate(-50%, -50%);
-                                z-index: 0;
-                                max-width: 400px;
-                                width: 100%;
-                                height: auto;
+                                .centered-image {
+                                    position: absolute; /* Position absolutely */
+                                    top: 50%; /* Center vertically */
+                                    left: 50%; /* Center horizontally */
+                                    transform: translate(-50%, -50%); /* Offset to center the image */
+                                    z-index: 0; /* Layer below others */
+                                    max-width: 400px; /* Maximum width of centered image */
+                                    width: 100%; /* Full width of the container */
+                                    height: auto; /* Height adjusts based on width */
+                                }
                             }
                         }
                     }
                 }
             }
         }
-    }
 
-    .carousel-text-container {
-        display: grid;
-        justify-items: center;
-        text-align: center;
+        .carousel-text-container {
+            display: grid; /* Display text container as grid */
+            justify-items: center; /* Center items inside the grid */
+            text-align: center; /* Center-align text */
 
-        h3 {
-            font-weight: 800;
-        }
+            h3 {
+                font-weight: 800; /* Bold font for headings */
+            }
 
-        p {
-            color: var(--color-gray-700);
+            p {
+                color: var(--color-gray-700); /* Color for paragraph text */
+            }
         }
     }
 }
