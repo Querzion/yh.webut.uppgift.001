@@ -8,6 +8,9 @@
     .grid {
     
         .carousel-title {
+            /* display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-column: 2; */
             font-size: 27.9px;
             font-weight: 800;
             
@@ -131,25 +134,39 @@
                                     }
                                 }
                             }
-                        }
+                        }  
+                    }
+                }  
+            }
+
+
+            /* New grid for the Phone Shell (layer-4 images) */
+            .phone-shell-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr;
+                
+                justify-content: center;
+                align-items: center;
+                position: relative; /* Ensures the carousel can float above it */
+                z-index: 1; /* Stays behind the carousel */
+                
+                @media (min-width: 768px) {
+                    grid-template-columns: repeat(3, 1fr);
+                    
+                    
+                    @media (min-width: 1400px) {
                         
                     }
                 }
-                
-                /* New grid for the Phone Shell (layer-4 images) */
-                .phone-shell-grid {
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    
-                    justify-content: center;
-                    align-items: center;
-                    position: relative; /* Ensures the carousel can float above it */
-                    z-index: 1; /* Stays behind the carousel */
-                    
-                    
-                    @media (min-width: 768px) {
-                        grid-template-columns: repeat(3, 1fr);
 
+                #image-4, #image-12 { 
+                    display: none;
+                
+                
+                    @media (min-width: 768px) {
+                        display: grid;
+                        opacity: 0;
                         
                         @media (min-width: 1400px) {
                             
@@ -157,14 +174,24 @@
                     }
                 }
                 
-                .phone-shell-layer {
-                    display: block;
-                    margin: 0 auto;
-                    max-width: 100%;
-                    width: auto;
-                    height: auto;
+            }
+            
+            .phone-shell-layer {
+                display: block;
+                margin: 0 auto;
+                max-width: 100%;
+                width: auto;
+                height: auto;
+
+                @media (min-width: 768px) {
+                    grid-template-columns: repeat(3, 1fr);
+
+                    
+                    @media (min-width: 1400px) {
+                        
+                    }
                 }
-            } 
+            }
         } 
 
         .carousel-text-container {
