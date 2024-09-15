@@ -1,4 +1,5 @@
 #showcase {
+    grid-area: showcase;
     padding-bottom: 2rem;
     
     @media (min-width: 768px) {
@@ -24,8 +25,7 @@
                 grid-template-areas:    "headline images"
                                         "content images";
             }
-        }
-        
+        }  
     }
 
     .headline {

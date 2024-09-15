@@ -1,18 +1,19 @@
-.carousel {
+#carousel {
+    grid-area: carousel;
+
     padding-top: 3rem;
     padding-bottom: 5rem;
     text-align: center;
-    
-    .grid {
 
-        
+    .grid {
+    
         .carousel-title {
             font-size: 27.9px;
             font-weight: 800;
             
             @media (min-width: 768px) {
                 font-size: 33.5px;
-                
+    
                 @media (min-width: 1400px) {
                     font-size: 40px;
                 }
@@ -20,108 +21,199 @@
         }
     
         #carousel-grid-container {
+            position: relative; /* Allows floating of carousel above the grid */
             display: grid;
             grid-template-columns: 1fr;
             /* overflow-x: hidden; */
-
-            @media (min-width: 768px) {
-                
-
-                @media (min-width: 1400px) {
-                    
-                }
-            }
-        
+    
+    
+            /* The grid for the floating carousel */
             .carousel-wrapper {
-                /* Make sure only the middle item is visible */
-                /* Adjust translation for other items */
-
-                transform: translateX(0); 
+                position: absolute;
+                top: 0; /* Adjust based on where you want the floating carousel */
+                left: 0;
+                right: 0;
+                z-index: 10; /* Ensures it's above the background image */
+                transform: translateX(0);
                 transition: transform 0.5s ease;
-
+                
                 .carousel-grid {
-                    
                     .carousel-item {
                         display: grid;
-                        grid-template-columns: repeat(3, 1fr);
-                    
-                        gap: 5rem;
-                        /* justify-content: center;
-                        justify-items: center; */
+                        grid-template-columns: 1fr;
+                        
+                        gap: 0rem;
+                        justify-content: center;
+                        justify-items: center;
+                        
+                        @media (min-width: 768px) {
+                            max-width: 720px;
+                            grid-template-columns: repeat(3, 1fr) ;
+                            gap: 2rem;
+                            
+                            @media (min-width: 1400px) {
+                                max-width: 1070px;
+                                gap: 7rem;
+                            }
+                        }
                         
                         .image-layers {
                             display: grid;
-                            grid-template-rows: 1fr;
                             position: relative;
-                            width: 100%;
-                            height: 100%; 
+                            width: 90%;
+                            height: auto;
                             
                             .layer {
-                                /* position: absolute; */
+                                position: absolute;
                                 top: 0;
                                 left: 0;
                                 width: 100%;
-                                opacity: .1; 
+                                opacity: 0.1;
                                 transition: opacity 0.3s ease-in-out;
-                                /* display: grid;
-                                grid-template-rows: 1fr; */
                                 
+                                @media (min-width: 768px) {
+                                    
+                                    
+                                    @media (min-width: 1400px) {
+                                        
+                                    }
+                                }
                             }
-                            #image-4 {
-                                display: none;
-                            }
-                            #image-12 {
-                                display: none;
-                            }
+                            
+                            #image-1, #image-9 {display: none;}
+                            
                             .layer-1 {
                                 display: block;
-                                /* width: 110%;
-                                height: auto;
-                                top: -1.3rem;
-                                left: -1.1rem; */
                                 z-index: 5;
                                 opacity: 1;
-                            }
-                            .layer-2 { 
-                                display: block;
-                                z-index: 3;
+    
                                 
-                                width: 90%;
-                                height: auto;
+                                /* height: auto;
+                                top: -1rem;
+                                left: -1.1rem; */
+
+                                @media (min-width: 768px) {
+                                    
+                
+                                    @media (min-width: 1400px) {
+                                        
+                                    }
+                                }
                             }
+                            
+                            .layer-2 {
+                                display: none;
+                                z-index: 4;
+
+                                opacity: .1;
+
+                                @media (min-width: 768px) {
+                                    
+                
+                                    @media (min-width: 1400px) {
+            
+                                    }
+                                }
+                            }
+                            
                             .layer-3 {
                                 display: block;
-                                z-index: 2;
-                                opacity: 1;
-    
-                                width: 90%;
-                                height: auto;
-    
-                                border-radius: 3rem;
+                                z-index: 3;
+
+                                opacity: 1;                                
+                                
+                                @media (min-width: 768px) {
+                                    border-radius: 1rem;
+                                    
+                                    @media (min-width: 1400px) {
+                                        
+                                        border-radius: 3rem;
+                                    }
+                                }
                             }
-                            .layer-4 {
-                                display: block;
-                                z-index: 1;
-                                opacity: 1;
-                            }
+                        }
+                        
+                    }
+                }
+                
+                /* New grid for the Phone Shell (layer-4 images) */
+                .phone-shell-grid {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    
+                    justify-content: center;
+                    align-items: center;
+                    position: relative; /* Ensures the carousel can float above it */
+                    z-index: 1; /* Stays behind the carousel */
+                    
+                    
+                    @media (min-width: 768px) {
+                        grid-template-columns: repeat(3, 1fr);
+
+                        
+                        @media (min-width: 1400px) {
+                            
                         }
                     }
                 }
-            }
-        }
+                
+                .phone-shell-layer {
+                    display: block;
+                    margin: 0 auto;
+                    max-width: 100%;
+                    width: auto;
+                    height: auto;
+                }
+            } 
+        } 
 
         .carousel-text-container {
             display: grid;
             justify-items: center;
             text-align: center;
-            
+    
             h3 {
                 font-weight: 800;
-                /* font-size: 21.6px; */
             }
+    
             p {
                 color: var(--color-gray-700);
             }
         }
-    }
+    }    
 }
+
+/* .carousel-left {
+    display: none;
+
+    @media (min-width: 768px) {
+    display: block;
+
+    @media (min-width: 1400px) {
+
+    }
+} */
+
+/* .carousel-middle {
+    display: block;
+    
+    @media (min-width: 768px) {
+        display: block;
+        
+        @media (min-width: 1400px) {
+
+        }
+    }                        
+} */
+
+/* .carousel-right {
+    display: none;
+    
+    @media (min-width: 768px) {
+        display: block;
+        
+        @media (min-width: 1400px) {
+
+        }
+    }                        
+} */

@@ -37,7 +37,14 @@ body {
 
     display: grid;
     grid-template-rows: auto 1fr auto;
-    height: 100vh;    
+    height: 100vh;
+    
+    grid-template-areas: 
+    "showcase"
+    "brands"
+    "app-features"
+    "carousel"
+    "footer";
 }
 
 .bg-gradient {
@@ -80,6 +87,7 @@ body {
 }
 
 footer {
+    grid-area: footer;
     font-size: 14px;
     padding-top: 2rem;
     padding-bottom: 2rem;
