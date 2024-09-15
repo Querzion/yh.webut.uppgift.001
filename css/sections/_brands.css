@@ -1,6 +1,4 @@
 #brands { 
-    grid-area: brands-section;
-
     display: none; 
     #brand-5, #brand-6 { display: none; }
 

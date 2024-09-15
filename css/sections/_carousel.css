@@ -1,7 +1,10 @@
 .bg-gradient { background: linear-gradient(var(--linear-gradient-c-sec)); }
 /* .bg-gradient { background: var(--color-gray-100) } */
-
-.c-wrapper {
+#carousel-section {
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+}
+.c-wrap {
     display: grid;
     justify-content: center;
     text-align: center;
@@ -19,7 +22,34 @@
         }
     }
 
+    .mobile-carousel {
+        
+        @media (min-width: 768px) {
+            display: none;
+        }
 
+        .carousel-wrapper
+    }
+
+    .tablet-carousel {
+        display: none;
+
+        @media (min-width: 768px) {
+            display: block;
+
+            @media (min-width: 1400px) {
+                display: none;
+            }
+        }
+    }
+
+    .desktop-carousel {
+        display: none;
+
+        @media (min-width: 1400px) {
+            display: block;
+        }
+    }
 
     .c-text {
         h3 {
@@ -33,3 +63,4 @@
         }
     }
 }
+
