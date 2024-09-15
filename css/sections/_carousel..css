@@ -10,15 +10,13 @@
     text-align: center; /* Center-align text */
 
     .container {
-        display: grid; /* Display container as grid layout */
-        /* gap: 2rem; */ /* Adjust gap between grid items as needed */
-    }
+        display: grid;
+        justify-content: center;
 
-    .grid {
         .carousel-title {
-            display: grid; /* Display carousel title as grid */
-            grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-            grid-column: 2; /* Position title in the second column */
+            display: grid;
+            grid-template-columns: auto;
+
             font-size: 27.9px; /* Font size for the title */
             font-weight: 800; /* Font weight for the title */
 
@@ -31,114 +29,8 @@
             }
         }
 
-        #carousel-grid-container {
-            .carousel-wrapper {
-                position: absolute; /* Position carousel wrapper absolutely */
-                top: 0; /* Align to the top of the container */
-                left: 0; /* Align to the left of the container */
-                right: 0; /* Align to the right of the container */
-                z-index: 10; /* Ensure it's above other content */
-                transform: translateX(0); /* Initial transformation */
-                transition: transform 0.5s ease; /* Smooth transition for transform changes */
 
-                .carousel-grid-container {
-                    position: relative; /* Position grid container relatively */
-                    display: grid; /* Display as grid layout */
-                    grid-template-columns: 1fr; /* Single column layout by default */
-                    width: 100%; /* Full width of the parent */
-
-                    .carousel-grid {
-                        .carousel-item {
-                            display: grid; /* Display carousel item as grid */
-                            grid-template-columns: 1fr; /* Single column layout */
-                            gap: 0rem; /* No gap by default */
-                            justify-content: center; /* Center items horizontally */
-                            justify-items: center; /* Center items inside each grid cell */
-
-                            @media (min-width: 768px) {
-                                grid-template-columns: repeat(3, 1fr); /* Three equal columns for tablets and above */
-                                gap: 2rem; /* Gap between columns */
-
-                                @media (min-width: 1400px) {
-                                    max-width: 1070px; /* Maximum width for large screens */
-                                    gap: 7rem; /* Larger gap between columns */
-                                }
-                            }
-
-                            .image-layers {
-                                display: grid; /* Display image layers as grid */
-                                position: relative; /* Position relatively for layering */
-                                width: 90%; /* Width of image layers container */
-                                height: auto; /* Height adjusts based on content */
-                                clip-path: url(#clip-shape); /* Apply clip-path to all layers inside */
-
-                                .layer-group {
-                                    position: absolute; /* Position layer groups absolutely */
-                                    top: 0; /* Align to top of container */
-                                    bottom: 0; /* Align to bottom of container */
-                                    width: 100%; /* Full width of the container */
-                                    display: flex; /* Flex layout for alignment */
-                                    justify-content: center; /* Center horizontally */
-                                    align-items: center; /* Center vertically */
-                                }
-
-                                .left {
-                                    left: -100%; /* Position to the left, outside of view */
-                                }
-
-                                .middle {
-                                    left: 0; /* Center position */
-                                }
-
-                                .right {
-                                    left: 100%; /* Position to the right, outside of view */
-                                }
-
-                                .layer {
-                                    position: absolute; /* Position layers absolutely */
-                                    top: 0; /* Align to top */
-                                    left: 0; /* Align to left */
-                                    width: 100%; /* Full width of the container */
-                                    opacity: 0.1; /* Default opacity */
-                                    transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity changes */
-
-                                    &.layer-1 {
-                                        z-index: 1; /* Layer below other layers */
-                                        opacity: 1; /* Full opacity for this layer */
-                                        /* Removed mask-image and replaced with clip-path */
-                                        clip-path: url(#clip-shape); /* Apply the same clip-path to this layer */
-                                    }
-
-                                    &.layer-2 {
-                                        z-index: 0; /* Layer below layer-1 */
-                                        opacity: 1; /* Full opacity for this layer */
-
-                                        @media (min-width: 768px) {
-                                            border-radius: 1rem; /* Rounded corners for tablets and above */
-
-                                            @media (min-width: 1400px) {
-                                                border-radius: 3rem; /* Larger rounded corners for large screens */
-                                            }
-                                        }
-                                    }
-                                }
-
-                                .centered-image {
-                                    position: absolute; /* Position absolutely */
-                                    top: 50%; /* Center vertically */
-                                    left: 50%; /* Center horizontally */
-                                    transform: translate(-50%, -50%); /* Offset to center the image */
-                                    z-index: 0; /* Layer below others */
-                                    max-width: 400px; /* Maximum width of centered image */
-                                    width: 100%; /* Full width of the container */
-                                    height: auto; /* Height adjusts based on width */
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+       
 
         .carousel-text-container {
             display: grid; /* Display text container as grid */
