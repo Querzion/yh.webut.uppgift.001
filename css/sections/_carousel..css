@@ -48,7 +48,7 @@
                         
                         @media (min-width: 768px) {
                             max-width: 720px;
-                            grid-template-columns: repeat(3, 1fr) ;
+                            grid-template-columns: repeat(3, 1fr);
                             gap: 2rem;
                             
                             @media (min-width: 1400px) {
@@ -73,7 +73,6 @@
                                 
                                 @media (min-width: 768px) {
                                     
-                                    
                                     @media (min-width: 1400px) {
                                         
                                     }
@@ -87,14 +86,8 @@
                                 z-index: 5;
                                 opacity: 1;
     
-                                
-                                /* height: auto;
-                                top: -1rem;
-                                left: -1.1rem; */
-
                                 @media (min-width: 768px) {
                                     
-                
                                     @media (min-width: 1400px) {
                                         
                                     }
@@ -104,12 +97,10 @@
                             .layer-2 {
                                 display: none;
                                 z-index: 4;
-
-                                opacity: .1;
+                                opacity: 0.1;
 
                                 @media (min-width: 768px) {
                                     
-                
                                     @media (min-width: 1400px) {
             
                                     }
@@ -119,20 +110,17 @@
                             .layer-3 {
                                 display: block;
                                 z-index: 3;
-
                                 opacity: 1;                                
                                 
                                 @media (min-width: 768px) {
                                     border-radius: 1rem;
                                     
                                     @media (min-width: 1400px) {
-                                        
                                         border-radius: 3rem;
                                     }
                                 }
                             }
                         }
-                        
                     }
                 }
                 
@@ -146,11 +134,9 @@
                     position: relative; /* Ensures the carousel can float above it */
                     z-index: 1; /* Stays behind the carousel */
                     
-                    
                     @media (min-width: 768px) {
                         grid-template-columns: repeat(3, 1fr);
 
-                        
                         @media (min-width: 1400px) {
                             
                         }
@@ -183,37 +169,55 @@
     }    
 }
 
-/* .carousel-left {
-    display: none;
+/* Carousel Image Positioning */
+/* Keeping the structure intact while introducing new classes */
 
-    @media (min-width: 768px) {
-    display: block;
+.carousel-wrapper {
+    position: relative;
+}
 
-    @media (min-width: 1400px) {
+.carousel-grid-container {
+    position: relative;
+    width: 100%;
+}
 
-    }
-} */
+.carousel-item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
 
-/* .carousel-middle {
-    display: block;
-    
-    @media (min-width: 768px) {
-        display: block;
-        
-        @media (min-width: 1400px) {
+.image-layers {
+    position: relative;
+    width: 100%;
+    /* Adjust width for your layout */
+}
 
-        }
-    }                        
-} */
+/* Left and Right transformations for offscreen positioning */
+.left {
+    transform: translateX(-100%); /* Move left-side images off-screen */
+}
 
-/* .carousel-right {
-    display: none;
-    
-    @media (min-width: 768px) {
-        display: block;
-        
-        @media (min-width: 1400px) {
+.right {
+    transform: translateX(100%); /* Move right-side images off-screen */
+}
 
-        }
-    }                        
-} */
+/* Centering the middle image group */
+.middle {
+    transform: translateX(0); /* Middle images stay in view */
+    display: flex;
+    justify-content: center; /* Ensures images within the middle are centered */
+    position: relative;
+}
+
+/* Center the layer-4 image */
+.centered-image {
+    position: absolute;  /* Allow free positioning */
+    top: 50%;            /* Center vertically */
+    left: 50%;           /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for image size */
+    z-index: 2;          /* Ensure it stays on top */
+    max-width: 400px;    /* Adjust this value for responsiveness */
+    width: 100%;
+    height: auto;
+}
