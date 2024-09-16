@@ -42,9 +42,9 @@
     --transition-time: all 0.2s;
 
     /* Heading Gradient Colours - LIGHT/DARK */ /* Got some help from ChatGPT here (Hex press to hsl didn't work for the background.) */
-    --clr-grad-1: 221, 87%, 95%; /* HSL values for #F1F4FD */
-    --clr-grad-2: 293, 82%, 60%; /* HSL values for #DA46EF */
-    --clr-grad-3: 238, 80%, 67%; /* HSL values for #6366F1 */
+    /* --clr-grad-1: 221, 87%, 95%; */ /* HSL values for #F1F4FD */
+    /* --clr-grad-2: 293, 82%, 60%; */ /* HSL values for #DA46EF */
+    /* --clr-grad-3: 238, 80%, 67%; */ /* HSL values for #6366F1 */
     
     /* Something similar was found in a bootstrap css file. */
     /* --linear-gradient: linear-gradient(0deg, 
@@ -59,9 +59,9 @@
     rgba(241,244,253,0.07) 83%
     );
     --linear-gradient-c-sec: linear-gradient(355deg, 
-    rgba(99,102,241,0.1) 0%, 
-    rgba(218,70,239,0.05) 42%, 
-    rgba(241,244,253,0.07) 83%
+    rgba(99,102,241,0.1) 10%, 
+    rgba(218,70,239,0.05) 50%, 
+    rgba(241,244,253,0.07) 100%
     );
 
 

@@ -5,6 +5,7 @@
     @media (min-width: 768px) {
         display: block;
         margin-top: 3rem;
+        margin-bottom: 2rem;
 
         @media (min-width: 1400px) {
             margin-top: 4.5rem;

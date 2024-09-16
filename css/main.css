@@ -17,7 +17,7 @@
 
 * {
     box-sizing: border-box;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* -webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
 }
 
 body, section, div, header, footer, main, aside, nav, blockquote, p, span {

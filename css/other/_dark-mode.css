@@ -72,27 +72,19 @@
     /* App Features Section */
     #app-features-section {
 
-        /* App Features - Top section */
-        
-        /* App Features - Grid */
-        .features .af-text-container {
-            
-            p {
-                /* color: var(--color-white); */
-                opacity: 60%;
-            }
+        p {
+            /* color: var(--color-white); */
+            /* opacity: 70%; */
+            color: var(--color-tex-wh-o70);
         }
     }    
         
     /* Carousel Section */
     #carousel-section {
 
-        .c-text {
-            
-            p {
-                color: var(--color-tex-wh-o70);
-                font-size: 16px;
-            }
+        p {
+            color: var(--color-tex-wh-o70);
+            font-size: 16px;
         }
     }
 }
