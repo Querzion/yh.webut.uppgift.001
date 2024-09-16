@@ -486,6 +486,7 @@
             // Function to detect the current viewport size
             function getCurrentContentSet() {
                 const width = window.innerWidth;
+                console.log("Viewport width:", width); // Debugging
                 if (width <= 768) {
                     return mobileContent; // Mobile view
                 } else if (width <= 1400) {
