@@ -1,4 +1,4 @@
-.bg-gradient { background: linear-gradient(var(--linear-gradient-c-sec)); }
+.bg-gradient { background: var(--linear-gradient-c-sec); }
 /* .bg-gradient { background: var(--color-gray-100) } */
 #carousel-section {
     /* padding-top: 1rem; */
@@ -28,9 +28,9 @@
         }
     }
 
-    .mobile-carousel { display: none; }
-    .tablet-carousel { display: none; }
-    .desktop-carousel { display: none; }
+    .desktop-carousel { display: none; }    /* D */
+    .mobile-carousel { display: none; }     /* M */
+    .tablet-carousel { display: none; }     /* T */
 
     .carousel-wrapper {
 
@@ -40,14 +40,20 @@
             justify-content: center;
             /* padding: 2rem; */
             width: 100%;
-
+            
             .c-top-layer {
                 z-index: 1;
                 opacity: 1;
                 position: relative;
                 grid-area: 1 / 1 / span 1 / span 1;
+                
+                @media (min-width: 768px) {
+                    
+                    grid-area: 1 / 1 / span 1 / span 3;
+                        
+                }
             }
-
+            
             #c-slide-layer {
                 display: flex;
                 justify-content: center;
@@ -56,26 +62,36 @@
                 position: relative;
                 grid-area: 1 / 1 / span 1 / span 1;
                 transition: transform 0.5s ease-in-out; /* For smooth sliding */
-            }
 
+            }
+            
             .c-layers {
                 flex: 0 0 100%; /* Each image will take up 100% width */
                 display: flex;
                 justify-content: center;
+                
+                .inner-layers {
+                    max-width: 100%; /* Ensure the images resize well */
+                }
             }
-
-            .inner-layers {
-                max-width: 100%; /* Ensure the images resize well */
-            }
-
+            
+            
             .c-bottom-layer {
                 z-index: 0;
                 position: relative;
                 grid-area: 1 / 1 / span 1 / span 1;
+                
+                @media (min-width: 768px) {
+                    
+                    grid-area: 1 / 1 / span 1 / span 3;
+                    
+                }
             }
+            
+            
         }
     }
-
+    
 
     @media (max-width: 767px) {
         .mobile-carousel { display: block; 
@@ -89,6 +105,11 @@
     @media (min-width: 768px) and (max-width: 1399px) {
         .tablet-carousel { display: block; 
         
+            .carousel-grid {
+                /* grid-template-columns: repeat(3, 1fr); */
+                gap: -10rem;
+
+            }
         }
 
         
@@ -97,32 +118,9 @@
     @media (min-width: 1400px) {
         .desktop-carousel { display: block; 
         
-            #c-slide-layer {
-                top: 2%;
-                z-index: 2;
-                height: 95%;
-            }
-
-            .inner-layers {
-                border-radius: 2rem;
-            }
-
-            .layer-1 {
-                display: hidden;
-            }
         }
     }
 
-    .c-text {
-        h3 {
-            font-weight: 800;
-            font-size: 22px;
-        }
-        
-        p {
-            color: var(--color-almostblack-blue);
-            font-size: 16px;
-        }
-    }
+    
 }
 

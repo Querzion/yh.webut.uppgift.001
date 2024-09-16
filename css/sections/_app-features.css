@@ -1,5 +1,8 @@
 #app-features-section {
-    padding-bottom: 4rem;
+    padding-bottom: 1rem;
+    @media (min-width: 768px) {
+        padding-bottom: 3rem;
+    }
 }
 
 .flexit {

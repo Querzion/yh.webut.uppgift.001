@@ -88,6 +88,7 @@
         
         .discover-more {
             color: var(--color-tex-bl-bl);
+            font-size: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -95,6 +96,7 @@
             margin-top: 2.5rem;
             
             @media (min-width: 768px) {
+                font-size: 14px;
                 justify-content: flex-start;
                 margin-bottom: 2.5rem;
                 

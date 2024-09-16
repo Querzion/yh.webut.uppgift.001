@@ -288,12 +288,16 @@
                                     <div class="c-layers right">
                                         <img src="/images/carousel/mobile/mobile-layer_2-3.svg" alt="silicon image" class="inner-layers image-3">
                                     </div>
-                                    
                                 </div>
+
                                 <div class="c-bottom-layer">
                                     <img src="/images/carousel/mobile/mobile-layer_3.svg" alt="black" class="outer-layers layer-3 ">
                                 </div>
-                                
+
+                                <div class="carousel-text-container">
+                                    <h3 class="carousel-heading"></h3>
+                                    <p class="carousel-text"></p>
+                                </div>
                             </div>
                         </div>
 
@@ -315,13 +319,17 @@
                                     </div>
                                     <div class="c-layers right">
                                         <img src="/images/carousel/tablet/tablet-layer_2-3.svg" alt="silicon image" class="inner-layers image-3">
-                                    </div>
-                                    
+                                    </div> 
                                 </div>
+
                                 <div class="c-bottom-layer">
                                     <img src="/images/carousel/mobile/mobile-layer_3.svg" alt="black" class="outer-layers layer-3 ">
                                 </div>
-                                
+
+                                <div class="carousel-text-container">
+                                    <h3 class="carousel-heading"></h3>
+                                    <p class="carousel-text"></p>
+                                </div>
                             </div>
                         </div>
 
@@ -342,22 +350,22 @@
                                     </div>
                                     <div class="c-layers right">
                                         <img src="/images/carousel/desktop/desktop-layer-2-3.svg" alt="silicon image" class="inner-layers image-3">
-                                    </div>
-                                    
+                                    </div>   
                                 </div>
+
                                 <div class="c-bottom-layer">
                                     <img src="/images/carousel/desktop/desktop-layer_3.svg" alt="black" class="outer-layers layer-3 ">
                                 </div>
-                                
+
+                                <div class="carousel-text-container">
+                                    <h3 class="carousel-heading"></h3>
+                                    <p class="carousel-text"></p>
+                                </div>
                             </div>
                         </div>
                     </section>
                     
                     
-                    <div class="c-text container">
-                        <h3>Transfers to people from your contact list</h3>
-                        <p>Proin volutpat mollis egestas. Nam luctus facilisis ultrices. Pellentesque volutpat ligula est. Mattis fermentum, at nec lacus.</p>
-                    </div>
 
                 </div>
             </section>
@@ -447,36 +455,96 @@
 
 
         /* CAROUSEL VERSION 5 CODE */
+        /* Working base */
+        
         document.addEventListener("DOMContentLoaded", function() {
             const slideLayer = document.querySelector('#c-slide-layer');
-            const images = document.querySelectorAll('.inner-layers');
-            const minIndex = -1; // Left image is -1
-            const maxIndex = 1;  // Right image is 1
+            const headingElement = document.querySelector('.carousel-heading');
+            const textElement = document.querySelector('.carousel-text');
+
+            const minIndex = -1; // Index for the left image (image-1)
+            const maxIndex = 1;  // Index for the right image (image-3)
             let currentIndex = 0; // Start at the middle image (index 0)
 
-            // Variables to track touch movement
+            // Content for each image based on viewport size
+            const mobileContent = [
+                { heading: "Mobile Heading for Left Image", text: "Mobile Text for Left Image" },
+                { heading: "Transfers to people from your contact list", text: "Proin volutpat mollis egestas. Nam luctus facilisis ultrices. Pellentesque volutpat ligula est. Mattis fermentum, at nec lacus." },
+                { heading: "Mobile Heading for Right Image", text: "Mobile Text for Right Image" }
+            ];
+
+            const tabletContent = [
+                { heading: "Tablet Heading for Left Image", text: "Tablet Text for Left Image" },
+                { heading: "Step 3. Transfers to people from your contact list", text: "Proin volutpat mollis egestas. Nam luctus facilisis ultrices. Pellentesque volutpat ligula est. Mattis fermentum, at nec lacus." },
+                { heading: "Tablet Heading for Right Image", text: "Tablet Text for Right Image" }
+            ];
+
+            const desktopContent = [
+                { heading: "Desktop Heading for Left Image", text: "Desktop Text for Left Image" },
+                { heading: "Desktop Heading for Middle Image", text: "Desktop Text for Middle Image" },
+                { heading: "Desktop Heading for Right Image", text: "Desktop Text for Right Image" }
+            ];
+
+            // Function to detect the current viewport size
+            function getCurrentContentSet() {
+                const width = window.innerWidth;
+                if (width <= 768) {
+                    return mobileContent; // Mobile view
+                } else if (width <= 1400) {
+                    return tabletContent; // Tablet view
+                } else {
+                    return desktopContent; // Desktop view
+                }
+            }
+
+            // Function to update the carousel and text based on the current image
+            function updateCarousel() {
+                const offset = currentIndex * -100; // Shift the slide by 100% per image
+                slideLayer.style.transform = `translateX(${offset}%)`;
+
+                // Get the correct content set based on screen size and update heading and text
+                const currentContentSet = getCurrentContentSet();
+                headingElement.textContent = currentContentSet[currentIndex + 1].heading; // Adjust index for array
+                textElement.textContent = currentContentSet[currentIndex + 1].text;
+            }
+
+            // Automatic image switch every 3 seconds
+            let autoSwitchInterval;
+            function startAutoSwitch() {
+                autoSwitchInterval = setInterval(function() {
+                    // Update the index with circular logic
+                    currentIndex = (currentIndex + 1) > maxIndex ? minIndex : currentIndex + 1;
+                    updateCarousel();
+                }, 3000); // Adjust the interval as needed
+            }
+
+            // Function to stop automatic switching when user interacts
+            function stopAutoSwitch() {
+                if (autoSwitchInterval) {
+                    clearInterval(autoSwitchInterval);
+                }
+            }
+
+            // Initialize the carousel and start automatic switching
+            updateCarousel();
+            startAutoSwitch();
+
+            // Track touch movement for swipe functionality
             let startX = 0;
             let startY = 0;
             let endX = 0;
             let endY = 0;
 
-            // Set the initial position to the middle image
-            function updateCarousel() {
-                const offset = currentIndex * -100; // Shift the slide by 100% per image
-                slideLayer.style.transform = `translateX(${offset}%)`;
-            }
-
-            // Call updateCarousel() immediately to set the starting position to the middle image
-            updateCarousel();
-
+            // Swipe event listeners for touch devices
             slideLayer.addEventListener('touchstart', function(event) {
                 startX = event.touches[0].clientX;
-                startY = event.touches[0].clientY;  // Track vertical start position
+                startY = event.touches[0].clientY; // Track vertical start position
+                stopAutoSwitch(); // Stop auto-switch when user starts swiping
             });
 
             slideLayer.addEventListener('touchmove', function(event) {
                 endX = event.touches[0].clientX;
-                endY = event.touches[0].clientY;  // Track vertical move position
+                endY = event.touches[0].clientY; // Track vertical move position
 
                 // Calculate horizontal and vertical differences
                 const diffX = Math.abs(startX - endX);
@@ -484,7 +552,7 @@
 
                 // Only prevent default behavior (which blocks vertical scrolling) if horizontal movement is larger
                 if (diffX > diffY) {
-                    event.preventDefault();  // Prevent vertical scrolling during horizontal swipe
+                    event.preventDefault(); // Prevent vertical scrolling during horizontal swipe
                 }
             });
 
@@ -496,27 +564,21 @@
                 if (Math.abs(diffX) > Math.abs(diffY)) {
                     // Swipe left (move to the next image)
                     if (diffX > 50) {
-                        if (currentIndex < maxIndex) { 
-                            currentIndex++; // Move to the next image (right)
-                        }
-                    } 
+                        currentIndex = (currentIndex + 1) > maxIndex ? minIndex : currentIndex + 1;
+                    }
                     // Swipe right (move to the previous image)
                     else if (diffX < -50) {
-                        if (currentIndex > minIndex) { 
-                            currentIndex--; // Move to the previous image (left)
-                        }
+                        currentIndex = (currentIndex - 1) < minIndex ? maxIndex : currentIndex - 1;
                     }
+
                     updateCarousel(); // Update the carousel to the new image position
+                    startAutoSwitch(); // Restart auto-switch after user interaction
                 }
-                // If the vertical movement is larger, do nothing (allow scrolling)
             });
+
+            // Update text on window resize (in case the screen size changes)
+            window.addEventListener('resize', updateCarousel);
         });
-
-
-
-
-
-
 
 
     </script>

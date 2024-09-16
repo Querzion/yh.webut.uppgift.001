@@ -4,6 +4,11 @@
     background-color: var(--color-gray-900);
     color: var(--color-white);
 
+    p {
+        color: var(--color-tex-wh-o70);
+    }
+
+
     /* Navbar */
 
     header {
@@ -84,9 +89,8 @@
     /* Carousel Section */
     #carousel-section {
 
-        p {
+        /* p {
             color: var(--color-tex-wh-o70);
-            font-size: 16px;
-        }
+        } */
     }
 }
