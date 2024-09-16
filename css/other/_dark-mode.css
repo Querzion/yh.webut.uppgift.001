@@ -72,10 +72,12 @@
     /* App Features Section */
     #app-features-section {
 
-        p {
-            /* color: var(--color-white); */
-            /* opacity: 70%; */
+        /* p {
             color: var(--color-tex-wh-o70);
+        } */
+
+        .af-text-box .features .af-img-container::before {
+            background-color: rgba(243, 246, 255, 0.05); 
         }
     }    
         
