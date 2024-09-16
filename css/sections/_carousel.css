@@ -1,3 +1,5 @@
+/* This whole file is a combination of me not thinking and chatgpt hallucinating. */
+
 .bg-gradient { background: var(--linear-gradient-c-sec); }
 /* .bg-gradient { background: var(--color-gray-100) } */
 #carousel-section {
@@ -7,8 +9,6 @@
 
 body {
     overflow-x: hidden;
-}
-@media (max-width: 767px) {   
 }
 
 .c-wrap {
@@ -78,8 +78,7 @@ body {
     }
     
     @media (max-width: 767px) {
-        .mobile-carousel { display: block; 
-            height: 100vh;
+        .mobile-carousel { display: block;
 
             .carousel-wrapper {
                 overflow: hidden;
@@ -88,28 +87,37 @@ body {
         }
         
     }
+
     @media (min-width: 768px) and (max-width: 1399px) {
         .tablet-carousel { display: block; 
             
-            .carousel-grid {
-                grid-template-columns: repeat(3, 1fr);
-                
-                .c-top-layer {
-                    grid-area: 1 / 2;
-                }
-                
-                
-                .c-bottom-layer {
-                    grid-area: 1 / 2;
-                }
-                
-                #c-slide-layer {
-                    grid-area: 1 / 2;
-                }
-                .c-layers {
-                    
-                    
+            .carousel-wrapper {
+                /* Distance between text and carousel */
+                margin-top:  -3rem;
 
+                .carousel-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                    
+                    .c-layers {
+                        /* gap between the middle layers */
+                        margin: 0 -3px;
+                    }
+                    
+                    .c-top-layer {
+                        grid-area: 1 / 2;
+                        transform: scale(0.8);
+                    }
+                    
+                    .c-bottom-layer {
+                        grid-area: 1 / 2;
+                        transform: scale(0.8);
+                    }
+                    
+                    #c-slide-layer {
+                        grid-area: 1 / 2;
+                        transform: scale(0.82);
+                        
+                    }
                 }
             }
         }
@@ -118,20 +126,33 @@ body {
     @media (min-width: 1400px) {
         .desktop-carousel { display: block; 
             
-            .carousel-grid {
-                grid-template-columns: repeat(3, 1fr);
-                max-width: 100%;
-                
-                .c-top-layer {
-                    grid-area: 1 / 2;
-                }
-                
-                #c-slide-layer {
-                    grid-area: 1 / 2;
-                }
-    
-                .c-bottom-layer {
-                    grid-area: 1 / 2;
+            .carousel-wrapper {
+                /* Distance between text and carousel */
+                /* margin-top:  -3rem; */
+
+                .carousel-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                    
+                    .c-layers {
+                        /* gap between the middle layers */
+                        /* margin: 0 -3px; */
+                    }
+                    
+                    .c-top-layer {
+                        grid-area: 1 / 2;
+                       /*  transform: scale(0.8); */
+                    }
+                    
+                    .c-bottom-layer {
+                        grid-area: 1 / 2;
+                       /*  transform: scale(0.8); */
+                    }
+                    
+                    #c-slide-layer {
+                        grid-area: 1 / 2;
+                        transform: scale(0.95);
+
+                    }
                 }
             }
         }
