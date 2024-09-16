@@ -7,8 +7,11 @@
     padding-bottom: 5rem;
 }
 
-body {
-    overflow-x: hidden;
+@media (max-width: 767px) {
+    
+    body {
+        overflow-x: hidden;
+    }
 }
 
 .c-wrap {
@@ -30,14 +33,15 @@ body {
     }
 
     .desktop-carousel { display: none; }    /* D */
-    .mobile-carousel { display: none; }     /* M */
+    .mobile-carousel { display: block; }    /* M */
     .tablet-carousel { display: none; }     /* T */
 
     .carousel-wrapper {
-
+        overflow: hidden;
+        
         .carousel-grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(3, 1tr);
             justify-content: center;
             max-width: 100%;
             
@@ -75,84 +79,73 @@ body {
                 grid-area: 1 / 1 / span 1 / span 1;
             }
         }
-    }
-    
-    @media (max-width: 767px) {
-        .mobile-carousel { display: block;
+    }  
+}
+@media (min-width: 768px) {
+        .mobile-carousel { display: none; }
+        .tablet-carousel { display: block; }
 
-            .carousel-wrapper {
-                overflow: hidden;
+        .carousel-wrapper {
+            /* Distance between text and carousel */
+            /* margin-top:  -3rem; */
+            /* overflow: visible; */
+
+            .carousel-grid {
+                /* grid-template-columns: repeat(3, 1fr); */
                 
-            }
-        }
-        
-    }
+                .c-layers {
+                    /* grid-template-columns: repeat(3, 1fr); */
 
-    @media (min-width: 768px) and (max-width: 1399px) {
-        .tablet-carousel { display: block; 
-            
-            .carousel-wrapper {
-                /* Distance between text and carousel */
-                margin-top:  -3rem;
-
-                .carousel-grid {
-                    grid-template-columns: repeat(3, 1fr);
+                    /* gap between the middle layers */
+                    /* margin: 0 -3px; */
+                    /* flex: 0 0 33.33%; */
+                }
+                
+                .c-top-layer, .c-bottom-layer {
+                    /* grid-area: 1 / 1; */
+                    /* transform: scale(1); */
+                }
+                
+                #c-slide-layer {
+                    /* grid-area: 1 / 1 / span 1 / span 3; */
+                    /* transform: translateX(0);
+                    transform: scale(1); */
                     
-                    .c-layers {
-                        /* gap between the middle layers */
-                        margin: 0 -3px;
-                    }
-                    
-                    .c-top-layer {
-                        grid-area: 1 / 2;
-                        transform: scale(0.8);
-                    }
-                    
-                    .c-bottom-layer {
-                        grid-area: 1 / 2;
-                        transform: scale(0.8);
-                    }
-                    
-                    #c-slide-layer {
-                        grid-area: 1 / 2;
-                        transform: scale(0.82);
-                        
-                    }
                 }
             }
-        }
+        }  
     }
     
     @media (min-width: 1400px) {
-        .desktop-carousel { display: block; 
-            
-            .carousel-wrapper {
-                /* Distance between text and carousel */
-                /* margin-top:  -3rem; */
+        .tablet-carousel { display: none; }
+        .desktop-carousel { display: block; }
+        
+        .carousel-wrapper {
+            /* Distance between text and carousel */
+            /* margin-top:  -3rem; */
 
-                .carousel-grid {
-                    grid-template-columns: repeat(3, 1fr);
-                    
-                    .c-layers {
-                        /* gap between the middle layers */
-                        /* margin: 0 -3px; */
-                    }
-                    
-                    .c-top-layer {
-                        grid-area: 1 / 2;
-                       /*  transform: scale(0.8); */
-                    }
-                    
-                    .c-bottom-layer {
-                        grid-area: 1 / 2;
-                       /*  transform: scale(0.8); */
-                    }
-                    
-                    #c-slide-layer {
-                        grid-area: 1 / 2;
-                        transform: scale(0.95);
+            .carousel-grid {
+                /* grid-template-columns: repeat(3, 1fr); */
+                
+                .c-layers {
+                    /* gap between the middle layers */
+                    /* margin: 0 -3px; */
+                }
+                
+                .c-top-layer {
+                    /* grid-area: 1 / 2; */
+                   /*  transform: scale(0.8); */
+                }
+                
+                .c-bottom-layer {
+                    /* grid-area: 1 / 2; */
+                   /*  transform: scale(0.8); */
+                }
+                
+                #c-slide-layer {
+                    /* grid-area: 1 / 2; */
+                    /* transform: scale(0.95); */
 
-                    }
                 }
             }
         }
