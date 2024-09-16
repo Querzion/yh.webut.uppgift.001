@@ -394,6 +394,47 @@
                 header.classList.remove('scrolled');
             }
         });
+
+
+        /* CAROUSEL VERSION 5 CODE */
+        document.addEventListener("DOMContentLoaded", function() {
+            const slideLayer = document.querySelector('#c-slide-layer');
+            const images = document.querySelectorAll('.inner-layers');
+            let currentIndex = 1; // Start with the second image (middle)
+            
+            function updateCarousel() {
+                const offset = currentIndex * -100; // Shift the slide by 100% per image
+                slideLayer.style.transform = `translateX(${offset}%)`;
+            }
+            
+            // Swiping functionality (touch events)
+            let startX = 0;
+            let endX = 0;
+
+            slideLayer.addEventListener('touchstart', function(event) {
+                startX = event.touches[0].clientX;
+            });
+
+            slideLayer.addEventListener('touchmove', function(event) {
+                endX = event.touches[0].clientX;
+            });
+
+            slideLayer.addEventListener('touchend', function() {
+                if (startX > endX + 50) {
+                    // Swipe left, move to the next image
+                    currentIndex = (currentIndex + 1) % images.length;
+                } else if (startX < endX - 50) {
+                    // Swipe right, move to the previous image
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                }
+                updateCarousel();
+            });
+
+            // You can also add buttons for next/previous functionality if needed
+        });
+
+
+
     </script>
 
 </body>

@@ -22,7 +22,7 @@
         }
     }
 
-    .mobile-carousel {
+/*     .mobile-carousel {
         
         @media (min-width: 768px) {
             display: none;
@@ -36,14 +36,14 @@
                 justify-content: center;
                 padding: .5rem;
                 
-                width: auto;
+                width: auto; */
 
                 /* .outer-layers {
                     height: auto;
                     width: 90%;
                 } */
                 
-                .c-top-layer {
+/*                 .c-top-layer {
                     z-index: 100;
                     opacity: 1;
 
@@ -61,14 +61,14 @@
                     
                     .image-1 { display: none; }
                     .image-2 {  }
-                    .image-3 { display: none; }
+                    .image-3 { display: none; } */
                     
                     /* .inner-layers {
                         height: 100%;
                         width: auto;
                     } */
                     
-                }
+/*                 }
                 
                 .c-bottom-layer {
                     z-index: 0;
@@ -78,7 +78,62 @@
 
             }
         }
+    } */
+
+    /* ChatGPT Changes */
+
+    .mobile-carousel {
+        @media (min-width: 768px) {
+            display: none;
+        }
+    
+        .carousel-wrapper {
+
+            .carousel-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                justify-content: center;
+                padding: .5rem;
+                width: auto;
+    
+                .c-top-layer {
+                    z-index: 100;
+                    opacity: 1;
+                    position: relative;
+                    grid-area: 1 / 1 / span 1 / span 1;
+                }
+    
+                #c-slide-layer {
+                    display: flex;
+                    justify-content: center;
+                    z-index: 2;
+                    opacity: 1;
+                    position: relative;
+                    grid-area: 1 / 1 / span 1 / span 1;
+                    transition: transform 0.5s ease-in-out; /* For smooth sliding */
+                }
+    
+                .c-layers {
+                    flex: 0 0 100%; /* Each image will take up 100% width */
+                    display: flex;
+                    justify-content: center;
+                }
+    
+                .inner-layers {
+                    max-width: 100%; /* Ensure the images resize well */
+                }
+    
+                .c-bottom-layer {
+                    z-index: 0;
+                    position: relative;
+                    grid-area: 1 / 1 / span 1 / span 1;
+                }
+            }
+        }
     }
+
+
+
 
     .tablet-carousel {
         display: none;
