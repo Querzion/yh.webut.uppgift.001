@@ -450,6 +450,12 @@
             const maxIndex = 1;  // Right image is 1
             let currentIndex = 0; // Start at the middle image (index 0)
 
+            // Variables to track touch movement
+            let startX = 0;
+            let startY = 0;
+            let endX = 0;
+            let endY = 0;
+
             // Set the initial position to the middle image
             function updateCarousel() {
                 const offset = currentIndex * -100; // Shift the slide by 100% per image
@@ -458,34 +464,47 @@
 
             // Call updateCarousel() immediately to set the starting position to the middle image
             updateCarousel();
-            
-            // Swiping functionality (touch events)
-            let startX = 0;
-            let endX = 0;
 
             slideLayer.addEventListener('touchstart', function(event) {
                 startX = event.touches[0].clientX;
+                startY = event.touches[0].clientY;  // Track vertical start position
             });
 
             slideLayer.addEventListener('touchmove', function(event) {
                 endX = event.touches[0].clientX;
-                event.preventDefault();  // Prevent default scroll behavior on touchmove
+                endY = event.touches[0].clientY;  // Track vertical move position
+
+                // Calculate horizontal and vertical differences
+                const diffX = Math.abs(startX - endX);
+                const diffY = Math.abs(startY - endY);
+
+                // Only prevent default behavior (which blocks vertical scrolling) if horizontal movement is larger
+                if (diffX > diffY) {
+                    event.preventDefault();  // Prevent vertical scrolling during horizontal swipe
+                }
             });
 
             slideLayer.addEventListener('touchend', function() {
-                // Swipe left (move to the next image)
-                if (startX > endX + 50) {
-                    if (currentIndex < maxIndex) { 
-                        currentIndex++; // Move to the next image (right)
+                const diffX = startX - endX;
+                const diffY = startY - endY;
+
+                // If the horizontal movement was larger than vertical movement, consider it a swipe
+                if (Math.abs(diffX) > Math.abs(diffY)) {
+                    // Swipe left (move to the next image)
+                    if (diffX > 50) {
+                        if (currentIndex < maxIndex) { 
+                            currentIndex++; // Move to the next image (right)
+                        }
+                    } 
+                    // Swipe right (move to the previous image)
+                    else if (diffX < -50) {
+                        if (currentIndex > minIndex) { 
+                            currentIndex--; // Move to the previous image (left)
+                        }
                     }
-                } 
-                // Swipe right (move to the previous image)
-                else if (startX < endX - 50) {
-                    if (currentIndex > minIndex) { 
-                        currentIndex--; // Move to the previous image (left)
-                    }
+                    updateCarousel(); // Update the carousel to the new image position
                 }
-                updateCarousel(); // Update the carousel to the new image position
+                // If the vertical movement is larger, do nothing (allow scrolling)
             });
         });
 
