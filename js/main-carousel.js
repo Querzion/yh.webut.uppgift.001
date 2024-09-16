@@ -1,4 +1,4 @@
-/* document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     const minIndex = -1;
     const maxIndex = 1;
     let currentIndex = 0;
@@ -54,7 +54,7 @@
         setInterval(function() {
             currentIndex = (currentIndex + 1) > maxIndex ? minIndex : currentIndex + 1;
             updateCarousel();
-        }, 3000);
+        }, 5000);
     }
 
     // Initialize the carousel
@@ -88,11 +88,13 @@
 
     // Ensure carousel adjusts on window resize
     window.addEventListener('resize', updateCarousel);
-}); */
+});
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
+
+/* TABLET & DESKTOP  */
+document.addEventListener("DOMContentLoaded", function () {
     const minIndex = -1;
     const maxIndex = 1;
     let currentIndex = 0;
@@ -105,9 +107,9 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
 
     const tabletContent = [
-        { heading: "Tablet Heading 1", text: "Tablet Text 1" },
-        { heading: "Tablet Heading 2", text: "Tablet Text 2" },
-        { heading: "Tablet Heading 3", text: "Tablet Text 3" }
+        { heading: "Tablet Heading for Left Image", text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora ipsam nam quas! Reiciendis, cum aliquid!" },
+        { heading: "Step 3. Transfers to people from your contact list", text: "Proin volutpat mollis egestas. Nam luctus facilisis ultrices. Pellentesque volutpat ligula est. Mattis fermentum, at nec lacus." },
+        { heading: "Tablet Heading for Right Image", text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas praesentium consequatur aspernatur ipsam, eveniet veniam." }
     ];
 
     const desktopContent = [
@@ -129,10 +131,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Function to update the carousel
-    function updateCarousel() {
-        const slideLayer = document.querySelector('#c-slide-layer');
-        const headingElement = document.querySelector('.carousel-heading');
-        const textElement = document.querySelector('.carousel-text');
+    function updateCarousel(carouselWrapper) {
+        const carouselGrid = carouselWrapper.querySelector('.carousel-grid');
+        const slideLayer = carouselGrid.querySelector('#c-slide-layer');
+        const headingElement = carouselWrapper.querySelector('.carousel-heading');
+        const textElement = carouselWrapper.querySelector('.carousel-text');
 
         if (!slideLayer || !headingElement || !textElement) {
             console.error("Carousel elements are missing.");
@@ -153,50 +156,86 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Auto-switch functionality
-    function startAutoSwitch() {
-        setInterval(function() {
-            currentIndex = (currentIndex + 1) > maxIndex ? minIndex : currentIndex + 1;
-            updateCarousel();
-        }, 3000);
+    // Function to initialize carousels
+    function initializeCarousel(carouselWrapper) {
+        const carouselGrid = carouselWrapper.querySelector('.carousel-grid');
+        const slideLayer = carouselGrid.querySelector('#c-slide-layer');
+        const layers = carouselGrid.querySelectorAll('.c-layers');
+        let isDragging = false;
+        let startX;
+        let scrollLeft;
+
+        // Click functionality
+        layers.forEach((layer, index) => {
+            layer.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel(carouselWrapper);
+            });
+        });
+
+        // Drag functionality
+        carouselWrapper.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - carouselWrapper.offsetLeft;
+            scrollLeft = carouselWrapper.scrollLeft;
+        });
+
+        carouselWrapper.addEventListener('mouseleave', () => {
+            isDragging = false;
+        });
+
+        carouselWrapper.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        carouselWrapper.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - carouselWrapper.offsetLeft;
+            const walk = (x - startX) * 2; // scroll-fast
+            carouselWrapper.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch support for tablets
+        carouselWrapper.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            startX = e.touches[0].pageX - carouselWrapper.offsetLeft;
+            scrollLeft = carouselWrapper.scrollLeft;
+        });
+
+        carouselWrapper.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+
+        carouselWrapper.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const x = e.touches[0].pageX - carouselWrapper.offsetLeft;
+            const walk = (x - startX) * 2; // scroll-fast
+            carouselWrapper.scrollLeft = scrollLeft - walk;
+        });
+
+        // Auto-switch functionality
+        function startAutoSwitch() {
+            setInterval(function () {
+                currentIndex = (currentIndex + 1) > maxIndex ? minIndex : currentIndex + 1;
+                updateCarousel(carouselWrapper);
+            }, 5000);
+        }
+
+        startAutoSwitch();
     }
 
-    // Initialize the carousel
-    updateCarousel();
-    startAutoSwitch();
+    // Initialize carousels for tablet and desktop views
+    const tabletCarousels = document.querySelectorAll('.tablet-carousel .carousel-wrapper');
+    const desktopCarousels = document.querySelectorAll('.desktop-carousel .carousel-wrapper');
 
-    // Swipe functionality for mobile and tablet
-    let startX = 0;
-    let endX = 0;
-
-    const slideLayer = document.querySelector('#c-slide-layer');
-    if (slideLayer) {
-        slideLayer.addEventListener('touchstart', function(event) {
-            startX = event.touches[0].clientX;
-        });
-
-        slideLayer.addEventListener('touchmove', function(event) {
-            endX = event.touches[0].clientX;
-        });
-
-        slideLayer.addEventListener('touchend', function() {
-            const diffX = startX - endX;
-            if (Math.abs(diffX) > 50) {
-                if (diffX > 0) { // Swipe left
-                    currentIndex = (currentIndex + 1) > maxIndex ? minIndex : currentIndex + 1;
-                } else { // Swipe right
-                    currentIndex = (currentIndex - 1) < minIndex ? maxIndex : currentIndex - 1;
-                }
-                updateCarousel();
-            }
-        });
-    } else {
-        console.error("Slide layer not found.");
-    }
+    tabletCarousels.forEach(initializeCarousel);
+    desktopCarousels.forEach(initializeCarousel);
 
     // Ensure carousel adjusts on window resize
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
         currentIndex = 0;  // Reset to first image on resize
-        updateCarousel();
+        tabletCarousels.forEach(carousel => updateCarousel(carousel));
+        desktopCarousels.forEach(carousel => updateCarousel(carousel));
     });
 });

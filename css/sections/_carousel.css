@@ -4,14 +4,11 @@
 /* .bg-gradient { background: var(--color-gray-100) } */
 #carousel-section {
     padding-top: 2rem;
-    padding-bottom: 4rem;
+    padding-bottom: 5rem;
 }
 
-@media (max-width: 767px) {
-    
-    body {
-        overflow-x: hidden;
-    }
+body {
+    overflow-x: hidden;
 }
 
 .c-wrap {
@@ -32,12 +29,10 @@
         }
     }
 
-    .desktop-carousel { display: none; }    /* D */
-    .mobile-carousel { display: block; }    /* M */
-    .tablet-carousel { display: none; }     /* T */
-
     .carousel-wrapper {
-        
+        /* position: relative; */
+        overflow: hidden;
+
         .carousel-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -59,7 +54,6 @@
                 position: relative;
                 grid-area: 1 / 1 / span 1 / span 1;
                 transition: transform 0.5s ease-in-out; /* For smooth sliding */
-                
             }
             
             .c-layers {
@@ -69,6 +63,7 @@
                 
                 .inner-layers {
                     max-width: 100%; /* Ensure the images resize well */
+                    cursor: pointer; 
                 }
             }
             
@@ -79,70 +74,95 @@
             }
         }
     }
-      
-    @media (min-width: 768px) {
-            .mobile-carousel { display: none; }
-            .tablet-carousel { display: block; 
+
+    .mobile-carousel { display: block; 
+
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }    
+    
+    .tablet-carousel { display: none; 
+    
+        @media (min-width: 768px) and (max-width: 1399px) {
+            display: block;
             
-                .carousel-wrapper {
-                    /* Distance between text and carousel */
-                    /* margin-top:  -3rem; */
-                    /* overflow: visible; */
+            .carousel-wrapper {
+                /* Distance between text and carousel */
+                margin-top:  -1rem;
+                overflow: visible;
         
-                    .carousel-grid {
-                        /* grid-template-columns: repeat(3, 1fr); */
-                        
-                        .c-layers {
-                            /* grid-template-columns: repeat(3, 1fr); */
-        
-                            /* gap between the middle layers */
-                            /* margin: 0 -3px; */
-                            /* flex: 0 0 33.33%; */
-                        }
-                        
-                        .c-top-layer, .c-bottom-layer {
-                            /* grid-area: 1 / 1; */
-                            /* transform: scale(1); */
-                        }
-                        
-                        #c-slide-layer {
-                            /* grid-area: 1 / 1 / span 1 / span 3; */
-                            /* transform: translateX(0);
-                            transform: scale(1); */
-                            
-                        }
-                    }
-                }  
-            }
-        
-        @media (min-width: 1400px) {
-            .tablet-carousel { display: none; }
-            .desktop-carousel { display: block; 
-            
-                .carousel-wrapper {
-                    /* Distance between text and carousel */
-                    /* margin-top:  -3rem; */
+                .carousel-grid {
+                    grid-template-columns: repeat(3, 1fr);
                     
-                    .carousel-grid {
+                    .c-layers {
                         /* grid-template-columns: repeat(3, 1fr); */
-                        
-                        .c-layers {
-                            /* gap between the middle layers */
-                            /* margin: 0 -3px; */
-                        }
-                        
-                        .c-top-layer, .c-bottom-layer {
-                            /* grid-area: 1 / 2; */
-                            /* transform: scale(0.8); */
-                        }
-                        
-                        #c-slide-layer {
-                            /* grid-area: 1 / 2; */
-                            /* transform: scale(0.95); */    
-                        }
+                        /* gap between the middle layers */
+                        /* margin: 0 -3px; */
+                        /* flex: 0 0 33.33%; */
+                        transform: scale(0.95); 
+                    }
+                    
+                    .c-top-layer, .c-bottom-layer {
+                        grid-area: 1 / 2;
+                        transform: scale(0.94);
+                    }
+                    
+                    #c-slide-layer {
+                        grid-area: 1 / 2;
+                        transform: translateX(0);
+                    }
+
+                    .carousel-text-container {
+                        position: relative;
+                        max-width: 720px;
+                        align-content: center;
+                        grid-area: 2 / 1 / span 1 / span 3;
+                    }
+                }
+            }  
+        }
+    }     
+    
+    .desktop-carousel { display: none; 
+    
+        @media (min-width: 1400px) {
+            display: block; 
+            
+            .carousel-wrapper {
+                /* Distance between text and carousel */
+                /* margin-top:  -3rem; */
+                
+                .carousel-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                    
+                    .c-layers {
+                        /* gap between the middle layers */
+                        /* margin: 0 -3px; */
+                        border-radius: 2rem;
+                    }
+                    
+                    .c-top-layer {
+                        /* z-index: 3; */
+                    }
+
+                    .c-top-layer, .c-bottom-layer {
+                        grid-area: 1 / 2;
+                        transform: scale(1.03);
+                    }
+                    
+                    #c-slide-layer {
+                        grid-area: 1 / 2;
+                        transform: scale(0.90);
+                        /* cursor: pointer; */   
+                    }
+
+                    .carousel-text-container {
+                        margin-top: 2rem;
+                        grid-area: 2 / 1 / span 1 / span 3;
                     }
                 }
             }
-        }    
-    }
+        }
+    }      
 }
