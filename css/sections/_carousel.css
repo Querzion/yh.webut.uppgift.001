@@ -1,7 +1,7 @@
 .bg-gradient { background: linear-gradient(var(--linear-gradient-c-sec)); }
 /* .bg-gradient { background: var(--color-gray-100) } */
 #carousel-section {
-    padding-top: 2rem;
+    /* padding-top: 1rem; */
     padding-bottom: 5rem;
 }
 .c-wrap {
@@ -28,7 +28,56 @@
             display: none;
         }
 
-        .carousel-wrapper
+        .carousel-wrapper {
+
+            .carousel-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                justify-content: center;
+                padding: .5rem;
+                
+                width: auto;
+
+                /* .outer-layers {
+                    height: auto;
+                    width: 90%;
+                } */
+                
+                .c-top-layer {
+                    z-index: 100;
+                    opacity: 1;
+
+                    position: relative;
+                    grid-area: 1 / 1 / span 1 / span 1;
+                }
+                
+                #c-slide-layer {
+                    justify-content: center;
+                    z-index: 2; 
+                    opacity: 1;
+
+                    display: flex;
+                    grid-area: 1 / 1 / span 1 / span 1;
+                    
+                    .image-1 { display: none; }
+                    .image-2 {  }
+                    .image-3 { display: none; }
+                    
+                    /* .inner-layers {
+                        height: 100%;
+                        width: auto;
+                    } */
+                    
+                }
+                
+                .c-bottom-layer {
+                    z-index: 0;
+                    position: relative;
+                    grid-area: 1 / 1 / span 1 / span 1;
+                }
+
+            }
+        }
     }
 
     .tablet-carousel {
@@ -54,11 +103,11 @@
     .c-text {
         h3 {
             font-weight: 800;
-            font-size: 20px;
+            font-size: 22px;
         }
         
         p {
-            /* color: var(--color-gray-700); */
+            color: var(--color-almostblack-blue);
             font-size: 16px;
         }
     }

@@ -29,52 +29,70 @@
     }
 
     /* Showcase Section */
+    #showcase-section {
 
-    /* Showcase Text */
-    #sc-text {
-        /* color: var(--color-white); */
-        color: var(--color-tex-wh-o70);
-    }
-
-    /* Marketplace Buttons */
-    .btn-download-app {
-        background-color: var(--color-gray-200);
-        
-        &:hover {
-            background-color: var(--color-gray-500);
-        }
-    }
-    
-    /* Discover more Button */
-    .btn-circle:hover {
-        background-color: var(--color-gray-700);
-    }
-    
-    /* Discover more Text */
-    .discover-more {
-        span {
+        /* Showcase Text */
+        #sc-text {
+            /* color: var(--color-white); */
             color: var(--color-tex-wh-o70);
-            /* color: rgba(255, 255, 255, 0.5); */
+        }
+        
+        /* Marketplace Buttons */
+        .btn-download-app {
+            background-color: var(--color-gray-200);
+            
+            &:hover {
+                background-color: var(--color-gray-500);
+            }
+        }
+        
+        /* Discover more Button */
+        .btn-circle:hover {
+            background-color: var(--color-gray-700);
+        }
+        
+        /* Discover more Text */
+        .discover-more {
+            span {
+                color: var(--color-tex-wh-o70);
+                /* color: rgba(255, 255, 255, 0.5); */
+            }
         }
     }
 
     /* Brand section */
+    #brand-section {
 
-    /* Brandbox Blue */
-    .brand-box {
-        background-color: var(--color-almostblack-blue);
+        /* Brandbox Blue */
+        .brand-box {
+            background-color: var(--color-almostblack-blue);
+        }
+        
     }
-
     /* App Features Section */
+    #app-features-section {
 
-    /* App Features - Top section */
+        /* App Features - Top section */
+        
+        /* App Features - Grid */
+        .features .af-text-container {
+            
+            p {
+                /* color: var(--color-white); */
+                opacity: 60%;
+            }
+        }
+    }    
+        
+    /* Carousel Section */
+    #carousel-section {
 
-    /* App Features - Grid */
-    .features .af-text-container {
-
-        p {
-            /* color: var(--color-white); */
-            opacity: 60%;
+        .c-text {
+            
+            p {
+                color: var(--color-tex-wh-o70);
+                font-size: 16px;
+            }
         }
     }
 }

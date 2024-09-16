@@ -27,7 +27,7 @@
         <!-- Navigation Bar is mainly recreated from school guidance material. (Tips & Trix video) -->
         <!-- <nav class="navigation"> -->
         <!-- uses _navbar.css -->
-        <header class="sticky-header">
+        <header id="navbar-section" class="sticky-header">
             <div class="container">
                 <a id="logo" href="index.html">
                 <img id="logo-img" src="images/silicon-logo.svg" alt="Silicon Logotype">
@@ -60,7 +60,7 @@
             
             <!-- NEW CODE - BASED ON SCHOOL GUIDANCE MATERIAL -->
             <!-- uses _showcase.css -->
-            <section id="showcase" class="first-section bg-gradient">
+            <section id="showcase-section" class="first-section bg-gradient">
                 <div class="container">
                     <div class="headline">
                         <h1>Manage all Your<br/>Money in One App</h1>
@@ -98,7 +98,7 @@
             <!-- BRAND LOGO SECTION --> <!-- School Guidance Material Code -->
             <!-- Brand bar code is recreated from school guidance material (Tips & Trix video) -->
             <!-- uses _brands.css -->
-            <section id="brands">
+            <section id="brands-section">
                 <div class="container">
                     <div id="brand-1" class="brand-box">
                         <img src="images/tablet+/brand-1.svg" alt="Brand Logo 1">
@@ -123,8 +123,8 @@
 
             <!------------------------------------------------------------------- APP FEATURES SECTION -->
             <!-- APP FEATURES SECTION -->
-            <!-- uses _app-features.css -->
-            <section id="app-features">
+            <!-- uses _app-features-section.css -->
+            <section id="app-features-section">
                 <div class="container flexit">
 
                     <img id="af-phone" src="/images/desktop/af-phone.svg" alt="iphone 12 pro">
@@ -269,10 +269,25 @@
                         
                         <div class="carousel-wrapper">
                             <div class="carousel-grid">
-                                <div id="carousel-item" class="carousel-item" draggable="true">
-
+                                <div class="c-top-layer">
+                                    <img src="/images/carousel/mobile/mobile-layer_1.svg" alt="iphone-top-layer" class="outer-layers layer-1">
                                 </div>
-                                .
+                                <div id="c-slide-layer" class="c-middle-layer" draggable="true">
+                                    <div class="c-layers left">
+                                        <img src="/images/carousel/mobile/mobile-layer-2-1.svg" alt="silicon image" class="inner-layers image-1">
+                                    </div>
+                                    <div class="c-layers middle">
+                                        <img src="/images/carousel/mobile/mobile-layer-2-1.svg" alt="silicon image" class="inner-layers image-2">
+                                    </div>
+                                    <div class="c-layers right">
+                                        <img src="/images/carousel/mobile/mobile-layer-2-1.svg" alt="silicon image" class="inner-layers image-3">
+                                    </div>
+                                    
+                                </div>
+                                <div class="c-bottom-layer">
+                                    <img src="/images/carousel/mobile/mobile-layer_3.svg" alt="black" class="outer-layers layer-3 ">
+                                </div>
+                                
                             </div>
                         </div>
 
@@ -287,7 +302,7 @@
                     </section>
                     
                     
-                    <div class="c-text">
+                    <div class="c-text container">
                         <h3>Transfers to people from your contact list</h3>
                         <p>Proin volutpat mollis egestas. Nam luctus facilisis
                             ultrices. Pellentesque volutpat ligula est. Mattis
@@ -303,7 +318,7 @@
         <!------------------------------------------------------------------- FOOTER SECTION -->
         <!-- FOOTER SECTION --> <!-- School Guidance Material Code -->
         <!-- Footer is recreated from school guidance material (Tips & Trix video) -->
-        <footer>
+        <footer id="footer-section">
             <div class="container">
                 <p class="copyright"> © 2024 Silicon. All rights reserved. </p>
                 <p class="credit"> Credit MadrasThemes</p>
