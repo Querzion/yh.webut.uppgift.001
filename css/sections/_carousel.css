@@ -1,10 +1,10 @@
 /* This whole file is a combination of me not thinking and chatgpt hallucinating. */
 
 .bg-gradient { background: var(--linear-gradient-c-sec); }
-/* .bg-gradient { background: var(--color-gray-100) } */
+
 #carousel-section {
-    padding-top: 2rem;
-    padding-bottom: 5rem;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
 }
 
 body {
@@ -31,6 +31,7 @@ body {
 
     .carousel-wrapper {
         /* position: relative; */
+        max-width: 600px;
         overflow: hidden;
 
         .carousel-grid {
@@ -63,7 +64,7 @@ body {
                 
                 .inner-layers {
                     max-width: 100%; /* Ensure the images resize well */
-                    cursor: pointer; 
+                    cursor: pointer;
                 }
             }
             
@@ -72,35 +73,63 @@ body {
                 position: relative;
                 grid-area: 1 / 1 / span 1 / span 1;
             }
+
+            .carousel-text-container {
+                /* margin-top: .5rem; */
+                padding: 1rem;
+                position: relative;    
+                grid-area: 2 / 1 / span 1 / span 3;
+            }
         }
     }
 
-    .mobile-carousel { display: block; 
+    /* Mobile view */
+    .mobile-carousel { 
+        display: block; 
 
         @media (min-width: 768px) {
             display: none;
         }
-    }    
+    }     
     
-    .tablet-carousel { display: none; 
-    
+    /* Tablet view */
+    .tablet-carousel { 
+        display: none; 
+        
         @media (min-width: 768px) and (max-width: 1399px) {
             display: block;
-            
+
             .carousel-wrapper {
-                /* Distance between text and carousel */
-                margin-top:  -1rem;
                 overflow: visible;
-        
+
                 .carousel-grid {
-                    grid-template-columns: repeat(3, 1fr);
-                    
+                    /* grid-template-columns: repeat(3, 1fr); */
+                    margin-top: -5rem;
+                    transform: scale(80%);
+                    justify-content: center;
+
                     .c-layers {
-                        /* grid-template-columns: repeat(3, 1fr); */
-                        /* gap between the middle layers */
-                        /* margin: 0 -3px; */
-                        /* flex: 0 0 33.33%; */
-                        transform: scale(0.95); 
+                        transform: scale(0.95);
+                        
+                        
+                        .left {
+                            order: 0;
+                            
+                        }
+                        
+                        .middle {
+                            order: 1;
+                            
+                        }
+                        
+                        .right {
+                            order: 2;
+                        }
+                        
+                        #image-2-1, #image-2-2, #image-2-3 {
+                            border-radius: 2.1rem;
+                        }
+                        
                     }
                     
                     .c-top-layer, .c-bottom-layer {
@@ -110,13 +139,12 @@ body {
                     
                     #c-slide-layer {
                         grid-area: 1 / 2;
-                        transform: translateX(0);
+                        gap: -2rem;
+                        
                     }
 
                     .carousel-text-container {
-                        position: relative;
-                        max-width: 720px;
-                        align-content: center;
+                        margin-top: 1rem;
                         grid-area: 2 / 1 / span 1 / span 3;
                     }
                 }
@@ -124,45 +152,63 @@ body {
         }
     }     
     
-    .desktop-carousel { display: none; 
-    
+    /* Desktop view */
+    .desktop-carousel { 
+        display: none; 
+        
         @media (min-width: 1400px) {
-            display: block; 
-            
-            .carousel-wrapper {
-                /* Distance between text and carousel */
-                /* margin-top:  -3rem; */
-                
-                .carousel-grid {
-                    grid-template-columns: repeat(3, 1fr);
-                    
-                    .c-layers {
-                        /* gap between the middle layers */
-                        /* margin: 0 -3px; */
-                        border-radius: 2rem;
-                    }
-                    
-                    .c-top-layer {
-                        /* z-index: 3; */
-                    }
+            display: block;
 
+            .carousel-wrapper {
+                overflow: visible;
+
+                .carousel-grid {
+                    /* grid-template-columns: repeat(3, 1fr); */
+                    /* margin-top: 1rem; */
+                    transform: scale(100%);
+                    justify-content: center;
+
+                    .c-layers {
+                        transform: scale(0.9);
+                        
+                        
+                        .left {
+                            order: 0;
+                            
+                        }
+                        
+                        .middle {
+                            order: 1;
+                            
+                        }
+                        
+                        .right {
+                            order: 2;
+                        }
+                        
+                        #image-2-1, #image-2-2, #image-2-3 {
+                            border-radius: 2.1rem;
+                        }
+                        
+                    }
+                    
                     .c-top-layer, .c-bottom-layer {
                         grid-area: 1 / 2;
-                        transform: scale(1.03);
+                        transform: scale(0.94);
                     }
                     
                     #c-slide-layer {
                         grid-area: 1 / 2;
-                        transform: scale(0.90);
-                        /* cursor: pointer; */   
+                        gap: 8rem;
+                        
                     }
 
                     .carousel-text-container {
-                        margin-top: 2rem;
+                        margin-top: 1rem;
                         grid-area: 2 / 1 / span 1 / span 3;
                     }
                 }
             }
         }
-    }      
+    }
 }
