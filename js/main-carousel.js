@@ -402,8 +402,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const maxIndex = 1;
     let currentIndex = 1; // Middle image is the default active one (index 1)
 
-    const left2rightDistance = 275; // Adjustable movement distance for image 1 (in pixels)
-    const right2leftDistance = 275; // Adjustable movement distance for image 3 (in pixels)
+    const left2rightDistance = 290; // Adjustable movement distance for image 1 (in pixels)
+    const right2leftDistance = 290; // Adjustable movement distance for image 3 (in pixels)
 
     function getViewportContent() {
         const width = window.innerWidth;
