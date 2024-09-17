@@ -1,3 +1,4 @@
+
 /* W3schools and then ChatGPT in order to get it implemented */
 // Dark mode toggle function
 

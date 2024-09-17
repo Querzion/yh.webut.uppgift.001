@@ -78,19 +78,12 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('resize', updateCarousel);
 });
 
-
-/* OLD 'WORKING' SCRIPT */
-
 /* document.addEventListener("DOMContentLoaded", function() {
-    const slideLayer = document.querySelector('#c-slide-layer');
-    const headingElement = document.querySelector('.carousel-heading');
-    const textElement = document.querySelector('.carousel-text');
+    const minIndex = -1;
+    const maxIndex = 1;
+    let currentIndex = 0;
 
-    const minIndex = -1; // Index for the left image (image-1)
-    const maxIndex = 1;  // Index for the right image (image-3)
-    let currentIndex = 0; // Start at the middle image (index 0)
-
-    // Content for each image based on viewport size
+    // Define content for mobile, tablet, and desktop
     const mobileContent = [
         { heading: "Latest transaction history", text: "Enim, et amet praesent pharetra. Mi non ante hendrerit amet sed. Arcu sociis tristique quisque hac in consectetur condimentum." },
         { heading: "Transfers to people from your contact list", text: "Proin volutpat mollis egestas. Nam luctus facilisis ultrices. Pellentesque volutpat ligula est. Mattis fermentum, at nec lacus." },
@@ -104,103 +97,75 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
 
     const desktopContent = [
-        { heading: "Desktop Heading for Left Image", text: "Desktop Text for Left Image" },
-        { heading: "Desktop Heading for Middle Image", text: "Desktop Text for Middle Image" },
-        { heading: "Desktop Heading for Right Image", text: "Desktop Text for Right Image" }
+        { heading: "Desktop Heading 1", text: "Desktop Text 1" },
+        { heading: "Desktop Heading 2", text: "Desktop Text 2" },
+        { heading: "Desktop Heading 3", text: "Desktop Text 3" }
     ];
 
-    // Function to detect the current viewport size
-    function getCurrentContentSet() {
+    // Function to detect the viewport size
+    function getViewportContent() {
         const width = window.innerWidth;
-        console.log("Viewport width:", width); // Debugging
-        if (width <= 768) {
-            return mobileContent; // Mobile view
-        } else if (width <= 1400) {
-            return tabletContent; // Tablet view
+        if (width <= 767) {
+            return mobileContent;  // Mobile view
+        } else if (width <= 1399) {
+            return tabletContent;  // Tablet view
         } else {
             return desktopContent; // Desktop view
         }
     }
 
-    // Function to update the carousel and text based on the current image
+    // Function to update the carousel
     function updateCarousel() {
-        const offset = currentIndex * -100; // Shift the slide by 100% per image
+        const slideLayer = document.querySelector('#c-slide-layer');
+        const headingElement = document.querySelector('.carousel-heading');
+        const textElement = document.querySelector('.carousel-text');
+
+        const offset = currentIndex * -100; // Slide offset
         slideLayer.style.transform = `translateX(${offset}%)`;
 
-        // Get the correct content set based on screen size and update heading and text
-        const currentContentSet = getCurrentContentSet();
-        headingElement.textContent = currentContentSet[currentIndex + 1].heading; // Adjust index for array
-        textElement.textContent = currentContentSet[currentIndex + 1].text;
+        // Get the correct content for the current viewport
+        const currentContent = getViewportContent();
+        headingElement.textContent = currentContent[currentIndex + 1].heading; // Adjust index
+        textElement.textContent = currentContent[currentIndex + 1].text;
     }
 
-    // Automatic image switch every 3 seconds
-    let autoSwitchInterval;
+    // Auto-switch functionality
     function startAutoSwitch() {
-        autoSwitchInterval = setInterval(function() {
-            // Update the index with circular logic
+        setInterval(function() {
             currentIndex = (currentIndex + 1) > maxIndex ? minIndex : currentIndex + 1;
             updateCarousel();
-        }, 3000); // Adjust the interval as needed
+        }, 5000);
     }
 
-    // Function to stop automatic switching when user interacts
-    function stopAutoSwitch() {
-        if (autoSwitchInterval) {
-            clearInterval(autoSwitchInterval);
-        }
-    }
-
-    // Initialize the carousel and start automatic switching
+    // Initialize the carousel
     updateCarousel();
     startAutoSwitch();
 
-    // Track touch movement for swipe functionality
+    // Swipe functionality for mobile and tablet
     let startX = 0;
-    let startY = 0;
     let endX = 0;
-    let endY = 0;
 
-    // Swipe event listeners for touch devices
+    const slideLayer = document.querySelector('#c-slide-layer');
     slideLayer.addEventListener('touchstart', function(event) {
         startX = event.touches[0].clientX;
-        startY = event.touches[0].clientY; // Track vertical start position
-        stopAutoSwitch(); // Stop auto-switch when user starts swiping
     });
 
     slideLayer.addEventListener('touchmove', function(event) {
         endX = event.touches[0].clientX;
-        endY = event.touches[0].clientY; // Track vertical move position
-
-        // Calculate horizontal and vertical differences
-        const diffX = Math.abs(startX - endX);
-        const diffY = Math.abs(startY - endY);
-
-        // Only prevent default behavior (which blocks vertical scrolling) if horizontal movement is larger
-        if (diffX > diffY) {
-            event.preventDefault(); // Prevent vertical scrolling during horizontal swipe
-        }
     });
 
     slideLayer.addEventListener('touchend', function() {
         const diffX = startX - endX;
-        const diffY = startY - endY;
-
-        // If the horizontal movement was larger than vertical movement, consider it a swipe
-        if (Math.abs(diffX) > Math.abs(diffY)) {
-            // Swipe left (move to the next image)
-            if (diffX > 50) {
+        if (Math.abs(diffX) > 50) {
+            if (diffX > 0) { // Swipe left
                 currentIndex = (currentIndex + 1) > maxIndex ? minIndex : currentIndex + 1;
-            }
-            // Swipe right (move to the previous image)
-            else if (diffX < -50) {
+            } else { // Swipe right
                 currentIndex = (currentIndex - 1) < minIndex ? maxIndex : currentIndex - 1;
             }
-
-            updateCarousel(); // Update the carousel to the new image position
-            startAutoSwitch(); // Restart auto-switch after user interaction
+            updateCarousel();
         }
     });
 
-    // Update text on window resize (in case the screen size changes)
+    // Ensure carousel adjusts on window resize
     window.addEventListener('resize', updateCarousel);
 }); */
