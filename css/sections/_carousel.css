@@ -103,7 +103,7 @@ body {
                 overflow: visible;
 
                 .carousel-grid {
-                    /* grid-template-columns: repeat(3, 1fr); */
+                    grid-template-columns: repeat(3, 1fr);
                     margin-top: -5rem;
                     transform: scale(80%);
                     justify-content: center;
@@ -124,6 +124,7 @@ body {
                         
                         .right {
                             order: 2;
+                
                         }
                         
                         #image-2-1, #image-2-2, #image-2-3 {
@@ -139,8 +140,10 @@ body {
                     
                     #c-slide-layer {
                         grid-area: 1 / 2;
-                        gap: -2rem;
-                        
+
+                        img {
+                            transition: transform 0.5s ease, z-index 0.5s ease;
+                        }                       
                     }
 
                     .carousel-text-container {
@@ -163,13 +166,13 @@ body {
                 overflow: visible;
 
                 .carousel-grid {
-                    /* grid-template-columns: repeat(3, 1fr); */
+                    grid-template-columns: repeat(3, 1fr);
                     /* margin-top: 1rem; */
                     transform: scale(100%);
                     justify-content: center;
 
                     .c-layers {
-                        transform: scale(0.9);
+                        transform: scale(0.96);
                         
                         
                         .left {
@@ -194,12 +197,16 @@ body {
                     
                     .c-top-layer, .c-bottom-layer {
                         grid-area: 1 / 2;
-                        transform: scale(0.94);
+                        transform: scale(1);
                     }
                     
                     #c-slide-layer {
                         grid-area: 1 / 2;
-                        gap: 8rem;
+                        gap: 5rem;
+
+                        img {
+                            transition: transform 0.5s ease, z-index 0.5s ease;
+                        }
                         
                     }
 
