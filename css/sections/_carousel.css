@@ -59,22 +59,20 @@ body {
                         opacity: 1;
                         position: relative;
                         grid-area: 1 / 1 / span 1 / span 1;
-                        transition: transform 0.5s ease-in-out; /* For smooth sliding */
+                        transition: transform 0.7s ease-in-out; /* For smooth sliding */
                         
                     }
                     
                     .c-layers {
-                        flex: 0 0 100%; /* Each image will take up 100% width */
+                        flex: 0 0 100%;
                         display: flex;
                         justify-content: center;
                         z-index: 0;
-                        /* background-color: blue; */
                         
                         .inner-layers {
-                            max-width: 100%; /* Ensure the images resize well */
+                            max-width: 100%;
                             cursor: pointer;
                             z-index: 1;
-                            /* background-color: brown; */
                         }
                     }
                     
@@ -84,10 +82,8 @@ body {
                         grid-area: 1 / 1 / span 1 / span 1;
                     }
                     
-                    .carousel-text-container {
-                        /* margin-top: .5rem; */
-                        padding: 1rem;
-                        /* position: relative;  */   
+                    .mobile-text-container {
+                        padding: 1rem;  
                         grid-area: 2 / 1 / span 1 / span 3;
                     }
                 }
@@ -111,17 +107,18 @@ body {
                 z-index: 1;
                 
                 .slide-layers {
+                    cursor: pointer;
+
                     #t-1 { order: 0; }
-                    #t-1 { order: 1; }
-                    #t-1 { order: 2; }
+                    #t-2 { order: 1; }
+                    #t-3 { order: 2; }
 
                     img {
                         transition: transform 0.5s ease, z-index 0.5s ease;
                     }
                 }
-                
             }
-            
+
             .slide-bg {
                 grid-area: 1 / 1;
                 transform: scale(0.75);
@@ -134,64 +131,12 @@ body {
         }
 
 
-
-
         /* TABLET VIEW */
         .tablet-carousel { 
             display: none; 
             
             @media (min-width: 768px) and (max-width: 1399px) {
-                display: block;
-                
-                
-
-                /* OLD CODE RESIDUE */
-                /* .carousel-wrapper {
-                    
-                    overflow: visible;
-                    
-                    
-                    .carousel-grid {
-                        grid-template-columns: repeat(3, 1fr);
-                        margin-top: -5rem;
-                        transform: scale(80%);
-                        justify-content: center;
-                        max-width: 100%;
-                        
-                        .c-layers {
-                            
-                            transform: scale(0.95);
-                            
-                            .left { order: 0; z-index: -10; }
-                            .middle { order: 1; z-index: 10; }
-                            .right { order: 2; z-index: 10; }
-                            
-                            #image-2-1, #image-2-2, #image-2-3 {
-                                border-radius: 2.1rem;
-                            }
-                            
-                        }
-                        
-                        .c-top-layer, .c-bottom-layer {
-                            grid-area: 1 / 2;
-                            transform: scale(0.94);
-                        }
-                        
-                        #c-slide-layer {
-                            grid-area: 1 / 2;
-                            
-                            img {
-                                transition: transform 0.5s ease, z-index 0.5s ease;
-                                z-index: 10;
-                            }                       
-                        }
-                        
-                        .carousel-text-container {
-                            margin-top: 1rem;
-                            grid-area: 2 / 1 / span 1 / span 3;
-                        }
-                    }
-                } */  
+                display: block; 
             }
         }     
 
@@ -207,6 +152,17 @@ body {
                     -webkit-mask-image: url(/images/carousel/desktop/desktop-mask-layer_1.svg);
                     mask-image: url(/images/carousel/desktop/desktop-mask-layer_1.svg);
                     mask-repeat: no-repeat;    
+                }
+
+                .carousel-wrapper {
+
+                    .slide-box {
+                        gap: 8rem;
+                    }
+
+                    .slide-bg {
+                        transform: scale(1);
+                    }
                 }
             }
         }
