@@ -1,22 +1,47 @@
+let boomerangTime = true; // Initially set to true
+
+// Function to toggle the boomerang time
+function toggleBoomerangTime() {
+    if (boomerangTime) {
+        boomerangTime = false; // Change to false
+        return 5000;           // Return 5000 when true
+    } else {
+        boomerangTime = true;  // Change to true
+        return 0;              // Return 0 when false
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
-    const minIndex = -1;
+    const minIndex = -1; 
     const maxIndex = 1;
-    let currentIndex = 1; // Middle image is the default active one (index 1)
+    let currentIndex = 1; // The middle image (index 1) is the default active image
 
-    const left2rightDistance = 290; // Adjustable movement distance for image 1 (in pixels)
-    const right2leftDistance = 290; // Adjustable movement distance for image 3 (in pixels)
+    function getImageDistance() {
+        const viewWidth = window.innerWidth; // Get the current width of the window
 
+        if (viewWidth <= 1399) {
+            // Tablet Image - Distance/Gap
+            return [285, 285]; // Return both distances as an array
+        } else {
+            // Desktop Image - Distance/Gap
+            return [425, 425]; // Return both distances as an array
+        }
+    }
+    
     function getViewportContent() {
-        const width = window.innerWidth;
+        const width = window.innerWidth; // Get the width of the viewport
+
         if (width <= 767) {
-            return null; // Mobile view is handled separately
+            return null; // For mobile view, content is handled separately
         } else if (width <= 1399) {
+            // Tablet content
             return [
-                { heading: "Tablet Heading for Left Image", text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora ipsam nam quas! Reiciendis, cum aliquid!" },
-                { heading: "Step 3. Transfers to people from your contact list", text: "Proin volutpat mollis egestas. Nam luctus facilisis ultrices. Pellentesque volutpat ligula est. Mattis fermentum, at nec lacus." },
-                { heading: "Tablet Heading for Right Image", text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas praesentium consequatur aspernatur ipsam, eveniet veniam." }
+                { heading: "Tablet Heading for Left Image", text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit." },
+                { heading: "Step 3. Transfers to people from your contact list", text: "Proin volutpat mollis egestas. Nam luctus facilisis ultrices." },
+                { heading: "Tablet Heading for Right Image", text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit." }
             ];
         } else {
+            // Desktop content
             return [
                 { heading: "Desktop Heading 1", text: "Desktop Text 1" },
                 { heading: "Desktop Heading 2", text: "Desktop Text 2" },
@@ -33,28 +58,29 @@ document.addEventListener("DOMContentLoaded", function () {
         const currentContent = getViewportContent();
         if (!currentContent) return;
 
-        // Update the text content based on the current index
         if (currentContent[currentIndex]) {
             headingElement.textContent = currentContent[currentIndex].heading;
             textElement.textContent = currentContent[currentIndex].text;
         }
 
-        // Update the position of the images
         const images = slideLayer.querySelectorAll('img');
+        const [left2rightDistance, right2leftDistance] = getImageDistance(); // Get distances dynamically
+
         images.forEach((img, idx) => {
             if (idx === currentIndex) {
-                img.style.order = 1; // Middle
+                img.style.order = 1; // Middle image
             } else if ((idx - currentIndex + 3) % 3 === 1) {
-                img.style.order = 0; // Left
+                img.style.order = 0; // Left image
             } else {
-                img.style.order = 2; // Right
+                img.style.order = 2; // Right image
             }
         });
 
-        // Move images when specified
+        // Move images to the right (left to right)
         if (moveImages1) {
+            const delay = toggleBoomerangTime(); // Use the boolean to get the delay (5000ms or 0ms)
             images.forEach((img, idx) => {
-                img.style.transition = 'transform 0.5s ease'; // Smooth transition
+                img.style.transition = 'transform 0.5s ease';
                 if (idx === 0) {
                     img.style.transform = `translateX(${left2rightDistance}px)`; // Move image 1 to the right
                 }
@@ -63,19 +89,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            // Reset the transform after the animation
             setTimeout(() => {
-                images.forEach(img => {
-                    img.style.transform = 'translateX(0)';
-                });
-                currentIndex = 0; // Update the current index to image 1
-                updateCarousel(carouselWrapper); // Update the carousel to reflect the new middle image
-            }, 500); // Duration of the animation
+                images.forEach(img => img.style.transform = 'translateX(0)');
+                currentIndex = 0; // Set image 1 as the middle
+                updateCarousel(carouselWrapper);
+            }, delay); // Use delay from toggleBoomerangTime
         }
 
+        // Move images to the left (right to left)
         if (moveImages2) {
+            const delay = toggleBoomerangTime(); // Use the boolean to get the delay (5000ms or 0ms)
             images.forEach((img, idx) => {
-                img.style.transition = 'transform 0.5s ease'; // Smooth transition
+                img.style.transition = 'transform 0.5s ease';
                 if (idx === 2) {
                     img.style.transform = `translateX(-${right2leftDistance}px)`; // Move image 3 to the left
                 }
@@ -84,20 +109,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            // Reset the transform after the animation
             setTimeout(() => {
-                images.forEach(img => {
-                    img.style.transform = 'translateX(0)';
-                });
-                currentIndex = 2; // Update the current index to image 3
-                updateCarousel(carouselWrapper); // Update the carousel to reflect the new middle image
-            }, 500); // Duration of the animation
+                images.forEach(img => img.style.transform = 'translateX(0)');
+                currentIndex = 2; // Set image 3 as the middle
+                updateCarousel(carouselWrapper);
+            }, delay); // Use delay from toggleBoomerangTime
         }
     }
 
     function initializeCarousel(carouselWrapper) {
         const images = carouselWrapper.querySelectorAll('#c-slide-layer img');
-        const slideLayer = carouselWrapper.querySelector('#c-slide-layer');
         let isDragging = false;
         let startX;
         let scrollLeft;
@@ -105,16 +126,16 @@ document.addEventListener("DOMContentLoaded", function () {
         images.forEach((img, index) => {
             img.addEventListener('click', () => {
                 if (index === 0) {
-                    updateCarousel(carouselWrapper, true); // Trigger movement for image 1
+                    updateCarousel(carouselWrapper, true); // Move images left to right
                 } else if (index === 2) {
-                    updateCarousel(carouselWrapper, false, true); // Trigger movement for image 3
+                    updateCarousel(carouselWrapper, false, true); // Move images right to left
+                } else if (index === 1) {
+                    currentIndex = 1; // Set image 2 as the middle
+                    updateCarousel(carouselWrapper);
                 }
-                currentIndex = index;
-                updateCarousel(carouselWrapper);
             });
         });
 
-        // Drag functionality
         carouselWrapper.addEventListener('mousedown', (e) => {
             isDragging = true;
             startX = e.pageX - carouselWrapper.offsetLeft;
@@ -133,11 +154,10 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!isDragging) return;
             e.preventDefault();
             const x = e.pageX - carouselWrapper.offsetLeft;
-            const walk = (x - startX) * 2; // scroll-fast
+            const walk = (x - startX) * 2;
             carouselWrapper.scrollLeft = scrollLeft - walk;
         });
 
-        // Touch support for tablets
         carouselWrapper.addEventListener('touchstart', (e) => {
             isDragging = true;
             startX = e.touches[0].pageX - carouselWrapper.offsetLeft;
@@ -151,23 +171,58 @@ document.addEventListener("DOMContentLoaded", function () {
         carouselWrapper.addEventListener('touchmove', (e) => {
             if (!isDragging) return;
             const x = e.touches[0].pageX - carouselWrapper.offsetLeft;
-            const walk = (x - startX) * 2; // scroll-fast
+            const walk = (x - startX) * 2;
             carouselWrapper.scrollLeft = scrollLeft - walk;
         });
 
-        updateCarousel(carouselWrapper);
+        updateCarousel(carouselWrapper); // Initial update of the carousel
     }
 
-    // Initialize carousels for tablet and desktop views
     const tabletCarousels = document.querySelectorAll('.tablet-carousel .carousel-wrapper');
     const desktopCarousels = document.querySelectorAll('.desktop-carousel .carousel-wrapper');
 
     tabletCarousels.forEach(initializeCarousel);
     desktopCarousels.forEach(initializeCarousel);
 
-    // Ensure carousel adjusts on window resize
     window.addEventListener('resize', function () {
         tabletCarousels.forEach(carousel => updateCarousel(carousel));
         desktopCarousels.forEach(carousel => updateCarousel(carousel));
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
