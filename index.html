@@ -271,12 +271,13 @@
                         <h2>How Does It Work?</h2>
                     </div>
                     
+                    <!-- Mobile Carousel Completed. -->
                     <section class="mobile-carousel">
                         
                         <div class="carousel-wrapper">
                             <div class="carousel-grid">
                                 <div class="c-layers c-top-layer">
-                                    <img src="/images/carousel/mobile/mobile-layer_1.svg" alt="iphone-top-layer" class="outer-layers layer-1">
+                                    <img src="/images/carousel/mobile/mobile-layer_1.svg" alt="iphone-top-layer" class="outer-layers layer-1" aria-hidden="true">
                                 </div>
                                 <div id="c-slide-layer" class="c-middle-layer" draggable="true">
                                     <div class="c-layers left">
@@ -291,10 +292,11 @@
                                 </div>
 
                                 <div class="c-layers c-bottom-layer">
-                                    <img src="/images/carousel/mobile/mobile-layer_3.svg" alt="black" class="outer-layers layer-3 ">
+                                    <img src="/images/carousel/mobile/mobile-layer_3.svg" alt="black" class="outer-layers layer-3 " aria-hidden="true">
                                 </div>
 
-                                <div class="carousel-text-container">
+                                <!-- carousel-mobile.js -->
+                                <div class="mobile-text-container">
                                     <h3 class="carousel-heading"></h3>
                                     <p class="carousel-text"></p>
                                 </div>
@@ -303,95 +305,69 @@
 
                     </section>
                     
+                    <!--  -->
                     <section class="tablet-carousel">
 
                         <div class="carousel-wrapper">
-                            <div class="carousel-grid">
-
-                                <div class="c-layers c-shell-layer">
-                                    <img src="/images/carousel/mobile/mobile-layer_1.svg" alt="iphone-top-layer" class="outer-layers layer-1">
-                                </div>
                                 
-                                <!-- <div id="c-slide-layer" class="c-middle-layer" draggable="true">
-                                    <div class="c-layers left">
-                                        <img id="image-1-1" src="/images/carousel/tablet/tablet-layer_2-1.svg" alt="silicon image" class="inner-layers image-1">
-                                    </div>
-                                    <div class="c-layers middle">
-                                        <img id="image-1-2" src="/images/carousel/tablet/tablet-layer_2-2.svg" alt="silicon image" class="inner-layers image-2">
-                                    </div>
-                                    <div class="c-layers right">
-                                        <img id="image-1-3" src="/images/carousel/tablet/tablet-layer_2-3.svg" alt="silicon image" class="inner-layers image-3">
-                                    </div> 
-                                </div> -->
-                                
-                                <div id="c-slide-layer" class="c-slide-layer" draggable="true">
-                                    <div class="c-layers">
-                                        <img id="t-1" src="/images/carousel/tablet/tablet-layer_2-1.svg" alt="silicon image" class="inner-layers left">
-                                    </div>
-                                    <div class="c-layers">
-                                        <img id="t-2" src="/images/carousel/tablet/tablet-layer_2-2.svg" alt="silicon image" class="inner-layers middle">
-                                    </div>
-                                    <div class="c-layers">
-                                        <img id="t-3" src="/images/carousel/tablet/tablet-layer_2-3.svg" alt="silicon image" class="inner-layers right">
-                                    </div> 
+                            <div id="t-slide-box" class="slide-box" draggable="true">
+                                <div class="slide-layers c-box-left">
+                                    <img id="t-1" src="/images/carousel/tablet/tablet-layer_2-1.svg" alt="silicon image" class="slide-layer left">
                                 </div>
-
-                                <div class="c-layers c-bottom-layer">
-                                    <img src="/images/carousel/mobile/mobile-layer_3.svg" alt="black" class="outer-layers layer-3 ">
+                                <div class="slide-layers c-box-middle">
+                                    <img id="t-2" src="/images/carousel/tablet/tablet-layer_2-2.svg" alt="silicon image" class="slide-layer middle">
                                 </div>
-
-                                <div class="carousel-text-container">
-                                    <h3 class="carousel-heading"></h3>
-                                    <p class="carousel-text"></p>
-                                </div>
+                                <div class="slide-layers c-box-right">
+                                    <img id="t-3" src="/images/carousel/tablet/tablet-layer_2-3.svg" alt="silicon image" class="slide-layer right">
+                                </div> 
                             </div>
-                        </div>
+                            
+                            <div class="slide-bg t-shell-outline" aria-hidden="true">
+                                <img id="t-shell-outline" src="/images/carousel/mobile/mobile-layer_1.svg" alt="iphone-top-layer" class="bottom-layer">
+                            </div>
 
+                            <div class="slide-bg t-shell-bg" aria-hidden="true">
+                                <img id="t-shell-bg" src="/images/carousel/mobile/mobile-layer_3.svg" alt="slide background" class="bottom-layer">
+                            </div>
+
+                            <!-- carousel-t-dt.js -->
+                            <div class="tablet-text-container">
+                                <h3 class="carousel-heading"></h3>
+                                <p class="carousel-text"></p>
+                            </div>
+
+                        </div>
                     </section>
                     
                     <section class="desktop-carousel">
                         <div class="carousel-wrapper">
-                            <div class="carousel-grid">
+                            
                                 
-                                <!-- <div id="c-slide-layer" class="c-middle-layer" draggable="true">
-                                    <div class="c-layers left">
-                                        <img id="image-2-1" src="/images/carousel/desktop/desktop-layer-2-1.svg" alt="silicon image" class="inner-layers image-1">
-                                    </div>
-                                    <div class="c-layers middle">
-                                        <img id="image-2-2" src="/images/carousel/desktop/desktop-layer-2-2.svg" alt="silicon image" class="inner-layers image-2">
-                                    </div>
-                                    <div class="c-layers right">
-                                        <img id="image-2-3" src="/images/carousel/desktop/desktop-layer-2-3.svg" alt="silicon image" class="inner-layers image-3">
-                                    </div>   
-                                </div> -->
-                                
-                                <div id="c-slide-layer" class="c-slide-layer" draggable="true">
-                                    <div class="c-layers">
-                                        <img id="d-1" src="/images/carousel/desktop/desktop-layer-2-1.svg" alt="silicon image" class="inner-layers left">
-                                        <img src="/images/carousel/desktop/desktop-layer_3.svg" alt="iphone-top-layer" class="outer-layers mask">
-                                    </div>
-                                    <div class="c-layers">
-                                        <img id="d-2" src="/images/carousel/desktop/desktop-layer-2-2.svg" alt="silicon image" class="inner-layers middle">
-                                        <img src="/images/carousel/desktop/desktop-layer_3.svg" alt="iphone-top-layer" class="outer-layers mask">
-                                    </div>
-                                    <div class="c-layers">
-                                        <img id="d-3" src="/images/carousel/desktop/desktop-layer-2-3.svg" alt="silicon image" class="inner-layers right">
-                                        <img src="/images/carousel/desktop/desktop-layer_3.svg" alt="iphone-top-layer" class="inner-layers mask">
-                                    </div>   
+                            <div id="d-slide-box" class="slide-box" draggable="true">
+                                <div class="slide-layers c-box-left mask">
+                                    <img id="d-1" src="/images/carousel/desktop/desktop-layer-2-1.svg" alt="silicon image" class="slide-layer left">
                                 </div>
-                                
-                                <div class="c-layers c-bottom-layer">
-                                    <img src="/images/carousel/desktop/desktop-layer_3.svg" alt="black" class="outer-layers layer-3 ">
+                                <div class="slide-layers c-box-middle mask">
+                                    <img id="d-2" src="/images/carousel/desktop/desktop-layer-2-2.svg" alt="silicon image" class="slide-layer middle">
                                 </div>
-
-                                <div class="carousel-text-container">
-                                    <h3 class="carousel-heading"></h3>
-                                    <p class="carousel-text"></p>
-                                </div>
+                                <div class="slide-layers c-box-right mask">
+                                    <img id="d-3" src="/images/carousel/desktop/desktop-layer-2-3.svg" alt="silicon image" class="slide-layer right">
+                                </div>   
                             </div>
+                            
+                            <div class="slide-bg" aria-hidden="true">
+                                <img id="d-shell" src="/images/carousel/desktop/desktop-layer_3.svg" alt="iphone-shell" class="bottom-layer">
+                            </div>
+
+                            <!-- carousel-t-dt.js -->
+                            <div class="desktop-text-container">
+                                <h3 class="carousel-heading"></h3>
+                                <p class="carousel-text"></p>
+                            </div>
+                            
                         </div>
                     </section>
-                
+
                 </div>
             </section>
 

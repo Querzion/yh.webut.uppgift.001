@@ -2,178 +2,213 @@
 
 .bg-gradient { background: var(--linear-gradient-c-sec); }
 
-#carousel-section {
-    padding-top: 1rem;
-    padding-bottom: 3rem;
-}
-
 body {
     overflow-x: hidden;
 }
 
-.c-wrap {
-    display: grid;
-    justify-content: center;
-    text-align: center;
-    
-    .c-title {
-        font-weight: 800;
-        font-size: 22px;
-        
-        @media (min-width: 768px) {
-            font-size: 24px;
-            
-            @media (min-width: 1400px) {
-                font-size: 26px;
-            }
-        }
-    }
-    
-    .carousel-wrapper {
-        /* position: relative; */
-        max-width: 600px;
-        overflow: hidden;
-        
-        .carousel-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            justify-content: center;
-            max-width: 100%;
-            
-            .c-top-layer {
-                opacity: 1;
-                position: relative;
-                grid-area: 1 / 1 / span 1 / span 1;
-            }
-            
-            #c-slide-layer {
-                z-index: 5;
-                display: flex;
-                justify-content: center;
-                opacity: 1;
-                position: relative;
-                grid-area: 1 / 1 / span 1 / span 1;
-                transition: transform 0.5s ease-in-out; /* For smooth sliding */
 
-            }
+#carousel-section {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    
+    .c-wrap {
+        display: grid;
+        justify-content: center;
+        text-align: center;
+        
+        .c-title {
+            font-weight: 800;
+            font-size: 22px;
             
-            .c-layers {
-                /* flex: 0 0 100%;  *//* Each image will take up 100% width */
-                display: flex;
-                justify-content: center;
-                z-index: 0;
-                background-color: blue;
+            @media (min-width: 768px) and (max-width: 1399px) {
+                font-size: 24px;
+                margin-bottom: -4rem;
                 
-                .inner-layers {
-                    max-width: 100%; /* Ensure the images resize well */
-                    cursor: pointer;
-                    z-index: 10;
-                    background-color: brown;
+                @media (min-width: 1400px) {
+                    font-size: 26px;
                 }
             }
-            
-            .c-bottom-layer {
-                z-index: 0;
-                position: relative;
-                grid-area: 1 / 1 / span 1 / span 1;
-            }
-            
-            .carousel-text-container {
-                /* margin-top: .5rem; */
-                padding: 1rem;
-                /* position: relative;  */   
-                grid-area: 2 / 1 / span 1 / span 3;
-            }
         }
-    }
-    
-    /* Mobile view */
-    .mobile-carousel { 
-        display: block; 
         
-        .c-layers {
-            flex: 0 0 100%;
-        }
-
-        @media (min-width: 768px) {
-            display: none;
-
-        }
-    }     
-    
-    /* Tablet view */
-    .tablet-carousel { 
-        display: none; 
+        /* MOBILE VIEW */
+        .mobile-carousel { 
+            display: block; 
         
-        @media (min-width: 768px) and (max-width: 1399px) {
-            display: block;
-            
-            /* .carousel-wrapper {
-                
-                overflow: visible;
-                
+        
+            .carousel-wrapper {
+                /* position: relative; */
+                max-width: 600px;
+                overflow: hidden;
                 
                 .carousel-grid {
-                    grid-template-columns: repeat(3, 1fr);
-                    margin-top: -5rem;
-                    transform: scale(80%);
+                    display: grid;
+                    grid-template-columns: 1fr;
                     justify-content: center;
                     max-width: 100%;
                     
-                    .c-layers {
-                        
-                        transform: scale(0.95);
-                        
-                        .image-1 { order: 0; z-index: 10; }
-                        .image-2 { order: 1; z-index: 10; }
-                        .image-3 { order: 2; z-index: 10; }
-                        
-                        #image-2-1, #image-2-2, #image-2-3 {
-                            border-radius: 2.1rem;
-                        }
-                    }
-                    
-                    .c-top-layer, .c-bottom-layer {
-                        grid-area: 1 / 2;
-                        transform: scale(0.94);
+                    .c-top-layer {
+                        opacity: 1;
+                        position: relative;
+                        grid-area: 1 / 1 / span 1 / span 1;
                     }
                     
                     #c-slide-layer {
-                        grid-area: 1 / 2;
+                        z-index: 1;
+                        display: flex;
+                        justify-content: center;
+                        opacity: 1;
+                        position: relative;
+                        grid-area: 1 / 1 / span 1 / span 1;
+                        transition: transform 0.5s ease-in-out; /* For smooth sliding */
                         
-                        img {
-                            transition: transform 0.5s ease, z-index 0.5s ease;
-                            z-index: 10;
-                        }                       
+                    }
+                    
+                    .c-layers {
+                        flex: 0 0 100%; /* Each image will take up 100% width */
+                        display: flex;
+                        justify-content: center;
+                        z-index: 0;
+                        /* background-color: blue; */
+                        
+                        .inner-layers {
+                            max-width: 100%; /* Ensure the images resize well */
+                            cursor: pointer;
+                            z-index: 1;
+                            /* background-color: brown; */
+                        }
+                    }
+                    
+                    .c-bottom-layer {
+                        z-index: 0;
+                        position: relative;
+                        grid-area: 1 / 1 / span 1 / span 1;
                     }
                     
                     .carousel-text-container {
-                        margin-top: 1rem;
+                        /* margin-top: .5rem; */
+                        padding: 1rem;
+                        /* position: relative;  */   
                         grid-area: 2 / 1 / span 1 / span 3;
                     }
                 }
-            }  */ 
-        }
-    }     
-    
-    /* Desktop view */
-    .desktop-carousel { 
-        display: none; 
+                
+                @media (min-width: 768px) {
+                    display: none;
+                }
+            }
+        }     
         
-        @media (min-width: 1400px) {
-            display: block;
+        /* SETTINGS | --- TABLET & DESKTOP --- | SETTINGS */
+        
+        .carousel-wrapper {
+            overflow: visible;
+            display: grid;
+            align-items: center;
+
+            .slide-box {
+                display: flex;
+                grid-area: 1 / 1;
+                z-index: 1;
+                
+                .slide-layers {
+                    #t-1 { order: 0; }
+                    #t-1 { order: 1; }
+                    #t-1 { order: 2; }
+
+                    img {
+                        transition: transform 0.5s ease, z-index 0.5s ease;
+                    }
+                }
+                
+            }
             
+            .slide-bg {
+                grid-area: 1 / 1;
+                transform: scale(0.75);
+            }
+
+            .carousel-text-container {
+                margin-top: 1rem;
+                grid-area: 2 / 1 / span 1 / span 3;
+            }
+        }
 
 
 
 
+        /* TABLET VIEW */
+        .tablet-carousel { 
+            display: none; 
+            
+            @media (min-width: 768px) and (max-width: 1399px) {
+                display: block;
+                
+                
 
+                /* OLD CODE RESIDUE */
+                /* .carousel-wrapper {
+                    
+                    overflow: visible;
+                    
+                    
+                    .carousel-grid {
+                        grid-template-columns: repeat(3, 1fr);
+                        margin-top: -5rem;
+                        transform: scale(80%);
+                        justify-content: center;
+                        max-width: 100%;
+                        
+                        .c-layers {
+                            
+                            transform: scale(0.95);
+                            
+                            .left { order: 0; z-index: -10; }
+                            .middle { order: 1; z-index: 10; }
+                            .right { order: 2; z-index: 10; }
+                            
+                            #image-2-1, #image-2-2, #image-2-3 {
+                                border-radius: 2.1rem;
+                            }
+                            
+                        }
+                        
+                        .c-top-layer, .c-bottom-layer {
+                            grid-area: 1 / 2;
+                            transform: scale(0.94);
+                        }
+                        
+                        #c-slide-layer {
+                            grid-area: 1 / 2;
+                            
+                            img {
+                                transition: transform 0.5s ease, z-index 0.5s ease;
+                                z-index: 10;
+                            }                       
+                        }
+                        
+                        .carousel-text-container {
+                            margin-top: 1rem;
+                            grid-area: 2 / 1 / span 1 / span 3;
+                        }
+                    }
+                } */  
+            }
+        }     
 
-
-
-
-
-           
+        /* DESKTOP VIEW */
+        .desktop-carousel { 
+            display: none; 
+            
+            @media (min-width: 1400px) {
+                display: block;
+                
+                /* https://www.w3schools.com/css/css3_masking.asp */
+                .mask {
+                    -webkit-mask-image: url(/images/carousel/desktop/desktop-mask-layer_1.svg);
+                    mask-image: url(/images/carousel/desktop/desktop-mask-layer_1.svg);
+                    mask-repeat: no-repeat;    
+                }
+            }
         }
     }
 }
