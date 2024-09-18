@@ -22,18 +22,18 @@ body {
         
         @media (min-width: 768px) {
             font-size: 24px;
-
+            
             @media (min-width: 1400px) {
                 font-size: 26px;
             }
         }
     }
-
+    
     .carousel-wrapper {
         /* position: relative; */
         max-width: 600px;
         overflow: hidden;
-
+        
         .carousel-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -41,30 +41,34 @@ body {
             max-width: 100%;
             
             .c-top-layer {
-                z-index: 1;
                 opacity: 1;
                 position: relative;
                 grid-area: 1 / 1 / span 1 / span 1;
             }
             
             #c-slide-layer {
+                z-index: 5;
                 display: flex;
                 justify-content: center;
-                z-index: 2;
                 opacity: 1;
                 position: relative;
                 grid-area: 1 / 1 / span 1 / span 1;
                 transition: transform 0.5s ease-in-out; /* For smooth sliding */
+
             }
             
             .c-layers {
-                flex: 0 0 100%; /* Each image will take up 100% width */
+                /* flex: 0 0 100%;  *//* Each image will take up 100% width */
                 display: flex;
                 justify-content: center;
+                z-index: 0;
+                background-color: blue;
                 
                 .inner-layers {
                     max-width: 100%; /* Ensure the images resize well */
                     cursor: pointer;
+                    z-index: 10;
+                    background-color: brown;
                 }
             }
             
@@ -73,22 +77,27 @@ body {
                 position: relative;
                 grid-area: 1 / 1 / span 1 / span 1;
             }
-
+            
             .carousel-text-container {
                 /* margin-top: .5rem; */
                 padding: 1rem;
-                position: relative;    
+                /* position: relative;  */   
                 grid-area: 2 / 1 / span 1 / span 3;
             }
         }
     }
-
+    
     /* Mobile view */
     .mobile-carousel { 
         display: block; 
+        
+        .c-layers {
+            flex: 0 0 100%;
+        }
 
         @media (min-width: 768px) {
             display: none;
+
         }
     }     
     
@@ -98,39 +107,30 @@ body {
         
         @media (min-width: 768px) and (max-width: 1399px) {
             display: block;
-
-            .carousel-wrapper {
+            
+            /* .carousel-wrapper {
+                
                 overflow: visible;
-
+                
+                
                 .carousel-grid {
                     grid-template-columns: repeat(3, 1fr);
                     margin-top: -5rem;
                     transform: scale(80%);
                     justify-content: center;
-
+                    max-width: 100%;
+                    
                     .c-layers {
+                        
                         transform: scale(0.95);
                         
-                        
-                        .left {
-                            order: 0;
-                            
-                        }
-                        
-                        .middle {
-                            order: 1;
-                            
-                        }
-                        
-                        .right {
-                            order: 2;
-                
-                        }
+                        .image-1 { order: 0; z-index: 10; }
+                        .image-2 { order: 1; z-index: 10; }
+                        .image-3 { order: 2; z-index: 10; }
                         
                         #image-2-1, #image-2-2, #image-2-3 {
                             border-radius: 2.1rem;
                         }
-                        
                     }
                     
                     .c-top-layer, .c-bottom-layer {
@@ -140,18 +140,19 @@ body {
                     
                     #c-slide-layer {
                         grid-area: 1 / 2;
-
+                        
                         img {
                             transition: transform 0.5s ease, z-index 0.5s ease;
+                            z-index: 10;
                         }                       
                     }
-
+                    
                     .carousel-text-container {
                         margin-top: 1rem;
                         grid-area: 2 / 1 / span 1 / span 3;
                     }
                 }
-            }  
+            }  */ 
         }
     }     
     
@@ -161,61 +162,18 @@ body {
         
         @media (min-width: 1400px) {
             display: block;
+            
 
-            .carousel-wrapper {
-                overflow: visible;
 
-                .carousel-grid {
-                    grid-template-columns: repeat(3, 1fr);
-                    /* margin-top: 1rem; */
-                    transform: scale(100%);
-                    justify-content: center;
 
-                    .c-layers {
-                        transform: scale(0.96);
-                        
-                        
-                        .left {
-                            order: 0;
-                            
-                        }
-                        
-                        .middle {
-                            order: 1;
-                            
-                        }
-                        
-                        .right {
-                            order: 2;
-                        }
-                        
-                        #image-2-1, #image-2-2, #image-2-3 {
-                            border-radius: 2.1rem;
-                        }
-                        
-                    }
-                    
-                    .c-top-layer, .c-bottom-layer {
-                        grid-area: 1 / 2;
-                        transform: scale(1);
-                    }
-                    
-                    #c-slide-layer {
-                        grid-area: 1 / 2;
-                        gap: 5rem;
 
-                        img {
-                            transition: transform 0.5s ease, z-index 0.5s ease;
-                        }
-                        
-                    }
 
-                    .carousel-text-container {
-                        margin-top: 1rem;
-                        grid-area: 2 / 1 / span 1 / span 3;
-                    }
-                }
-            }
+
+
+
+
+
+           
         }
     }
 }

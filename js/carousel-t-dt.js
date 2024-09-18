@@ -1,10 +1,12 @@
-let boomerangTime = true; // Initially set to true
+/* KIND OF WORKING - THERE ARE SOME KINKS IN IT THAT MAKES IT A DISASTER. */
+
+/* let boomerangTime = true; // Initially set to true
 
 // Function to toggle the boomerang time
 function toggleBoomerangTime() {
     if (boomerangTime) {
         boomerangTime = false; // Change to false
-        return 5000;           // Return 5000 when true
+        return 5000;           // Return 10000 when true
     } else {
         boomerangTime = true;  // Change to true
         return 0;              // Return 0 when false
@@ -21,10 +23,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (viewWidth <= 1399) {
             // Tablet Image - Distance/Gap
-            return [285, 285]; // Return both distances as an array
+            return 285; // Return distance for tablet
         } else {
             // Desktop Image - Distance/Gap
-            return [425, 425]; // Return both distances as an array
+            return 425; // Return distance for desktop
         }
     }
     
@@ -50,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function updateCarousel(carouselWrapper, moveImages1 = false, moveImages2 = false) {
+    function updateCarousel(carouselWrapper, moveImages1 = false, moveImages2 = false, moveMiddle = false) {
         const slideLayer = carouselWrapper.querySelector('#c-slide-layer');
         const headingElement = carouselWrapper.querySelector('.carousel-heading');
         const textElement = carouselWrapper.querySelector('.carousel-text');
@@ -64,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const images = slideLayer.querySelectorAll('img');
-        const [left2rightDistance, right2leftDistance] = getImageDistance(); // Get distances dynamically
+        const imageDistance = getImageDistance(); // Get distance dynamically
 
         images.forEach((img, idx) => {
             if (idx === currentIndex) {
@@ -76,16 +78,35 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
+        // Handle movement for the middle image (if it's clicked but not in the middle)
+        if (moveMiddle) {
+            const delay = toggleBoomerangTime(); // Use the boolean to get the delay (5000ms or 0ms)
+
+            if (currentIndex === 0) {
+                images[0].style.transition = 'transform 0.5s ease';
+                images[0].style.transform = `translateX(${imageDistance}px)`; // Move from left to middle
+            } else if (currentIndex === 2) {
+                images[2].style.transition = 'transform 0.5s ease';
+                images[2].style.transform = `translateX(-${imageDistance}px)`; // Move from right to middle
+            }
+
+            setTimeout(() => {
+                images.forEach(img => img.style.transform = 'translateX(0)');
+                currentIndex = 1; // Set image 2 (middle) as the middle
+                updateCarousel(carouselWrapper);
+            }, delay);
+        }
+
         // Move images to the right (left to right)
         if (moveImages1) {
             const delay = toggleBoomerangTime(); // Use the boolean to get the delay (5000ms or 0ms)
             images.forEach((img, idx) => {
                 img.style.transition = 'transform 0.5s ease';
                 if (idx === 0) {
-                    img.style.transform = `translateX(${left2rightDistance}px)`; // Move image 1 to the right
+                    img.style.transform = `translateX(${imageDistance}px)`; // Move image 1 to the right
                 }
                 if (idx === 1) {
-                    img.style.transform = `translateX(-${left2rightDistance}px)`; // Move image 2 to the left
+                    img.style.transform = `translateX(-${imageDistance}px)`; // Move image 2 to the left
                 }
             });
 
@@ -102,10 +123,10 @@ document.addEventListener("DOMContentLoaded", function () {
             images.forEach((img, idx) => {
                 img.style.transition = 'transform 0.5s ease';
                 if (idx === 2) {
-                    img.style.transform = `translateX(-${right2leftDistance}px)`; // Move image 3 to the left
+                    img.style.transform = `translateX(-${imageDistance}px)`; // Move image 3 to the left
                 }
                 if (idx === 1) {
-                    img.style.transform = `translateX(${right2leftDistance}px)`; // Move image 2 to the right
+                    img.style.transform = `translateX(${imageDistance}px)`; // Move image 2 to the right
                 }
             });
 
@@ -130,8 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 } else if (index === 2) {
                     updateCarousel(carouselWrapper, false, true); // Move images right to left
                 } else if (index === 1) {
-                    currentIndex = 1; // Set image 2 as the middle
-                    updateCarousel(carouselWrapper);
+                    updateCarousel(carouselWrapper, false, false, true); // Move middle image using boomerang
                 }
             });
         });
@@ -188,31 +208,182 @@ document.addEventListener("DOMContentLoaded", function () {
         tabletCarousels.forEach(carousel => updateCarousel(carousel));
         desktopCarousels.forEach(carousel => updateCarousel(carousel));
     });
+}); */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* // Get elements for the carousel images and text
+const tabletImages = document.querySelectorAll('.tablet-carousel .inner-layers');
+const desktopImages = document.querySelectorAll('.desktop-carousel .inner-layers');
+const tabletHeadlines = ['Tablet Headline 1', 'Tablet Headline 2', 'Tablet Headline 3'];
+const tabletTexts = ['Tablet Text 1', 'Tablet Text 2', 'Tablet Text 3'];
+const desktopHeadlines = ['Desktop Headline 1', 'Desktop Headline 2', 'Desktop Headline 3'];
+const desktopTexts = ['Desktop Text 1', 'Desktop Text 2', 'Desktop Text 3'];
+const tabletHeadingElement = document.querySelector('.tablet-carousel .carousel-heading');
+const tabletTextElement = document.querySelector('.tablet-carousel .carousel-text');
+const desktopHeadingElement = document.querySelector('.desktop-carousel .carousel-heading');
+const desktopTextElement = document.querySelector('.desktop-carousel .carousel-text');
+
+// Define order for images (left: 0, middle: 1, right: 2)
+const leftOrder = 0, middleOrder = 1, rightOrder = 2;
+
+// Function to get image distance (tablet or desktop)
+function getImageTravelDistance() {
+    const viewWidth = window.innerWidth;
+    return viewWidth <= 1399 ? 285 : 425; // 285 for tablet, 425 for desktop
+}
+
+// Function to update the text content based on the center image (position 2)
+function updateTextContent(view, currentIndex) {
+    if (view === 'tablet') {
+        tabletHeadingElement.textContent = tabletHeadlines[currentIndex];
+        tabletTextElement.textContent = tabletTexts[currentIndex];
+    } else if (view === 'desktop') {
+        desktopHeadingElement.textContent = desktopHeadlines[currentIndex];
+        desktopTextElement.textContent = desktopTexts[currentIndex];
+    }
+}
+
+// Function to switch positions between images based on click
+function switchPositions(view, images, currentIndex) {
+    const distance = getImageTravelDistance();
+    
+    // Define movement behavior based on the image clicked
+    images.forEach((image, index) => {
+        // Reset all positions initially
+        image.style.transform = '';
+
+        if (index === currentIndex) {
+            // Middle image stays in center
+            image.style.transform = `translateX(0px)`;
+            image.style.zIndex = '2'; // Keep middle image on top
+        } else if (index < currentIndex) {
+            // Move left images
+            image.style.transform = `translateX(-${distance}px)`;
+            image.style.zIndex = '1'; // Move behind middle
+        } else {
+            // Move right images
+            image.style.transform = `translateX(${distance}px)`;
+            image.style.zIndex = '1'; // Move behind middle
+        }
+    });
+
+    // Update the text content to reflect the new center image
+    updateTextContent(view, currentIndex);
+}
+
+// Click event for tablet images
+tabletImages.forEach((image, index) => {
+    image.addEventListener('click', () => {
+        switchPositions('tablet', tabletImages, index);
+    });
 });
 
+// Click event for desktop images
+desktopImages.forEach((image, index) => {
+    image.addEventListener('click', () => {
+        switchPositions('desktop', desktopImages, index);
+    });
+});
+
+// Initialize carousel positions
+switchPositions('tablet', tabletImages, middleOrder); // Start with middle image in the center for tablet
+switchPositions('desktop', desktopImages, middleOrder); // Start with middle image in the center for desktop */
 
 
 
 
 
+// Get elements for the carousel images and text
+const tabletImages = document.querySelectorAll('.tablet-carousel .image-1, .tablet-carousel .image-2, .tablet-carousel .image-3');
+const desktopImages = document.querySelectorAll('.desktop-carousel .image-1, .desktop-carousel .image-2, .desktop-carousel .image-3');
+const tabletHeadlines = ['Tablet Headline 1', 'Tablet Headline 2', 'Tablet Headline 3'];
+const tabletTexts = ['Tablet Text 1', 'Tablet Text 2', 'Tablet Text 3'];
+const desktopHeadlines = ['Desktop Headline 1', 'Desktop Headline 2', 'Desktop Headline 3'];
+const desktopTexts = ['Desktop Text 1', 'Desktop Text 2', 'Desktop Text 3'];
+const tabletHeadingElement = document.querySelector('.tablet-carousel .carousel-heading');
+const tabletTextElement = document.querySelector('.tablet-carousel .carousel-text');
+const desktopHeadingElement = document.querySelector('.desktop-carousel .carousel-heading');
+const desktopTextElement = document.querySelector('.desktop-carousel .carousel-text');
 
 
+// Function to get image distance (tablet or desktop)
+function getImageTravelDistance() {
+    const viewWidth = window.innerWidth;
+    return viewWidth <= 1399 ? 285 : 50; // 285 for tablet, 425 for desktop
+}
 
+// Function to update the text content based on the center image (position 2)
+function updateTextContent(view, currentIndex) {
+    if (view === 'tablet') {
+        tabletHeadingElement.textContent = tabletHeadlines[currentIndex];
+        tabletTextElement.textContent = tabletTexts[currentIndex];
+    } else if (view === 'desktop') {
+        desktopHeadingElement.textContent = desktopHeadlines[currentIndex];
+        desktopTextElement.textContent = desktopTexts[currentIndex];
+    }
+}
 
+// Define order for images (left: 0, middle: 1, right: 2)
+const leftOrder = 0, middleOrder = 10, rightOrder = 2;
 
+// Function to switch positions between images based on click
+function switchPositions(view, images, currentIndex) {
+    const distance = getImageTravelDistance();
+    
+    // Define movement behavior based on the image clicked
+    images.forEach((image, index) => {
+        // Reset all positions initially
+        image.style.transform = '';
 
+        if (index === currentIndex) {
+            // Middle image stays in center
+            image.style.transform = `translateX(0px)`;
+        } else if (index < currentIndex) {
+            // Move left images
+            image.style.transform = `translateX(-${distance}px)`;
+        } else {
+            // Move right images
+            image.style.transform = `translateX(${distance}px)`;
+        }
+    });
 
+    // Update the text content to reflect the new center image
+    updateTextContent(view, currentIndex);
+}
 
+// Click event for tablet images
+tabletImages.forEach((image, index) => {
+    image.addEventListener('click', () => {
+        switchPositions('tablet', tabletImages, index);
+    });
+});
 
+// Click event for desktop images
+desktopImages.forEach((image, index) => {
+    image.addEventListener('click', () => {
+        switchPositions('desktop', desktopImages, index);
+    });
+});
 
-
-
-
-
-
-
-
-
+// Initialize carousel positions
+switchPositions('tablet', tabletImages, middleOrder); // Start with middle image in the center for tablet
+switchPositions('desktop', desktopImages, middleOrder); // Start with middle image in the center for desktop
 
 
 
