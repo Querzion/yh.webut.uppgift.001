@@ -18,8 +18,8 @@ header {
         grid-template-columns: 1fr auto auto;
         /* grid-template-areas: "Logo sw mobile"; */
         gap: 1.5em;
-        /* padding-top: 1rem;
-        padding-bottom: 1rem; */
+        padding-top: -1rem;
+        padding-bottom: -1rem;
       
         align-content: center;
         
@@ -178,7 +178,6 @@ header {
 .slider.round {
     border-radius: 35px;
 }
-
 .slider.round::before {
     border-radius: 50%;
 }
