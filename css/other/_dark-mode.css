@@ -11,6 +11,14 @@
 
     /* Navbar */
 
+    .sticky-header {
+        background: transparent;
+
+    }
+    .sticky-header.scrolled {
+        background: var(--color-gray-900);
+    }
+    
     header {
         /* Features Text*/
         .nav-link {

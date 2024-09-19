@@ -1,27 +1,13 @@
 /* Partly taken from School Guidance Material & ChatGPT */
-
-body {
-    .dark-mode {
-        .sticky-header {
-            background: transparent;
-
-            &.scrolled {
-                background: var(--color-gray-900)
-            }
-        }
-    }
-}
-
-header {
+#navbar-section {
     .container {
         display: grid;
+        justify-content: center;
+        align-items: center;
         grid-template-columns: 1fr auto auto;
-        /* grid-template-areas: "Logo sw mobile"; */
+        /* margin: 0; */
+        /* padding: 1rem; */
         gap: 1.5em;
-        padding-top: -1rem;
-        padding-bottom: -1rem;
-      
-        align-content: center;
         
         @media (min-width: 768px) {
             gap: 3rem;
@@ -30,9 +16,14 @@ header {
                 grid-template-columns: auto 1fr auto auto;
                 gap: 3rem;
             }
-        }       
-    }
+        } 
+    }     
 }
+
+
+/* ############################################################################################ */
+                                /* NAVBAR FUNCTIONALITY SETTINGS */
+/* ############################################################################################ */
 
 /* Start with the header being fully transparent */
 /* MEMO: -webkit-sticky is for Safari */
@@ -42,6 +33,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    /* max-height: 78px; */
     background-color: transparent;
     backdrop-filter: blur(10px);
     transition: background-color 0.5s ease;
@@ -53,70 +45,27 @@ header {
     background: var(--color-white); 
 }
 
-/* MEMO: Menu Alternatives Show/Hide */ /* Menu option Show/Hide */
-.navbar {
-    display: none;
 
-    @media (min-width: 1400px) {
-        display: block;
-        align-content: center;
-        margin-top: .2rem;
-    }  
-}
-
-#logo {
-    display: flex;
-    position: relative;
-    align-items: center;
-    gap: 1.5rem;
-    left: .3rem;
-    max-width: 150px;
-
-    #logo-img {
-        transform: scale(1.2);
-    }
-    
-    #logo-text {
-        margin-right: 1.5rem;
-        transform: scale(1.2);
-    }
-}
-
-.nav-link {
-    color: var(--color-gray-900);
-    font-weight: 600;
-    text-decoration: none;
-    
-    &:hover {
-        color: var(--color-primary);
-        
-        &.active {
-            color: var(--color-primary);
-            text-decoration: underline;
-        }
-    }
-}
-
-/* MEMO: Sign in / up button Show/Hide */
-#auth-signin-create {
-    display: none;
-
-    @media (min-width: 1400px) {
-        display: block;
-    }
-}
+/* ############################################################################################ */
+                                /* HAMBURGER MENU SETTINGS */
+/* ############################################################################################ */
 
 /* MEMO: While the earlier button settings focused on the bigger picture, this one focus on the hamburger menu. */
 .btn-mobile {
     background-color: transparent;
     border: none;
     font-size: 2rem;
-    padding-top: .25rem;
+    /* padding-top: .25rem; */
     
     @media (min-width: 1400px) {
         display: none;
     }
 }
+
+
+/* ############################################################################################ */
+                                /* TEXT DARK-MODE SETTINGS */
+/* ############################################################################################ */
 
 /* This part handles the toggle button, for dark/light mode. */
 /* MEMO: .Label - Dark Mode Text Show/Hide */
@@ -136,6 +85,99 @@ header {
         }
     }
 }
+
+
+/* ############################################################################################ */
+                                /* NAVBAR MENU SETTINGS */
+/* ############################################################################################ */
+
+/* MEMO: Menu Alternatives Show/Hide */ /* Menu option Show/Hide */
+.navbar {
+    display: none;
+
+    @media (min-width: 1400px) {
+        display: block;
+        align-content: center;
+        margin-top: .2rem;
+    }  
+}
+
+.nav-link {
+    color: var(--color-gray-900);
+    font-weight: 600;
+    text-decoration: none;
+    
+    &:hover {
+        color: var(--color-primary);
+        
+        &.active {
+            color: var(--color-primary);
+            text-decoration: underline;
+        }
+    }
+}
+
+/* ############################################################################################ */
+                                /* SIGN UP/IN BUTTON SETTINGS */
+/* ############################################################################################ */
+
+/* MEMO: Sign in / up button Show/Hide */
+#auth-signin-create {
+    display: none;
+
+    @media (min-width: 1400px) {
+        display: block;
+    }
+}
+
+
+/* ############################################################################################ */
+                                /* LOGOTYPE & TEXT SETTINGS */
+/* ############################################################################################ */
+
+#logo {
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 2rem;
+    left: .3rem;
+    max-width: 150px;
+
+    #logo-img {
+        transform: scale(1.4);
+    }
+    
+    #logo-text {
+        margin-right: 1.5rem;
+        transform: scale(1.3);
+    }
+}
+
+@media (min-width: 768px) {
+
+    #logo {
+        gap: 1rem;
+        left: 1rem;
+    
+        #logo-img {
+            transform: scale(1.2);
+        }
+        
+        #logo-text {
+            margin-left: .5rem;
+            margin-right: 1.5rem;
+            transform: scale(1.1);
+        }
+    }
+    
+    @media (min-width: 1400px) {
+
+    }
+}
+
+/* ############################################################################################ */
+                                /* CHECKMARK / TOGGLE SETTINGS */
+/* ############################################################################################ */
 
 .toggle-switch {
     position: relative;
