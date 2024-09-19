@@ -125,7 +125,7 @@
 
         .img-back {
             position: absolute;
-            z-index: -10;
+            /* z-index: -10; */
             bottom: 0;
             right: 135px;
             height: auto;
@@ -140,7 +140,7 @@
 
         .img-front {
             position: absolute;
-            z-index: -5;
+            /* z-index: -5; */
             bottom: 0;
             right: 0;
             height: auto;
