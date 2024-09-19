@@ -165,8 +165,8 @@ body {
                 .mask {
                     -webkit-mask-image: url(/images/carousel/desktop/desktop-mask-layer_1.svg);
                     mask-image: url(/images/carousel/desktop/desktop-mask-layer_1.svg);
-                    mask-repeat: repeat-x;
-                    contain: layout;
+                    /* mask-repeat: repeat-x;
+                    contain: layout; */
                 }
                 
                 .carousel-wrapper {

@@ -1,12 +1,17 @@
 /* --------------------------------------------------------------- NAVIGATION BAR SECTION */
 /* NAVIGATION BAR SECTION */
+#navbar-section {
+
+}
+
+
 
 /* Start with the header being fully transparent */
 .sticky-header {
     position: -webkit-sticky; /* For Safari */
-    position: fixed;
+    position: sticky;
     top: 0;
-    /* left: 0; */
+    left: 0;
     width: 100%;
     background-color: transparent;
     backdrop-filter: blur(10px);
@@ -17,7 +22,7 @@
 
 /* First section styling */
 .first-section {
-    padding-top: 1rem;
+    /* padding-top: 1rem; */
     top: 0; 
 }
 
@@ -97,7 +102,7 @@ header {
 
 .nav-link {
     color: var(--color-gray-900);
-    font-weight: 600; /* SemiBold */
+    font-weight: 600;
     text-decoration: none;
     
     &:hover {
@@ -111,8 +116,8 @@ header {
 
 }
 
+/* Sign in / up button Show/Hide */
 #auth-signin-create {
-    /* Sign in / up button Show/Hide */
     display: none;
 
     @media (min-width: 1400px) {
@@ -157,29 +162,95 @@ header {
 }
 
 
+/* Toggle switch styles */
 .toggle-switch {
     position: relative;
     display: inline-block;
     width: 45px;
     height: 25px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-gray-600);
+    transition: 0.4s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 2.5px;
+    background-color: var(--color-white);
+    transition: all 0.2s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Rounded slider */
+.slider.round {
+    border-radius: 35px;
+}
+
+.slider.round::before {
+    border-radius: 50%;
+}
+
+/* When checked, move the slider knob */
+.toggle-switch input:checked + .slider::before {
+    transform: translateX(18px);
+    background-color: var(--color-white);
+}
+
+/* Slider background when checked */
+.toggle-switch input:checked + .slider {
+    background-color: var(--color-primary);
+}
+
+
+
+
+
+
+
+/* BORKED */
+
+/* .toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 25px;
     
-    /* align-items: center; */
+    align-items: center;
 
     input {
         opacity: 0;
 
-        &:checked + .slider {
+        &:checked + .toggle-switch.slider {
             background-color: var(--color-primary);
+            &:focus + .toggle-switch.slider {
+                box-shadow: 0 0 1px var(--color-primary);
+            }
         }
-
-        &:focus + .slider {
-            box-shadow: 0 0 1px var(--color-primary);
-        }
-
-        &:checked + .slider::before {
+        
+        &:checked + .toggle-switch.slider::before {
             transform: translateX(18px);
             background-color: var(--color-white);
         }
+
     }
 
     .slider {
@@ -190,7 +261,7 @@ header {
         right: 0;
         bottom: 0;
         background-color: var(--color-gray-600);
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow here */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 
         &::before {
             position: absolute;
@@ -201,8 +272,7 @@ header {
             bottom: 2.5px;
             background-color: var(--color-white);
             transition: all 200ms;
-            /* ChatGPT */
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow to the slider knob */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         &.round {
@@ -213,4 +283,4 @@ header {
             }
         }
     }
-}
+} */

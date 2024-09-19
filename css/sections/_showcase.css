@@ -1,5 +1,5 @@
 #showcase-section {
-    padding-bottom: 2rem;
+    /* padding-bottom: 2rem; */
     
     @media (min-width: 768px) {
         padding-bottom: 0;
@@ -27,7 +27,7 @@
         }  
     }
 
-    .headline {
+    .sc-headline {
         grid-area: headline;
         text-align: center;
         font-weight: 800;
@@ -46,7 +46,7 @@
         }
     }
 
-    .content {
+    .sc-content {
         grid-area: content;
         text-align: center;
 
