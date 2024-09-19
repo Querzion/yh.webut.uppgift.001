@@ -1,8 +1,9 @@
 #showcase-section {
-    /* padding-bottom: 2rem; */
+    padding-bottom: 2rem;
     
     @media (min-width: 768px) {
         padding-bottom: 0;
+        margin-top: -2rem;
     }
     
 
@@ -14,7 +15,7 @@
                                 "content";
         
         @media (min-width: 768px) {
-            grid-template-columns: 40% 1fr;
+            grid-template-columns: 38% 1fr;
             grid-template-areas:    "headline headline"
                                     "content images";
                                     
@@ -23,6 +24,8 @@
                 gap: 10px;
                 grid-template-areas:    "headline images"
                                         "content images";
+
+                margin-top: 5rem;
             }
         }  
     }
@@ -32,16 +35,19 @@
         text-align: center;
         font-weight: 800;
         font-size: 26px;
+        margin-top: -5rem;
         
         
         @media (min-width: 768px) {
             font-size: 30px;
+            margin-top: -3rem;
+            margin-bottom: 4rem;
             
             @media (min-width: 1400px) {
                 text-align: left;
                 font-size: 40px;
-                margin-top: 5.5rem;
-                margin-bottom: -3rem;   
+                margin-top: 0;
+                margin-bottom: 0;   
             }
         }
     }
@@ -51,7 +57,7 @@
         text-align: center;
 
         @media (min-width: 768px) {
-            text-align: left;           
+            text-align: left;         
         }
 
         a { 
@@ -63,7 +69,7 @@
         }
 
         p {
-            /* font-size: 18px; */
+            margin-top: -3rem;
             margin-bottom: 3rem;
 
             .tablet-line-break {
@@ -101,7 +107,7 @@
                 margin-bottom: 2.5rem;
                 
                 @media (min-width: 1400px) {
-                    margin-top: 15rem;
+                    margin-top: 12rem;
                 }
             }
             
@@ -113,12 +119,16 @@
         display: none;
         position: relative;
         
+
         @media (min-width: 768px) {
             display: block;
             width: 100%;
+            /* height: auto; */
+            /* margin-top: 4rem; */
             
             @media (min-width: 1400px) {
-                margin-top: 6rem;                    
+                /* margin-top: 2.5rem;
+                margin-bottom: 2.5rem; */                    
             }
         }
 
