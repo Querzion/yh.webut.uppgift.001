@@ -4,10 +4,13 @@
     background-color: var(--color-gray-900);
     color: var(--color-white);
 
+    body {
+
+    }
+
     p {
         color: var(--color-tex-wh-o70);
     }
-
 
     /* Navbar */
 
@@ -18,12 +21,12 @@
     .sticky-header.scrolled {
         background: var(--color-gray-900);
     }
-    
+
     header {
         /* Features Text*/
         .nav-link {
             color: var(--color-gray-500);
-            
+
             &:hover {
                 color: var(--color-primary);
             }
@@ -49,21 +52,21 @@
             /* color: var(--color-white); */
             color: var(--color-tex-wh-o70);
         }
-        
+
         /* Marketplace Buttons */
         .btn-download-app {
             background-color: var(--color-gray-200);
-            
+
             &:hover {
                 background-color: var(--color-gray-500);
             }
         }
-        
+
         /* Discover more Button */
         .btn-circle:hover {
             background-color: var(--color-gray-700);
         }
-        
+
         /* Discover more Text */
         .discover-more {
             span {
@@ -74,31 +77,17 @@
     }
 
     /* Brand section */
-    #brand-section {
-
-        /* Brandbox Blue */
-        .brand-box {
-            background-color: var(--color-almostblack-blue);
-        }
-        
+    /* Brandbox Blue */
+    .brand-box {
+        background: var(--color-almostblack-blue);
     }
+
+    
     /* App Features Section */
     #app-features-section {
 
-        /* p {
-            color: var(--color-tex-wh-o70);
-        } */
-
         .af-text-box .features .af-img-container::before {
-            background-color: rgba(243, 246, 255, 0.05); 
+            background-color: rgba(243, 246, 255, 0.05);
         }
-    }    
-        
-    /* Carousel Section */
-    #carousel-section {
-
-        /* p {
-            color: var(--color-tex-wh-o70);
-        } */
     }
 }
