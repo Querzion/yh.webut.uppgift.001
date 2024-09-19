@@ -1,10 +1,50 @@
 /* --------------------------------------------------------------- NAVIGATION BAR SECTION */
 /* NAVIGATION BAR SECTION */
-#navbar-section {
 
+
+body {
+    .dark-mode {
+        .sticky-header {
+            background: transparent;
+
+            &.scrolled {
+                background: var(--color-gray-900)
+            }
+        }
+    }
 }
 
+/* Dark mode: Initially transparent */
+/* body.dark-mode .sticky-header {
+    background: transparent; 
+} */
 
+/* Dark mode: When scrolled, apply --color-gray-900 */
+/* body.dark-mode .sticky-header.scrolled {
+    background: var(--color-gray-900); 
+} */
+
+header {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        /* grid-template-areas: "Logo sw mobile"; */
+        gap: 1.5em;
+        /* padding-top: 1rem;
+        padding-bottom: 1rem; */
+      
+        align-content: center;
+        
+        @media (min-width: 768px) {
+            gap: 3rem;
+            
+            @media (min-width: 1400px) {
+                grid-template-columns: auto 1fr auto auto;
+                gap: 3rem;
+            }
+        }       
+    }
+}
 
 /* Start with the header being fully transparent */
 .sticky-header {
@@ -16,56 +56,12 @@
     background-color: transparent;
     backdrop-filter: blur(10px);
     transition: background-color 0.5s ease;
-    z-index: 1000;
-    
-}
-
-/* First section styling */
-.first-section {
-    /* padding-top: 1rem; */
-    top: 0; 
+    z-index: 1000; 
 }
 
 /* When scrolled, make the header fully opaque in light mode */
 .sticky-header.scrolled {
     background: var(--color-white); 
-}
-
-/* Dark mode: Initially transparent */
-body.dark-mode .sticky-header {
-    background: transparent; 
-}
-
-/* Dark mode: When scrolled, apply --color-gray-900 */
-body.dark-mode .sticky-header.scrolled {
-    background: var(--color-gray-900); 
-}
-
-
-
-header {
-
-    .container {
-        display: grid;
-        grid-template-columns: 1fr auto auto;
-        /* grid-template-areas: "Logo sw mobile"; */
-        gap: 1.5em;
-        /* padding-top: 1rem;
-        padding-bottom: 1rem; */
-
-        
-        align-content: center;
-        
-        @media (min-width: 768px) {
-            gap: 3rem;
-            
-            @media (min-width: 1400px) {
-                grid-template-columns: auto 1fr auto auto;
-                gap: 3rem;
-            }
-        }
-        
-    }
 }
 
 .navbar {
@@ -77,11 +73,9 @@ header {
         display: block;
         align-content: center;
         margin-top: .2rem;
-    }
-    
+    }  
 }
 
-/* Partly taken from School Guidance Material & ChatGPT */
 #logo {
     display: flex;
     position: relative;
@@ -99,6 +93,15 @@ header {
         transform: scale(1.2);
     }
 }
+/* First section styling */
+/* .first-section {
+    padding-top: 1rem;
+    top: 0; 
+} */
+
+
+
+/* Partly taken from School Guidance Material & ChatGPT */
 
 .nav-link {
     color: var(--color-gray-900);
@@ -113,7 +116,6 @@ header {
             text-decoration: underline;
         }
     }
-
 }
 
 /* Sign in / up button Show/Hide */
@@ -123,11 +125,6 @@ header {
     @media (min-width: 1400px) {
         display: block;
     }
-}
-
-#burger-menu {
-    
-    color: var(--color-white);
 }
 
 /* While the earlier button settings focused on the bigger picture, this one focus on the hamburger menu. */
