@@ -92,11 +92,11 @@
 /* MEMO: Menu Alternatives Show/Hide */ /* Menu option Show/Hide */
 .navbar {
     display: none;
-
+    
     @media (min-width: 1400px) {
         display: block;
         align-content: center;
-        margin-top: .2rem;
+        margin-top: .1rem;
     }  
 }
 
