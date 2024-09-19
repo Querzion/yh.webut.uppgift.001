@@ -4,7 +4,7 @@
 /* Start with the header being fully transparent */
 .sticky-header {
     position: -webkit-sticky; /* For Safari */
-    position: sticky;
+    position: fixed;
     top: 0;
     /* left: 0; */
     width: 100%;
@@ -45,8 +45,9 @@ header {
         grid-template-columns: 1fr auto auto;
         /* grid-template-areas: "Logo sw mobile"; */
         gap: 1.5em;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        /* padding-top: 1rem;
+        padding-bottom: 1rem; */
+
         
         align-content: center;
         
