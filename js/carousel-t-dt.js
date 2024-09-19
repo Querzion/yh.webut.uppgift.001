@@ -130,3 +130,5 @@ desktopImages.forEach((image, index) => {
 // Initialize carousel positions with the middle image in the center
 switchPositions('tablet', tabletImages, middleOrder); // Start with middle image in the center for tablet
 switchPositions('desktop', desktopImages, middleOrder); // Start with middle image in the center for desktop
+
+/* Created by: Slisk Lindqvist sep'24 in conjunction with ChatGPT.com */
