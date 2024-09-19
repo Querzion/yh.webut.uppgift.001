@@ -1,6 +1,4 @@
-/* --------------------------------------------------------------- NAVIGATION BAR SECTION */
-/* NAVIGATION BAR SECTION */
-
+/* Partly taken from School Guidance Material & ChatGPT */
 
 body {
     .dark-mode {
@@ -13,16 +11,6 @@ body {
         }
     }
 }
-
-/* Dark mode: Initially transparent */
-/* body.dark-mode .sticky-header {
-    background: transparent; 
-} */
-
-/* Dark mode: When scrolled, apply --color-gray-900 */
-/* body.dark-mode .sticky-header.scrolled {
-    background: var(--color-gray-900); 
-} */
 
 header {
     .container {
@@ -47,8 +35,9 @@ header {
 }
 
 /* Start with the header being fully transparent */
+/* MEMO: -webkit-sticky is for Safari */
 .sticky-header {
-    position: -webkit-sticky; /* For Safari */
+    position: -webkit-sticky; 
     position: sticky;
     top: 0;
     left: 0;
@@ -64,12 +53,11 @@ header {
     background: var(--color-white); 
 }
 
+/* MEMO: Menu Alternatives Show/Hide */ /* Menu option Show/Hide */
 .navbar {
-    /* Menu Alternatives Show/Hide */
     display: none;
 
     @media (min-width: 1400px) {
-        /* Menu option Show/Hide */
         display: block;
         align-content: center;
         margin-top: .2rem;
@@ -93,15 +81,6 @@ header {
         transform: scale(1.2);
     }
 }
-/* First section styling */
-/* .first-section {
-    padding-top: 1rem;
-    top: 0; 
-} */
-
-
-
-/* Partly taken from School Guidance Material & ChatGPT */
 
 .nav-link {
     color: var(--color-gray-900);
@@ -118,7 +97,7 @@ header {
     }
 }
 
-/* Sign in / up button Show/Hide */
+/* MEMO: Sign in / up button Show/Hide */
 #auth-signin-create {
     display: none;
 
@@ -127,7 +106,7 @@ header {
     }
 }
 
-/* While the earlier button settings focused on the bigger picture, this one focus on the hamburger menu. */
+/* MEMO: While the earlier button settings focused on the bigger picture, this one focus on the hamburger menu. */
 .btn-mobile {
     background-color: transparent;
     border: none;
@@ -140,14 +119,14 @@ header {
 }
 
 /* This part handles the toggle button, for dark/light mode. */
+/* MEMO: .Label - Dark Mode Text Show/Hide */
 .btn-toggle-switch {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
     
     gap: 15px;
     
-    /* Dark Mode Text Show/Hide */
     &>.label {
         display: none;
         font-weight: 700;  
@@ -158,8 +137,6 @@ header {
     }
 }
 
-
-/* Toggle switch styles */
 .toggle-switch {
     position: relative;
     display: inline-block;
@@ -216,68 +193,3 @@ header {
 .toggle-switch input:checked + .slider {
     background-color: var(--color-primary);
 }
-
-
-
-
-
-
-
-/* BORKED */
-
-/* .toggle-switch {
-    position: relative;
-    display: inline-block;
-    width: 45px;
-    height: 25px;
-    
-    align-items: center;
-
-    input {
-        opacity: 0;
-
-        &:checked + .toggle-switch.slider {
-            background-color: var(--color-primary);
-            &:focus + .toggle-switch.slider {
-                box-shadow: 0 0 1px var(--color-primary);
-            }
-        }
-        
-        &:checked + .toggle-switch.slider::before {
-            transform: translateX(18px);
-            background-color: var(--color-white);
-        }
-
-    }
-
-    .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: var(--color-gray-600);
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-
-        &::before {
-            position: absolute;
-            content: "";
-            height: 20px;
-            width: 20px;
-            left: 3px;
-            bottom: 2.5px;
-            background-color: var(--color-white);
-            transition: all 200ms;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        &.round {
-            border-radius: 35px;
-
-            &::before {
-                border-radius: 50%;
-            }
-        }
-    }
-} */
