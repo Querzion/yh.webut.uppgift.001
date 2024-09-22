@@ -73,6 +73,7 @@
     .sub-input-box {
         padding: 2rem;
         width: 100%;
+
         @media (min-width: 768px) {
             padding: 0;
         }
@@ -86,30 +87,41 @@
             border-radius: .5rem;
             overflow: hidden;
             max-height: 50px;
-
+            
+            
             #sub-scribe {
                 justify-content: center;
                 align-content: center;
-                font-size: 16px;
+                /* padding: 1rem; */
             }
             
             .input-field {
+                position: relative;
+                
                 .email {
                     grid-column: 1 / span 2 ;
                     width: 100%;
-                    height: 100%;
                     padding: 1rem;
+                    padding-left: 2.4rem;
                     border: none;
                 }
             }
+            
+            .icon {
+                position: absolute;
+
+                top: 50%;
+                left: .7rem;
+
+                transform: translateY(-50%);
+            }
 
             .sub-btn {
-                z-index: 1;
     
                 .btn {
                     border: none;
                     border-radius: 0;
-                    height: 3rem;
+                    padding: 1.3em 2.5em;
                 }
             }
         }

@@ -1,64 +1,65 @@
 
 
-.faq-container {
+#faq-section{
 
-    .fac-container {
+    .faq-container {
+    
+    }
         
-        .faq-heading-field {
-            margin-bottom: 3rem;
-            text-align: center;
-    
-            h2 {
-                font-weight: 800;
-                font-size: 24.7px;
-                @media (min-width: 768px) {
-                    font-size: 32px;
-                    
-                }
-            }
-    
-            .faq-accordian-box {
-                border: .05rem solid var(--color-gray-200);
-                border-radius: 1rem;
+    .faq-heading-field {
+        margin-bottom: 3rem;
+        text-align: center;
+
+        h2 {
+            font-weight: 800;
+            font-size: 24.7px;
+            @media (min-width: 768px) {
+                font-size: 32px;
                 
-                overflow: hidden;
-            
-                .faq-accordion {
-                    height: 73px;
-                    width: 100%;
-                    text-align: left;
-                    
-                    
-                    font-weight: 600;
-                    font-size: 16px;
-                    transition: transform 1s ease-in-out;
-                    cursor: pointer;
-                    
-                    #a1, #a2, #a3, #a4, #a5, #a6 {
-                        border: none;
-                    }
-                    
-                    /* .active, .accordion:hover {
-                        
-                    } */
-                    
-                    .faq-panel {
-                        font-size: 14px;
-                        border: .1rem;
-                        display: none;
-                        padding: .3rem;
-                        
-                        overflow: hidden;
-                    }
-                }
-                
-                /* ChatGPT code */
-                .faq-accordion + .faq-panel {
-                    max-height: 0;
-                    overflow: hidden;
-                    transition: max-height 0.3s ease-out;
-                }
             }
         }
-    }   
+    }
+
+    .faq-accordian-box {
+        border: .05rem solid var(--color-gray-200);
+        border-radius: .8rem;
+        
+        overflow: hidden;
+    
+        .faq-accordion {
+            height: 73px;
+            width: 100%;
+            text-align: left;
+            
+            
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 1s ease-in-out;
+            cursor: pointer;
+            
+            #a1, #a2, #a3, #a4, #a5, #a6 {
+                border: none;
+            }
+            
+            /* .active, .accordion:hover {
+                
+            } */
+            
+            .faq-panel {
+                font-size: 14px;
+                border: .1rem;
+                display: none;
+                padding: .3rem;
+                
+                overflow: hidden;
+            }
+        }
+        
+        /* ChatGPT code */
+        .faq-accordion + .faq-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+    }
 }
