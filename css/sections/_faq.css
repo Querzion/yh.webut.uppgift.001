@@ -9,6 +9,7 @@
         h2 {
             font-weight: 800;
             font-size: 24.7px;
+            
             @media (min-width: 768px) {
                 font-size: 32px;
                 
@@ -17,45 +18,84 @@
     }
 
     .faq-accordian-box {
-        border: .05rem solid var(--color-gray-200);
-        border-radius: .8rem;
+        border: 1px solid var(--color-gray-200);
+        border-radius: .5rem;
         
         overflow: hidden;
-    
-        .faq-accordion {
-            height: 73px;
-            width: 100%;
-            text-align: left;
-            
-            
-            font-weight: 600;
-            font-size: 16px;
-            transition: transform 1s ease-in-out;
-            cursor: pointer;
-            
-            #a1, #a2, #a3, #a4, #a5, #a6 {
-                border: none;
+    }
+
+    .faq-accordion {
+        display: grid;
+        grid-template-columns: 1fr 80px;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+
+        height: 4rem;
+        width: 100%;
+        /* background-color: var(--color-white); */
+        background-color: transparent;
+        border: 1px solid var(--color-gray-200);
+        position: relative;
+        
+        font-weight: 600;
+        font-size: 16px;
+        transition: transform 1s ease-in-out;
+        cursor: pointer;
+        
+        .a1, .a2, .a3, .a4, .a5, .a6 {
+            padding-left: 1rem;
+        }
+        
+        .icon-down {
+            grid-area: 1/2;
+            position: absolute;
+            background-color: var(--color-gray-100);
+            padding: 15px;
+            justify-self: center;
+            border-radius: 50%;
+
+            &:hover {
+                background-color: var(--color-gray-600);
             }
-            
-            /* .active, .accordion:hover {
-                
-            } */
-            
-            .faq-panel {
-                font-size: 14px;
-                border: .1rem;
-                display: none;
-                padding: .3rem;
-                
-                overflow: hidden;
+
+            &::after {
+                background-color: var(--color-primary);
             }
         }
         
-        /* ChatGPT code */
-        .faq-accordion + .faq-panel {
-            max-height: 0;
+        .icon-down:active {
+        }
+        
+
+
+        /* p {
+            font-size: 14px;
+            border: .1rem;
+            display: none;
+            padding: .3rem;
+            margin: .5rem;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
+            max-width: 75%;
+        } */
+    }
+    
+    /* ChatGPT code */    
+    .faq-accordion + .faq-panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        font-size: 14px;
+        padding: auto; 
+    }
+    .faq-contact {
+        padding: 3rem;
+        padding-top: 4rem;
+
+        .btn {
+            padding: 1rem;
+            width: 160px;
         }
     }
+
 }
