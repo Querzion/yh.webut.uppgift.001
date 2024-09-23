@@ -4,10 +4,6 @@
     background-color: var(--color-gray-900);
     color: var(--color-white);
 
-    body {
-
-    }
-
     p {
         color: var(--color-tex-wh-o70);
     }
@@ -86,7 +82,13 @@
     /* App Features Section */
     #app-features-section {
 
-        .af-text-box .features .af-img-container::before {
+        .af-img-container::before {
+            background-color: rgba(243, 246, 255, 0.05);
+        }
+    }
+    #app-features-followup-section {
+
+        .sf2-img-container::before {
             background-color: rgba(243, 246, 255, 0.05);
         }
     }

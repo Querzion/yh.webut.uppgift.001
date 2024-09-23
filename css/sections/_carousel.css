@@ -10,6 +10,10 @@ body {
 #carousel-section {
     padding-top: 3rem;
     padding-bottom: 4rem;
+
+    @media (min-width: 1400px) {
+        padding-bottom: 6rem;
+    }
     
     .c-wrap {
         display: grid;
