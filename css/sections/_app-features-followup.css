@@ -3,7 +3,8 @@
     padding-bottom: 5rem;
     
     @media (min-width: 1400px) {
-        display: block;   
+        display: block;
+        padding-bottom: 8rem;  
     }
     
     .btn {   

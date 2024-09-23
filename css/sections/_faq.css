@@ -1,7 +1,22 @@
 
 
 #faq-section{
-        
+    padding-bottom: 0;
+    
+    @media (min-width: 1400px) {
+        padding-bottom: 7rem;
+    }
+
+
+    .faq-container {
+        display: grid;
+
+        @media (min-width: 1400px) {
+            grid-template-columns: 31% 1fr;
+            gap: 8rem;
+        }
+    }
+
     .faq-heading-field {
         margin-bottom: 3rem;
         text-align: center;
@@ -13,7 +28,16 @@
             @media (min-width: 768px) {
                 font-size: 32px;
                 
+                @media (min-width: 1400px) {
+                    max-width: 325px;
+                }
             }
+        }
+
+        @media (min-width: 1400px) {
+            grid-area: 1 / 1;
+            text-align: left;
+            max-width: 98%;
         }
     }
 
@@ -42,6 +66,7 @@
         font-size: 16px;
         transition: transform 1s ease-in-out;
         cursor: pointer;
+        gap: 1rem;
         
         .a1, .a2, .a3, .a4, .a5, .a6 {
             padding-left: 1rem;
@@ -58,26 +83,7 @@
             &:hover {
                 background-color: var(--color-gray-600);
             }
-
-            &::after {
-                background-color: var(--color-primary);
-            }
         }
-        
-        .icon-down:active {
-        }
-        
-
-
-        /* p {
-            font-size: 14px;
-            border: .1rem;
-            display: none;
-            padding: .3rem;
-            margin: .5rem;
-            overflow: hidden;
-            max-width: 75%;
-        } */
     }
     
     /* ChatGPT code */    
@@ -86,16 +92,63 @@
         overflow: hidden;
         transition: max-height 0.3s ease-out;
         font-size: 14px;
-        padding: auto; 
     }
-    .faq-contact {
+
+    .faq-m-contact {
         padding: 3rem;
         padding-top: 4rem;
 
+        
         .btn {
             padding: 1rem;
             width: 160px;
         }
+        
+        @media (min-width: 768px) { display: none; }
     }
 
+    .faq-t-contact { display: none;
+
+        @media (min-width: 768px) {
+            display: block;
+            
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            height: 11rem;
+            padding: 1.5rem;
+            gap: 1rem;
+            
+            .tplus-style {
+                background-color: transparent;
+                border: 2px solid var(--color-gray-200);
+                border-radius: .5rem;
+                display: grid;
+                justify-content: left;
+                padding: 1rem;
+                cursor: pointer;
+
+                .contact-us {
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+                    font-weight: 600;
+                }
+
+                .call-us-flex {
+                    color: var(--color-primary);
+                }
+                .message-us-flex {
+                    color: var(--color-green);
+                }
+            }
+            
+            @media (min-width: 1400px) {
+                grid-area: 1 / 1;
+                position: relative;
+                transform: translateY(170%);
+                padding: 0;
+                height: 8rem;
+            }
+        }
+    }
 }

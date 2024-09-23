@@ -94,9 +94,10 @@
     display: none;
     
     @media (min-width: 1400px) {
-        display: block;
+        display: flex;
         align-content: center;
         margin-top: .1rem;
+        gap: 2rem;
     }  
 }
 
