@@ -1,7 +1,3 @@
-/* This whole file is a combination of me not thinking and chatgpt hallucinating. */
-
-.bg-gradient { background: var(--linear-gradient-c-sec); }
-
 body {
     overflow-x: hidden;
 }
@@ -10,6 +6,7 @@ body {
 #carousel-section {
     padding-top: 3rem;
     padding-bottom: 4rem;
+    background-color: var(--color-gray-100);
 
     @media (min-width: 1400px) {
         padding-bottom: 6rem;

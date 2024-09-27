@@ -16,6 +16,7 @@
     border-radius: .5rem;
     /* gap: 1rem; */
     padding-top: 2rem;
+    background-color: var(--color-gray-100);
     
     @media (min-width: 768px) {
         grid-template-columns: repeat(2, 1fr);

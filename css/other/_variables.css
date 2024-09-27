@@ -1,6 +1,7 @@
 :root {
     /* Grayscale */
     --color-gray-100: #f3f6ff; /* Light BG */
+    --color-gray-100-dark: rgba(243, 246, 255, 0.04); /* Dark BG */
     --color-gray-100-hsl: 224, 100%, 97%;
     --color-gray-200: #EFF2FC; /* Secondary */
     --color-gray-300: #E2E5F1; /* Divider, Border */
@@ -25,6 +26,7 @@
     --color-blue: #4C82F7; /* Info */
     --color-black: #000; /* Black Button */
     --color-white: #fff;
+    --color-white-dark: rgba(255, 255, 255, 0.04); /* Dark BG */
     /* Text Dark-Mode Transparency */
     --color-tex-wh-o100: rgba(255, 255, 255, 1); /* S, M, L */
     --color-tex-wh-o70: rgba(255, 255, 255, 0.7);

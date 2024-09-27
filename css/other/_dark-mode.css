@@ -86,10 +86,24 @@
             background-color: rgba(243, 246, 255, 0.05);
         }
     }
+
+    #carousel-section {
+        background-color: var(--color-gray-100-dark);
+    }
+
     #app-features-followup-section {
 
         .sf2-img-container::before {
             background-color: rgba(243, 246, 255, 0.05);
+        }
+    }
+
+    #testimonial-section {
+        
+        background-color: var(--color-gray-100-dark);
+        
+        .review-box {
+            background-color: var(--color-white-dark);   
         }
     }
 
@@ -113,6 +127,12 @@
             /* background-color: var(--color-gray-900); */
             background-color: hsla(223, 26%, 14%, 0.911);;
             color: var(--color-white);
+        }
+    }
+
+    #subscribe-section {
+        .sub-box {
+            background-color: var(--color-gray-100-dark);
         }
     }
 }
