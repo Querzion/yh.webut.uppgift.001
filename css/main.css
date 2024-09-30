@@ -1,3 +1,7 @@
+/* FONT - MANROPE | GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+/* Import of css files */
 @import url('/css/other/_typography.css');
 @import url('/css/other/_variables.css');
 @import url('/css/other/_buttons.css');
@@ -13,8 +17,6 @@
 @import url('/css/sections/_subscribe.css');
 
 
-/* FONT - MANROPE | GOOGLE FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 /* Pick your poison. */
 .old-code {display: none;}
