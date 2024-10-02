@@ -4,7 +4,7 @@
     --color-gray-100-dark: rgba(243, 246, 255, 0.04); /* Dark BG */
     --color-gray-100-hsl: 224, 100%, 97%;
     --color-gray-200: #EFF2FC; /* Secondary */
-    --color-gray-200-op: rgba(239, 242, 252, 0.5); /* Secondary */
+    --color-gray-200-op: rgba(239, 242, 252, 0.2); /* Secondary */
     --color-gray-300: #E2E5F1; /* Divider, Border */
     --color-gray-400: #D4D7E5; /* Forms Border */
     --color-gray-500: #B4B7C9; /* Input Placeholder */
@@ -15,6 +15,7 @@
 
     /* Brand */
     --color-primary: #6366F1; /* Brand, Primary */
+    --color-primary-op: rgba(99, 101, 241, 0.491); /* Brand, Primary */
     --color-secondary: #585C7B; /* Some Text */
     --color-gradiant-1: #6366F1; /* 0% */
     --color-gradiant-2: #8B5CF6; /* 50% */

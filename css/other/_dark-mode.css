@@ -109,23 +109,40 @@
 
     /* FAQ Section */
     #faq-section {
-        /* .faq-accordion-box .faq-accordion::before {
-            background-color: var(--color-gray-900);
-        } */
-
+        
         .a1, .a2, .a3, .a4, .a5, .a6 {
             color: var(--color-white);
         }
+        
+        .faq-accordion-box {
 
+            @media (width < 768px) {
+                border: 0.5px solid var(--color-gray-200-op);                
+            }
+
+            .box-box:active {
+                border: 2px solid var(--color-gray-200-op);
+            }
+        }
         .faq-accordion {
-            background-color: var(--color-almostblack-blue);
+            background-color: var(--color-gray-100-dark);
+
+            @media (width < 768px) {
+                background-color: var(--color-almostblack-blue);
+                border: 0.5px solid var(--color-gray-200-op);                
+            }
         }
         .faq-accordion + .faq-panel {
-            background-color: var(--color-almostblack-blue);
+            background-color: var(--color-gray-100-dark);
+
+            @media (width < 768px) {
+                background-color: var(--color-almostblack-blue);
+                /* border: 0.5px solid var(--color-gray-200-op); */                
+            }
         }
         .faq-accordion .icon-down {
-            /* background-color: var(--color-gray-900); */
-            background-color: hsla(223, 26%, 14%, 0.911);;
+            
+            background-color: hsla(223, 26%, 14%, 0.911);
             color: var(--color-white);
         }
     }

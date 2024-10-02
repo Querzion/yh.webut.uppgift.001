@@ -41,13 +41,13 @@
         }
     }
 
-    .faq-accordian-box {
+    .faq-accordion-box {
         overflow: hidden;
         border: none;
         
         @media (width < 768px) {
             
-            border: .5px solid var(--color-gray-200);
+            border: 0.5px solid var(--color-gray-200);
             border-radius: .5rem;
             
         }
@@ -64,12 +64,10 @@
 
             @media (min-width: 768px) {
                 margin: 1rem;
-                border: 1px solid var(--color-gray-200);
                 border-radius: .8rem;
                 box-shadow: 0 3px 6px #00000013;
-    
             }
-        }               
+        }  
     }
     
     .faq-accordion {
@@ -81,9 +79,8 @@
         
         height: 4rem;
         width: 100%;
-        /* background-color: var(--color-white); */
+        border: 0.5px solid var(--color-gray-200);
         background-color: transparent;
-        border: 1px solid var(--color-gray-200);
         position: relative;
         
         font-weight: 600;
@@ -99,6 +96,11 @@
             padding-left: 1rem;
         }
         
+        .fa-chevron-up {
+            color: var(--color-white);
+            box-shadow: 0 7px 14px var(--color-primary-op);
+        }
+
         .icon-down {
             grid-area: 1/2;
             position: absolute;
