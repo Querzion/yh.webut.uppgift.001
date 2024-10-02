@@ -314,17 +314,16 @@ body {
   margin: 0; /* Adjust margins as needed */
 }
 
-/* --------------------------------------------------------------- DARK MODE CONFIGURATION */
-/* DARK MODE CONFIGURATION */
+/* 
+██████╗  █████╗ ██████╗ ██╗  ██╗     ███╗   ███╗ ██████╗ ██████╗ ███████╗
+██╔══██╗██╔══██╗██╔══██╗██║ ██╔╝     ████╗ ████║██╔═══██╗██╔══██╗██╔════╝
+██║  ██║███████║██████╔╝█████╔╝█████╗██╔████╔██║██║   ██║██║  ██║█████╗  
+██║  ██║██╔══██║██╔══██╗██╔═██╗╚════╝██║╚██╔╝██║██║   ██║██║  ██║██╔══╝  
+██████╔╝██║  ██║██║  ██║██║  ██╗     ██║ ╚═╝ ██║╚██████╔╝██████╔╝███████╗
+╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝     ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝ */
 .dark-mode {
   background-color: var(--color-gray-900);
   color: var(--color-white);
-  /* Navbar */
-  /* Showcase Section */
-  /* Brand section */
-  /* Brandbox Blue */
-  /* App Features Section */
-  /* FAQ Section */
 }
 .dark-mode p {
   color: var(--color-tex-wh-o70);
@@ -334,11 +333,6 @@ body {
 }
 .dark-mode .sticky-header.scrolled {
   background: var(--color-gray-900);
-}
-.dark-mode header {
-  /* Features Text*/
-  /* Dark mode Text */
-  /* Burger Menu Icon */
 }
 .dark-mode header .nav-link {
   color: var(--color-gray-500);
@@ -352,14 +346,7 @@ body {
 .dark-mode header .btn-mobile {
   color: var(--color-white);
 }
-.dark-mode #showcase-section {
-  /* Showcase Text */
-  /* Marketplace Buttons */
-  /* Discover more Button */
-  /* Discover more Text */
-}
 .dark-mode #showcase-section #sc-text {
-  /* color: var(--color-white); */
   color: var(--color-tex-wh-o70);
 }
 .dark-mode #showcase-section .btn-download-app {
@@ -783,14 +770,6 @@ body {
   #showcase-section .images {
     display: block;
     width: 100%;
-    /* height: auto; */
-    /* margin-top: 4rem; */
-  }
-}
-@media (min-width: 768px) and (min-width: 1400px) {
-  #showcase-section .images {
-    /* margin-top: 2.5rem;
-    margin-bottom: 2.5rem; */
   }
 }
 #showcase-section .images .img-back {
