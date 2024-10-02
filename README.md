@@ -63,3 +63,6 @@ Felen som nämns är fel som DELVIS följer med uppåt, från mobilläget till d
 - Det är säkert mer.
 
 Hade jag haft ork, så hade jag säkert skrivit om all kod och samtidigt lagt bilderna i ett bättre folder-system. Man lär sig i varje fall.
+
+[EDIT: 02 OKT 2024]
+Det existerar ett allvarligt fel i Firefox, för accordion delen, där knapparna hamnar i mitten utav fältet, det verkar även vara problem med javascripten enligt Firefox dev-tools, men kan ha påverkats utav extensions. Inte testat!
