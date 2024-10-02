@@ -1,5 +1,11 @@
-/* --------------------------------------------------------------- DARK MODE CONFIGURATION */
-/* DARK MODE CONFIGURATION */
+/* 
+██████╗  █████╗ ██████╗ ██╗  ██╗     ███╗   ███╗ ██████╗ ██████╗ ███████╗
+██╔══██╗██╔══██╗██╔══██╗██║ ██╔╝     ████╗ ████║██╔═══██╗██╔══██╗██╔════╝
+██║  ██║███████║██████╔╝█████╔╝█████╗██╔████╔██║██║   ██║██║  ██║█████╗  
+██║  ██║██╔══██║██╔══██╗██╔═██╗╚════╝██║╚██╔╝██║██║   ██║██║  ██║██╔══╝  
+██████╔╝██║  ██║██║  ██║██║  ██╗     ██║ ╚═╝ ██║╚██████╔╝██████╔╝███████╗
+╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝     ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝ */
+
 .dark-mode {
     background-color: var(--color-gray-900);
     color: var(--color-white);
@@ -7,8 +13,6 @@
     p {
         color: var(--color-tex-wh-o70);
     }
-
-    /* Navbar */
 
     .sticky-header {
         background: transparent;
@@ -19,7 +23,7 @@
     }
 
     header {
-        /* Features Text*/
+        
         .nav-link {
             color: var(--color-gray-500);
 
@@ -27,29 +31,29 @@
                 color: var(--color-primary);
             }
         }
-        /* Dark mode Text */
+        
         .btn-toggle-switch {
             .label {
                 color: var(--color-gray-700);
             }
         }
 
-        /* Burger Menu Icon */
+        
         .btn-mobile {
             color: var(--color-white);
         }
     }
 
-    /* Showcase Section */
+    
     #showcase-section {
 
-        /* Showcase Text */
+        
         #sc-text {
-            /* color: var(--color-white); */
+            
             color: var(--color-tex-wh-o70);
         }
 
-        /* Marketplace Buttons */
+       
         .btn-download-app {
             background-color: var(--color-gray-200);
 
@@ -58,12 +62,12 @@
             }
         }
 
-        /* Discover more Button */
+        
         .btn-circle:hover {
             background-color: var(--color-gray-700);
         }
 
-        /* Discover more Text */
+        
         .discover-more {
             span {
                 color: var(--color-tex-wh-o70);
@@ -72,14 +76,13 @@
         }
     }
 
-    /* Brand section */
-    /* Brandbox Blue */
+
     .brand-box {
         background: var(--color-almostblack-blue);
     }
 
     
-    /* App Features Section */
+
     #app-features-section {
 
         .af-img-container::before {
@@ -107,7 +110,7 @@
         }
     }
 
-    /* FAQ Section */
+    
     #faq-section {
         
         .a1, .a2, .a3, .a4, .a5, .a6 {

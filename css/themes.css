@@ -1,14 +1,14 @@
-/* --------------------------------------------------------------- DARK MODE CONFIGURATION */
-/* DARK MODE CONFIGURATION */
+@charset "UTF-8";
+/* 
+██████╗  █████╗ ██████╗ ██╗  ██╗     ███╗   ███╗ ██████╗ ██████╗ ███████╗
+██╔══██╗██╔══██╗██╔══██╗██║ ██╔╝     ████╗ ████║██╔═══██╗██╔══██╗██╔════╝
+██║  ██║███████║██████╔╝█████╔╝█████╗██╔████╔██║██║   ██║██║  ██║█████╗  
+██║  ██║██╔══██║██╔══██╗██╔═██╗╚════╝██║╚██╔╝██║██║   ██║██║  ██║██╔══╝  
+██████╔╝██║  ██║██║  ██║██║  ██╗     ██║ ╚═╝ ██║╚██████╔╝██████╔╝███████╗
+╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝     ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝ */
 .dark-mode {
   background-color: var(--color-gray-900);
   color: var(--color-white);
-  /* Navbar */
-  /* Showcase Section */
-  /* Brand section */
-  /* Brandbox Blue */
-  /* App Features Section */
-  /* FAQ Section */
 }
 .dark-mode p {
   color: var(--color-tex-wh-o70);
@@ -18,11 +18,6 @@
 }
 .dark-mode .sticky-header.scrolled {
   background: var(--color-gray-900);
-}
-.dark-mode header {
-  /* Features Text*/
-  /* Dark mode Text */
-  /* Burger Menu Icon */
 }
 .dark-mode header .nav-link {
   color: var(--color-gray-500);
@@ -36,14 +31,7 @@
 .dark-mode header .btn-mobile {
   color: var(--color-white);
 }
-.dark-mode #showcase-section {
-  /* Showcase Text */
-  /* Marketplace Buttons */
-  /* Discover more Button */
-  /* Discover more Text */
-}
 .dark-mode #showcase-section #sc-text {
-  /* color: var(--color-white); */
   color: var(--color-tex-wh-o70);
 }
 .dark-mode #showcase-section .btn-download-app {
