@@ -1,0 +1,155 @@
+/* --------------------------------------------------------------- DARK MODE CONFIGURATION */
+/* DARK MODE CONFIGURATION */
+.dark-mode {
+    background-color: var(--color-gray-900);
+    color: var(--color-white);
+
+    p {
+        color: var(--color-tex-wh-o70);
+    }
+
+    /* Navbar */
+
+    .sticky-header {
+        background: transparent;
+
+    }
+    .sticky-header.scrolled {
+        background: var(--color-gray-900);
+    }
+
+    header {
+        /* Features Text*/
+        .nav-link {
+            color: var(--color-gray-500);
+
+            &:hover {
+                color: var(--color-primary);
+            }
+        }
+        /* Dark mode Text */
+        .btn-toggle-switch {
+            .label {
+                color: var(--color-gray-700);
+            }
+        }
+
+        /* Burger Menu Icon */
+        .btn-mobile {
+            color: var(--color-white);
+        }
+    }
+
+    /* Showcase Section */
+    #showcase-section {
+
+        /* Showcase Text */
+        #sc-text {
+            /* color: var(--color-white); */
+            color: var(--color-tex-wh-o70);
+        }
+
+        /* Marketplace Buttons */
+        .btn-download-app {
+            background-color: var(--color-gray-200);
+
+            &:hover {
+                background-color: var(--color-gray-500);
+            }
+        }
+
+        /* Discover more Button */
+        .btn-circle:hover {
+            background-color: var(--color-gray-700);
+        }
+
+        /* Discover more Text */
+        .discover-more {
+            span {
+                color: var(--color-tex-wh-o70);
+                /* color: rgba(255, 255, 255, 0.5); */
+            }
+        }
+    }
+
+    /* Brand section */
+    /* Brandbox Blue */
+    .brand-box {
+        background: var(--color-almostblack-blue);
+    }
+
+    
+    /* App Features Section */
+    #app-features-section {
+
+        .af-img-container::before {
+            background-color: rgba(243, 246, 255, 0.05);
+        }
+    }
+
+    #carousel-section {
+        background-color: var(--color-gray-100-dark);
+    }
+
+    #app-features-followup-section {
+
+        .sf2-img-container::before {
+            background-color: rgba(243, 246, 255, 0.05);
+        }
+    }
+
+    #testimonial-section {
+        
+        background-color: var(--color-gray-100-dark);
+        
+        .review-box {
+            background-color: var(--color-white-dark);   
+        }
+    }
+
+    /* FAQ Section */
+    #faq-section {
+        
+        .a1, .a2, .a3, .a4, .a5, .a6 {
+            color: var(--color-white);
+        }
+        
+        .faq-accordion-box {
+
+            @media (width < 768px) {
+                border: 0.5px solid var(--color-gray-200-op);                
+            }
+
+            .box-box:active {
+                border: 1px solid var(--color-gray-200-op);
+            }
+        }
+        .faq-accordion {
+            background-color: var(--color-gray-100-dark);
+
+            @media (width < 768px) {
+                background-color: var(--color-almostblack-blue);
+                border: 0.5px solid var(--color-gray-200-op);                
+            }
+        }
+        .faq-accordion + .faq-panel {
+            background-color: var(--color-gray-100-dark);
+
+            @media (width < 768px) {
+                background-color: var(--color-almostblack-blue);
+                /* border: 0.5px solid var(--color-gray-200-op); */                
+            }
+        }
+        .faq-accordion .icon-down {
+            
+            background-color: hsla(223, 26%, 14%, 0.911);
+            color: var(--color-white);
+        }
+    }
+
+    #subscribe-section {
+        .sub-box {
+            background-color: var(--color-gray-100-dark);
+        }
+    }
+}

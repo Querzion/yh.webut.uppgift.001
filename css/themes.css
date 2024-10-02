@@ -1,0 +1,115 @@
+/* --------------------------------------------------------------- DARK MODE CONFIGURATION */
+/* DARK MODE CONFIGURATION */
+.dark-mode {
+  background-color: var(--color-gray-900);
+  color: var(--color-white);
+  /* Navbar */
+  /* Showcase Section */
+  /* Brand section */
+  /* Brandbox Blue */
+  /* App Features Section */
+  /* FAQ Section */
+}
+.dark-mode p {
+  color: var(--color-tex-wh-o70);
+}
+.dark-mode .sticky-header {
+  background: transparent;
+}
+.dark-mode .sticky-header.scrolled {
+  background: var(--color-gray-900);
+}
+.dark-mode header {
+  /* Features Text*/
+  /* Dark mode Text */
+  /* Burger Menu Icon */
+}
+.dark-mode header .nav-link {
+  color: var(--color-gray-500);
+}
+.dark-mode header .nav-link:hover {
+  color: var(--color-primary);
+}
+.dark-mode header .btn-toggle-switch .label {
+  color: var(--color-gray-700);
+}
+.dark-mode header .btn-mobile {
+  color: var(--color-white);
+}
+.dark-mode #showcase-section {
+  /* Showcase Text */
+  /* Marketplace Buttons */
+  /* Discover more Button */
+  /* Discover more Text */
+}
+.dark-mode #showcase-section #sc-text {
+  /* color: var(--color-white); */
+  color: var(--color-tex-wh-o70);
+}
+.dark-mode #showcase-section .btn-download-app {
+  background-color: var(--color-gray-200);
+}
+.dark-mode #showcase-section .btn-download-app:hover {
+  background-color: var(--color-gray-500);
+}
+.dark-mode #showcase-section .btn-circle:hover {
+  background-color: var(--color-gray-700);
+}
+.dark-mode #showcase-section .discover-more span {
+  color: var(--color-tex-wh-o70);
+  /* color: rgba(255, 255, 255, 0.5); */
+}
+.dark-mode .brand-box {
+  background: var(--color-almostblack-blue);
+}
+.dark-mode #app-features-section .af-img-container::before {
+  background-color: rgba(243, 246, 255, 0.05);
+}
+.dark-mode #carousel-section {
+  background-color: var(--color-gray-100-dark);
+}
+.dark-mode #app-features-followup-section .sf2-img-container::before {
+  background-color: rgba(243, 246, 255, 0.05);
+}
+.dark-mode #testimonial-section {
+  background-color: var(--color-gray-100-dark);
+}
+.dark-mode #testimonial-section .review-box {
+  background-color: var(--color-white-dark);
+}
+.dark-mode #faq-section .a1, .dark-mode #faq-section .a2, .dark-mode #faq-section .a3, .dark-mode #faq-section .a4, .dark-mode #faq-section .a5, .dark-mode #faq-section .a6 {
+  color: var(--color-white);
+}
+@media (width < 768px) {
+  .dark-mode #faq-section .faq-accordion-box {
+    border: 0.5px solid var(--color-gray-200-op);
+  }
+}
+.dark-mode #faq-section .faq-accordion-box .box-box:active {
+  border: 1px solid var(--color-gray-200-op);
+}
+.dark-mode #faq-section .faq-accordion {
+  background-color: var(--color-gray-100-dark);
+}
+@media (width < 768px) {
+  .dark-mode #faq-section .faq-accordion {
+    background-color: var(--color-almostblack-blue);
+    border: 0.5px solid var(--color-gray-200-op);
+  }
+}
+.dark-mode #faq-section .faq-accordion + .faq-panel {
+  background-color: var(--color-gray-100-dark);
+}
+@media (width < 768px) {
+  .dark-mode #faq-section .faq-accordion + .faq-panel {
+    background-color: var(--color-almostblack-blue);
+    /* border: 0.5px solid var(--color-gray-200-op); */
+  }
+}
+.dark-mode #faq-section .faq-accordion .icon-down {
+  background-color: hsla(223, 26%, 14%, 0.911);
+  color: var(--color-white);
+}
+.dark-mode #subscribe-section .sub-box {
+  background-color: var(--color-gray-100-dark);
+}/*# sourceMappingURL=themes.css.map */

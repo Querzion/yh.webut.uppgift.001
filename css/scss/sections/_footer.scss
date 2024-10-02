@@ -1,0 +1,32 @@
+footer {
+    grid-area: footer-section;
+    font-size: 14px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: var(--color-gray-600);
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+        @media (min-width: 768px) {
+            
+            
+            flex-direction: row;
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+            gap: 5px;        
+            
+            @media (min-width: 1400px) {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+        }
+    }
+    
+    .credit {
+        display: block;
+    }    
+}
