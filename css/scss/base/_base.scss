@@ -4,7 +4,7 @@
 
 * {
     box-sizing: border-box;
-    /* -webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body, section, div, header, footer, main, aside, nav, blockquote, p, span {
@@ -13,10 +13,10 @@ body, section, div, header, footer, main, aside, nav, blockquote, p, span {
 }
 
 body {
-    /* font-family: "Manrope", sans-serif;
+    font-family: "Manrope", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
-    font-style: normal; */
+    font-style: normal;
     font-size: 18px;
 }
 
