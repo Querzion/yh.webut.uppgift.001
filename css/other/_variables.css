@@ -4,6 +4,7 @@
     --color-gray-100-dark: rgba(243, 246, 255, 0.04); /* Dark BG */
     --color-gray-100-hsl: 224, 100%, 97%;
     --color-gray-200: #EFF2FC; /* Secondary */
+    --color-gray-200-op: rgba(239, 242, 252, 0.5); /* Secondary */
     --color-gray-300: #E2E5F1; /* Divider, Border */
     --color-gray-400: #D4D7E5; /* Forms Border */
     --color-gray-500: #B4B7C9; /* Input Placeholder */
